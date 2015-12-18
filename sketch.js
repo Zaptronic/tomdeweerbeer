@@ -27,6 +27,7 @@ var tempColorMappedB = 0;
 // variables for objects
 var raindrops = [];
 var snowflakes = [];
+var clouds = [];
 var weerbeer;
 var weathericon = [];
 var weathericonsAmount = 3;
@@ -63,6 +64,7 @@ function setup() {
     setInterval(loadInt, 100000);
     setInterval(raindropPush, 100);
     setInterval(snowflakePush, 100);
+    setInterval(cloudPush, 100);
     weerbeerPush();
     setInterval(weerbeerPush, 1250);
     setTimeout(backgroundColorCalculator, 1250);
@@ -98,6 +100,14 @@ function draw() {
         
             if (snowflakes[i].lifespancheck()) {
             snowflakes.splice(i,1);
+            }
+        }
+        for (var i = clouds.length-1; i  > 0; i--) {
+            clouds[i].update();
+            clouds[i].display();
+        
+            if (clouds[i].lifespancheck()) {
+            clouds.splice(i,1);
             }
         }
     }   
