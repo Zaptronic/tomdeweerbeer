@@ -56,7 +56,7 @@ function setup() {
 //    cnv.parent("sketch");
     fill(255);
     textFont(standardFont);
-    textSize(36);
+    textSize(48);
     formCity = select('#formCity');
     buttonF = select('#buttonCity');
     buttonF.mousePressed(loadCity);
@@ -105,6 +105,13 @@ function draw() {
         for (var i = clouds.length-1; i  > 0; i--) {
             clouds[i].update();
             clouds[i].display();
+            
+            for(var j = 0; j < clouds.length; j++) {
+                if (i!=j && clouds[i].intersects(clouds[j])) {
+                    clouds[i].changecolor();
+                    clouds[j].changecolor();
+                }
+            }
         
             if (clouds[i].lifespancheck()) {
             clouds.splice(i,1);

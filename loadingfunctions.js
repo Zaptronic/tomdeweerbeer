@@ -25,6 +25,5 @@ function gotData(data){
     temperature = data.list[0].main.temp;
     tempColor = data.list[0].main.temp;
     weatherType = data.list[0].weather[0].id;
-    console.log(weatherData); 
-    console.log(temperature);
+//    console.log(weatherData); 
 }

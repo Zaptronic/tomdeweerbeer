@@ -26,16 +26,15 @@ p {
 
     .zoekform {
         position: relative;
-        margin-top: 120px;
         text-align: center;
     //    left: 50%;
         margin: auto;
+        margin-top: 80px;
     }
     #button {
 //        z-index: 999999;
     }
-    .formfield {
-        margin-top: 10vh;
+    #cityfield {
         width: 200px;
         height: 32px;
         border-radius: 4px;

@@ -24,11 +24,10 @@ p {
   width: 100%; }
   .container .zoekform {
     position: relative;
-    margin-top: 120px;
     text-align: center;
-    margin: auto; }
-  .container .formfield {
-    margin-top: 10vh;
+    margin: auto;
+    margin-top: 80px; }
+  .container #cityfield {
     width: 200px;
     height: 32px;
     border-radius: 4px; }
