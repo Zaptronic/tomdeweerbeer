@@ -4,7 +4,7 @@ function cloudPush() {
     var cloudAmount = 6;
     
     if (clouds.length < cloudAmount) {
-         clouds.push(new Cloud(random(cloudPosxA,cloudPosxB), random(windowHeight*0.66, windowHeight-200), round(random(100,windowWidth))));     
+         clouds.push(new Cloud(random(cloudPosxA,cloudPosxB), random(windowHeight*0.66, windowHeight-200), round(random(100,200))));     
         //call color function in raindrop in for loop 
         //raindrop[i].pickcolor bv
     }
@@ -17,7 +17,7 @@ function Cloud(x,y,lifespan) {
     this.radius = 25;
     this. moveover = 25;
     this.lifespan = lifespan;
-    this.windmovementX = windSpeed/2;
+    this.windmovementX = windSpeed/3;
     this.color = color(255, 120, 0);
     
     this.display = function() {

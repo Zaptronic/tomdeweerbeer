@@ -122,7 +122,8 @@ function draw() {
 function keyPressed() {
     if (keyCode === ENTER){
         loadCity();
-        console.log('enter');
+//        clouds.splice(0,clouds.length);
+        cloudPush();
     }
 }
 
@@ -139,6 +140,7 @@ function temperaturePush() {
     push();
 //    translate(width/6,-100);
 //    rotate(210);
+    textAlign(CENTER);
     text(floor(temperature), windowWidth/2,windowHeight-100);
     pop();
 }
