@@ -64,7 +64,7 @@ function setup() {
     setInterval(loadInt, 100000);
     setInterval(raindropPush, 100);
     setInterval(snowflakePush, 100);
-    setInterval(cloudPush, 100);
+    setInterval(cloudPush, 200);
     weerbeerPush();
     setInterval(weerbeerPush, 1250);
     setTimeout(backgroundColorCalculator, 1250);
@@ -105,11 +105,12 @@ function draw() {
         for (var i = clouds.length-1; i  > 0; i--) {
             clouds[i].update();
             clouds[i].display();
+                        console.log(clouds);
             
             for(var j = 0; j < clouds.length; j++) {
                 if (i!=j && clouds[i].intersects(clouds[j])) {
-                    clouds[i].changecolor();
-                    clouds[j].changecolor();
+                    clouds[i].rearrange();
+                    clouds[j].rearrange();
                 }
             }
         
@@ -122,7 +123,9 @@ function draw() {
 function keyPressed() {
     if (keyCode === ENTER){
         loadCity();
-//        clouds.splice(0,clouds.length);
+        for (var i = clouds.length-1; i  > 0; i--) {
+            clouds[i].updateWind();
+         }
         cloudPush();
     }
 }

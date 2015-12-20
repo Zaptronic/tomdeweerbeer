@@ -10,6 +10,7 @@ function loadCity() {
 function gotData(data){
     weatherData = data;
     windSpeed = data.list[0].wind.speed*1.2;
+    
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
         amountRain = round(amountRain * 100);   
