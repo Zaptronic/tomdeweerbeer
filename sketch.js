@@ -58,13 +58,12 @@ function setup() {
     textFont(standardFont);
     textSize(48);
     formCity = select('#formCity');
-    buttonF = select('#buttonCity');
-    buttonF.mousePressed(loadCity);
+//    buttonF = select('#buttonCity');
     loadJSON(url, gotData, 'jsonp'); 
     setInterval(loadInt, 100000);
-    setInterval(raindropPush, 100);
-    setInterval(snowflakePush, 100);
-    setInterval(cloudPush, 200);
+    setInterval(raindropPush, 400);
+    setInterval(snowflakePush, 400);
+    setInterval(cloudPush, 1500);
     weerbeerPush();
     setInterval(weerbeerPush, 1250);
     setTimeout(backgroundColorCalculator, 1250);
@@ -80,9 +79,26 @@ function setup() {
 
 function draw() {
     background(tempColorMappedR, tempColorMappedG, tempColorMappedB);
-        keyPressed();
+    keyPressed();
+//    buttonF.mousePressed(reloadCity);
     
     if (weatherData) {
+        for (var i = clouds.length-1; i  > 0; i--) {
+            clouds[i].update();
+            clouds[i].display();
+//                        console.log(clouds);
+            
+            for(var j = 0; j < clouds.length; j++) {
+                if (i!=j && clouds[i].intersects(clouds[j])) {
+                    clouds[i].rearrange();
+                    clouds[j].rearrange();
+                }
+            }
+        
+            if (clouds[i].lifespancheck()) {
+            clouds.splice(i,1);
+            }
+        }
         weerbeer.display();
         temperaturePush();
 
@@ -102,38 +118,20 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
-        for (var i = clouds.length-1; i  > 0; i--) {
-            clouds[i].update();
-            clouds[i].display();
-                        console.log(clouds);
-            
-            for(var j = 0; j < clouds.length; j++) {
-                if (i!=j && clouds[i].intersects(clouds[j])) {
-                    clouds[i].rearrange();
-                    clouds[j].rearrange();
-                }
-            }
-        
-            if (clouds[i].lifespancheck()) {
-            clouds.splice(i,1);
-            }
-        }
     }   
 }
 function keyPressed() {
     if (keyCode === ENTER){
-        loadCity();
-        for (var i = clouds.length-1; i  > 0; i--) {
-            clouds[i].updateWind();
-         }
-        cloudPush();
+        reloadCity();
     }
 }
 
 function backgroundColorCalculator() {
-    tempColorMappedR = round(map(hour(),0, 23, 0, 20));
-    tempColorMappedG = tempColorMappedR;
-    tempColorMappedB = round(map(tempColor,-20, 40, 0, 100));
+//    tempColorMappedR = round(map(hour(),0, 23, 0, 20));
+    tempColorMappedR = 26;
+    tempColorMappedG = 35;
+    tempColorMappedB = 38;
+//    tempColorMappedB = round(map(tempColor,-20, 40, 0, 100));
     return tempColorMappedR;
     return tempColorMappedG;
     return tempColorMappedB;
@@ -144,6 +142,6 @@ function temperaturePush() {
 //    translate(width/6,-100);
 //    rotate(210);
     textAlign(CENTER);
-    text(floor(temperature), windowWidth/2,windowHeight-100);
+    text(floor(temperature)+'\xB0', windowWidth/2,windowHeight-100);
     pop();
 }

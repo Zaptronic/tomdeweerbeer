@@ -7,7 +7,7 @@ function weerbeerPush() {
 function Weerbeer(x,y) {
     this.x = x;
     this.y = y;
-    this.radius = 150;
+    this.radius = 500;
     this.fillColor = 255;
     
     this.display = function() {
@@ -29,7 +29,7 @@ function Weerbeer(x,y) {
             pop();
 
          } if (weatherType >= 500 && weatherType < 600){
-            image(weathericon[2], this.x, this.y, this.radius, this.radius);
+            image(weathericon[2], this.x, this.y, this.radius, this.radius*1.4);
              
          } if (weatherType >= 600 && weatherType < 700){
             push();
