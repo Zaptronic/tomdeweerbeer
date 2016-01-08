@@ -1,21 +1,12 @@
-var hoogte;
-
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
+    raindrops = [];
+    snowflakes = [];
+    clouds = [];
 }
-
-window.onorientationchange = function() {
-  resizeCanvas(windowWidth, windowHeight);
-};
 
 window.addEventListener("orientationchange", function() {
-    getsizes();
-    resizeCanvas(windowWidth, hoogte);
-    alert(hoogte);   
+    windowResized();
+    weerbeerPush();
+    temperaturePush();
 }, false);
-
-function getsizes() {
-    var pix = devicePixelRatio;
-    hoogte = floor(windowHeight*pix);
-    return hoogte;
-}
