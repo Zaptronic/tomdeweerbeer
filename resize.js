@@ -1,12 +1,12 @@
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
-    raindrops = [];
-    snowflakes = [];
-    clouds = [];
 }
 
 window.addEventListener("orientationchange", function() {
     windowResized();
+    raindrops = [];
+    snowflakes = [];
+    clouds = [];
     weerbeerPush();
     temperaturePush();
 }, false);

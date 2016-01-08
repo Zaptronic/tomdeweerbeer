@@ -1,1 +1,1 @@
-function windowResized(){resizeCanvas(windowWidth,windowHeight),raindrops=[],snowflakes=[],clouds=[]}window.addEventListener("orientationchange",function(){windowResized(),weerbeerPush(),temperaturePush()},!1);
+function windowResized(){resizeCanvas(windowWidth,windowHeight)}window.addEventListener("orientationchange",function(){windowResized(),raindrops=[],snowflakes=[],clouds=[],weerbeerPush(),temperaturePush()},!1);
