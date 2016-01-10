@@ -3,13 +3,36 @@ function loadInt() {
 }
 
 function loadCity() {
-    url = baseurl+formCity.value()+mode+appid+unit+lang; 
-    loadJSON(url, gotData, 'jsonp');
+    url = baseurl+lat+lon+mode+appid+unit+lang; 
+    loadJSON(url, gotData);
+    console.log(url);
+}
+
+function loadGeo() {
+    var latbase = 'lat=';
+    lat = latbase + round(locationData.latitude);
+    var lonbase = '&lon=';
+    lon = lonbase + round(locationData.longitude);      
+    urlgeo = baseurl+lat+lon+appid;
+    weather = loadJSON(urlgeo, setGeo, 'jsonp');
+
+}
+
+function setGeo(data) {
+    temperature = weather.list[0].main.temp;
+    city = data.city.name;
+    formCity.value(city);
+    return city;
 }
 
 function gotData(data){
     weatherData = data;
     windSpeed = data.list[0].wind.speed*1.2;
+    city = data.city.name;
+    country = data.city.country;
+//    console.log(city);
+//    console.log(url);
+    formCity.value(city + ', ' + country);
     
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
@@ -26,7 +49,6 @@ function gotData(data){
     temperature = data.list[0].main.temp;
     tempColor = data.list[0].main.temp;
     weatherType = data.list[0].weather[0].id;
-//    console.log(amountRain); 
 }
 
 function reloadCity() {

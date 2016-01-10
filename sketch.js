@@ -1,11 +1,18 @@
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-var city = 'amsterdam';
+var city;
+var country;
+var lon;
+var lat;
+var locationData;
 var mode = 'JSON';
 var appid = '&appid=2de143494c0b295cca9337e1e96b00e0';
 var lang = '&lang=en'
 var unit = '&units=metric';
-var url = baseurl+city+mode+appid+unit+lang;
+var url = baseurl+city+appid+unit+lang;
+
+
+var weather;
 // land toevoegen aan city met land selectiebox/ land iccon? 
 // button.mousepressed calls function with find and put it in an array with city and country then list them as text and then mousepressed an duse the value to chagne the global city value
 
@@ -45,6 +52,7 @@ var formCity;
 function preload() {
 //    loadJSON(url); 
     standardFont = loadFont("../fonts/Cof.ttf");
+    locationData =  getCurrentPosition();
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('../images/weather'+i+'.png');   
     }
@@ -58,8 +66,21 @@ function setup() {
     textFont(standardFont);
     textSize(48);
     formCity = select('#formCity');
+    
+    if(geoCheck() == true){
+        loadGeo();
+        console.log('city:' + city);
+        loadCity();
+//                alert(url);
+
+    } else {
+        console.log('failed');
+        city = 'berlin';
+        alert(url);
+        loadJSON(url, gotData, 'jsonp');
+    }
+//    console.log(url);
 //    buttonF = select('#buttonCity');
-    loadJSON(url, gotData, 'jsonp'); 
     setInterval(loadInt, 100000);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
