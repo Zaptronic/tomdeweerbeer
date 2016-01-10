@@ -1,11 +1,12 @@
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-var city = 'poznan';
+var city = 'Amsterdam, NL';
+var type = '&type=like';
 var mode = 'JSON';
 var appid = '&appid=2de143494c0b295cca9337e1e96b00e0';
 var lang = '&lang=en'
 var unit = '&units=metric';
-var url = baseurl+city+mode+appid+unit+lang;
+var url = baseurl+city+type+mode+appid+unit+lang;
 // land toevoegen aan city met land selectiebox/ land iccon? 
 // button.mousepressed calls function with find and put it in an array with city and country then list them as text and then mousepressed an duse the value to chagne the global city value
 
@@ -70,7 +71,6 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
-
 
 //    for (var i = 0; i < 3; i++) {
 //            raindrops[i] = new Raindrop(random(100,200), random(windowHeight/2,windowHeight/2+20));
