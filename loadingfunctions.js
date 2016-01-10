@@ -7,15 +7,6 @@ function loadCity() {
     loadJSON(url, gotData, 'jsonp');
 }
 
-function loadGeo() {
-    var latbase = 'lat=';
-    lat = latbase + round(locationData.latitude);
-    var lonbase = '&lon=';
-    lon = lonbase + round(locationData.longitude);      
-    urlgeo = baseurl+lat+lon+appid;
-    weather = loadJSON(urlgeo, setGeo, 'jsonp');
-}
-
 
 function gotData(data){
     weatherData = data;
