@@ -7,6 +7,17 @@ function loadCity() {
     loadJSON(url, gotData, 'jsonp');
 }
 
+function loadGeo() {
+    var latbase = 'lat=';
+    lat = latbase + round(locationData.latitude);
+    var lonbase = '&lon=';
+    lon = lonbase + round(locationData.longitude);      
+    urlgeo = baseurl+lat+lon+appid;
+    weather = loadJSON(urlgeo, setGeo, 'jsonp');
+
+}
+
+
 function gotData(data){
     weatherData = data;
     windSpeed = data.list[0].wind.speed*1.2;
@@ -16,7 +27,6 @@ function gotData(data){
     var lat = round(data.city.coord.lat);
     console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
-    
     
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
