@@ -1,6 +1,6 @@
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-var city = 'poznan';
+var city = 'amsterdam';
 var mode = 'JSON';
 var appid = '&appid=2de143494c0b295cca9337e1e96b00e0';
 var lang = '&lang=en'

@@ -267,28 +267,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/sketch_bckp141220151545.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/sketch_bckp141220151545.js",
-		"outputAbbreviatedPath": "\/min\/sketch_bckp141220151545-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/sketch_bckp_14122015.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/sketch_bckp_14122015.js",
-		"outputAbbreviatedPath": "\/min\/sketch_bckp_14122015-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/snow.js": {
 		"fileType": 64,
 		"ignore": 0,
