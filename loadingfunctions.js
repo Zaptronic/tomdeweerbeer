@@ -14,7 +14,6 @@ function loadGeo() {
     lon = lonbase + round(locationData.longitude);      
     urlgeo = baseurl+lat+lon+appid;
     weather = loadJSON(urlgeo, setGeo, 'jsonp');
-
 }
 
 
