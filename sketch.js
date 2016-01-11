@@ -41,6 +41,7 @@ var standardFont;
 
 //variables for DOM elements
 var buttonF;
+var clearbutton;
 var formCity;
 
 function preload() {
@@ -59,6 +60,8 @@ function setup() {
     textFont(standardFont);
     textSize(48);
     formCity = select('#formCity');
+    clearbutton = select('.clearbutton');
+    clearbutton.mousePressed(clearPressed);
 //    buttonF = select('#buttonCity');
     loadJSON(url, gotData, 'jsonp'); 
     setInterval(loadInt, 100000);
@@ -71,6 +74,7 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
+    keyPressed();
 
 //    for (var i = 0; i < 3; i++) {
 //            raindrops[i] = new Raindrop(random(100,200), random(windowHeight/2,windowHeight/2+20));
@@ -79,8 +83,6 @@ function setup() {
 
 function draw() {
     background(tempColorMappedR, tempColorMappedG, tempColorMappedB);
-    keyPressed();
-//    buttonF.mousePressed(reloadCity);
     
     if (weatherData) {
         for (var i = clouds.length-1; i  > 0; i--) {
@@ -125,6 +127,9 @@ function keyPressed() {
         reloadCity();
     }
 }
+function clearPressed() {
+    formCity.value('');
+} 
 
 function backgroundColorCalculator() {
 //    tempColorMappedR = round(map(hour(),0, 23, 0, 20));

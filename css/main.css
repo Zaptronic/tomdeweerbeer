@@ -27,6 +27,16 @@ p {
     text-align: center;
     margin: auto;
     margin-top: 48px; }
+    .container .zoekform .clearbutton {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      display: inline-block;
+      background: lightgrey;
+      border-radius: 16px;
+      border: none;
+      margin: 6px;
+      z-index: 99999; }
   .container #formCity {
     box-sizing: border-box;
     width: 200px;

@@ -23,13 +23,27 @@ p {
     color: aqua;
     z-index: 99999;
     width: 100%;
+//    background: red;
 
     .zoekform {
+//        background: pink;
         position: relative;
         text-align: center;
     //    left: 50%;
         margin: auto;
         margin-top: 48px;
+    
+        .clearbutton {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            display: inline-block;
+            background: lightgrey;
+            border-radius: 16px;
+            border: none;
+            margin: 6px;
+            z-index: 99999;
+        }
     }
     #button {
 //        z-index: 999999;
