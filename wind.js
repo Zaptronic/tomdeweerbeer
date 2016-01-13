@@ -1,34 +1,37 @@
 function cloudPush() {
     var cloudPosxA = -100;
     var cloudPosxB = 0;
-    var cloudAmount = 3;
+    var cloudAmount = 4;
+    cloudpicker = floor(random(3));
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
-                    random(windowHeight*0.66, windowHeight-200), 
-                    round(random(100,200))));
+                    random(windowHeight*0.45, windowHeight*0.6), 
+                    round(random(100,400)),
+                    cloudpicker
+                         ));
     }
 }
 
 //single cloud
-function Cloud(x,y,lifespan) {
+function Cloud(x,y,lifespan, cloudpicker) {
     this.x = x;
     this.y = y;
     this.radius = 25;
     this.moveover = 25;
-    this.lifespan = lifespan;
-    this.windmovementX = windSpeed/3;
+    this.width = 150;
+    this.height = 120;
+    this.windmovementX = windSpeed/10 * (windowWidth/500);
     this.fadeInOpacity = 0;
     this.fadeInX = windowWidth/2;
     this.fadeOutX = windowWidth - (windowWidth/3);
     
     this.display = function() {
         push();
-        noStroke();
-        fill(255, 120, 0, this.fadeInOpacity);
-        ellipse(this.x, this.y, this.radius, this.radius);
+        imageMode(CENTER);
+        tint(255,this.fadeInOpacity);
+        image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);
         pop();
-        //array with different img clouds one is random picked for ech new cloud 
     }
     
     this.update = function() {
@@ -57,7 +60,7 @@ function Cloud(x,y,lifespan) {
         }
     }
 	this.lifespancheck = function() {
-		 if (this.lifespan < 0 && this.fadeInOpacity <= 0) {
+		 if (this.lifespan < 0 || this.fadeInOpacity <= 0) {
             return true;
          } else {
 			return false;

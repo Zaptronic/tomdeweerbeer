@@ -11,6 +11,39 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/clouds0.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2034,
+		"inputAbbreviatedPath": "\/images\/clouds0.png",
+		"outputAbbreviatedPath": "\/images\/clouds0.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/clouds1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2169,
+		"inputAbbreviatedPath": "\/images\/clouds1.png",
+		"outputAbbreviatedPath": "\/images\/clouds1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/clouds2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1445,
+		"inputAbbreviatedPath": "\/images\/clouds2.png",
+		"outputAbbreviatedPath": "\/images\/clouds2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/weather0.png": {
 		"fileType": 32768,
 		"ignore": 0,

@@ -32,6 +32,8 @@ var clouds = [];
 var weerbeer;
 var weathericon = [];
 var weathericonsAmount = 3;
+var cloudicons =  [];
+var cloudpicker;
 
 // variables for animation
 var direction = 1; //unused
@@ -49,6 +51,9 @@ function preload() {
     standardFont = loadFont("../fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('../images/weather'+i+'.png');   
+    }
+    for (var i = 0; i < 3; i++) {
+        cloudicons[i] = loadImage('../images/clouds'+i+'.png');
     }
 }
 
@@ -83,7 +88,8 @@ function setup() {
 
 function draw() {
     background(tempColorMappedR, tempColorMappedG, tempColorMappedB);
-    
+    console.log(windSpeed);
+
     if (weatherData) {
         for (var i = clouds.length-1; i  > 0; i--) {
             clouds[i].update();
