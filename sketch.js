@@ -147,6 +147,6 @@ function temperaturePush() {
 //    translate(width/6,-100);
 //    rotate(210);
     textAlign(CENTER);
-    text(floor(temperature)+'\xB0', windowWidth/2,windowHeight-100);
+    text(floor(temperature)+'*'+'C', windowWidth/2,windowHeight-100);
     pop();
 }

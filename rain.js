@@ -24,7 +24,7 @@ function Raindrop(x,y,lifespan) {
 //        translate(-300,-200);
         rotate(this.raindropRotator);
         noStroke();
-        fill(255, this.lifespan);
+        fill(121,219,226, this.lifespan);
 
 //        beginShape();
 //        curveVertex(this.x,  this.y);
