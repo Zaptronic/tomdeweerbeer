@@ -15,7 +15,7 @@ function gotData(data){
     country = data.city.country;
     var lon = round(data.city.coord.lon);
     var lat = round(data.city.coord.lat);
-    console.log(lon + ', ' + lat);
+//    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
     
     if (data.list[0].rain) {
