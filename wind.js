@@ -3,17 +3,20 @@ function cloudPush() {
     var cloudPosxB = -50;
     var cloudRatio = windowWidth/500;
     var cloudAmount = 1 + cloudRatio;
+    cloudpicker = floor(random(3));
+    console.log(cloudpicker);
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
                     random(windowHeight*0.45, windowHeight*0.625), 
-                    round(random(10,150))
+                    round(random(10,150)),
+                    cloudpicker
         ));
     }
 }
 
 //single cloud
-function Cloud(x,y,lifespan) {
+function Cloud(x,y,lifespan, cloudpicker) {
     this.x = x;
     this.y = y;
     this.lifespan = lifespan;
@@ -30,8 +33,9 @@ function Cloud(x,y,lifespan) {
     this.display = function() {
         push();
         imageMode(CENTER);
-        ellipse(this.x, this.y, this.radius, this.radius);
-        tint(255,this.fadeInOpacity);
+//        ellipse(this.x, this.y, this.radius, this.radius);
+//        tint(255,this.fadeInOpacity);
+        image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);
         console.log(this.windmovementX);
         pop();
     }
