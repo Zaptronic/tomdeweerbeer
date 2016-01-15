@@ -4,7 +4,7 @@ function cloudPush() {
     var cloudRatio = windowWidth / 500;
     var cloudAmount = 1 + cloudRatio;
     cloudpicker = floor(random(2));
-    console.log(cloudpicker);
+//    console.log(cloudpicker);
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
@@ -33,7 +33,6 @@ function Cloud(x,y,lifespan, cloudpicker) {
         push();
         imageMode(CENTER);
         image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);
-        console.log(this.windmovementX);
         pop();
     }
     
