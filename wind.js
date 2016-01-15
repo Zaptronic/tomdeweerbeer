@@ -1,15 +1,15 @@
 function cloudPush() {
-    var cloudPosxA = -(windowWidth/4);
+    var cloudPosxA = -(windowWidth / 4);
     var cloudPosxB = -50;
-    var cloudRatio = windowWidth/500;
+    var cloudRatio = windowWidth / 500;
     var cloudAmount = 1 + cloudRatio;
-    cloudpicker = floor(random(3));
+    cloudpicker = floor(random(2));
     console.log(cloudpicker);
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
                     random(windowHeight*0.45, windowHeight*0.625), 
-                    round(random(10,150)),
+                    round(random(10,100)),
                     cloudpicker
         ));
     }
@@ -27,8 +27,9 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.windowRatioSpeed = windowWidth/100;
     this.windmovementX = this.windSpeedMotion / this.windowRatioSpeed;
     this.fadeInOpacity = 0;
-    this.fadeInX = windowWidth/2;
-    this.fadeOutX = windowWidth/2 + (windowWidth/6);
+    this.fadeInX = 0;
+//    this.fadeInX = windowWidth/2;
+    this.fadeOutX = windowWidth;
     
     this.display = function() {
         push();
@@ -44,35 +45,18 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.update = function() {
         this.x = this.x + this.windSpeedMotion;
         if (this.x < this.fadeInX) {
-            this.lifespan++;
-            this.fadeInOpacity++;
+            this.lifespan+= 0.5;
+//            this.fadeInOpacity++;
         } if (this.x > this.fadeOutX) {
             this.lifespan--;
-            this.fadeInOpacity--;
+//            this.fadeInOpacity--;
         }
     }
-    
-//    this.randomizer = function() {
-//        this.cloudtimer = round(random(10));
-//        console.log(this.cloudtimer);
-//        if (this.cloudtimer == 2) {
-//            this.lifespan = 0;
-//        }
-////        return cloudtimer;
-//    }
     
     this.updateWind = function() {
         this.windmovementX = this.windSpeedMotion / this.windowRatioSpeed;
     }
     
-    this.intersects = function(otherCloud) {
-        var d = dist(this.x, this.y, otherCloud.x, otherCloud.y);
-        if (d < (this.radius + otherCloud.radius)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 	this.lifespancheck = function() {
 		 if (this.lifespan <= 0) {
             return true;

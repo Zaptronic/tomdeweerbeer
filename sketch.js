@@ -34,7 +34,6 @@ var weathericon = [];
 var weathericonsAmount = 3;
 var cloudicons =  [];
 var cloudpicker;
-var cloudtimer = [];
 
 // variables for animation
 var direction = 1; //unused
