@@ -22,28 +22,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/clouds1.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2169,
-		"inputAbbreviatedPath": "\/images\/clouds1.png",
-		"outputAbbreviatedPath": "\/images\/clouds1.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/clouds2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1445,
-		"inputAbbreviatedPath": "\/images\/clouds2.png",
-		"outputAbbreviatedPath": "\/images\/clouds2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/images\/weather0.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -81,7 +59,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 149782,
+		"initialSize": 51720,
 		"inputAbbreviatedPath": "\/images\/weather2.png",
 		"outputAbbreviatedPath": "\/images\/weather2.png",
 		"outputPathIsOutsideProject": 0,
@@ -142,14 +120,14 @@
 		},
 	"\/loadingfunctions.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/loadingfunctions.js",
 		"outputAbbreviatedPath": "\/min\/loadingfunctions-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/main.scss": {
 		"createSourceMap": 0,
@@ -367,14 +345,14 @@
 		},
 	"\/wind.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wind.js",
 		"outputAbbreviatedPath": "\/min\/wind-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		}
 	},
 "hooks": [

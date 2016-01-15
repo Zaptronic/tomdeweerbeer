@@ -1,63 +1,54 @@
 function cloudPush() {
-    var cloudPosxA = -100;
-    var cloudPosxB = 0;
-    var cloudAmount = 3;
+    var cloudPosxA = -(windowWidth / 4);
+    var cloudPosxB = -50;
+    var cloudRatio = windowWidth / 500;
+    var cloudAmount = 1 + cloudRatio;
+    cloudpicker = floor(random(2));
+    console.log(cloudpicker);
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
-                    random(windowHeight*0.66, windowHeight-200), 
-                    round(random(100,200))));
+                    random(windowHeight*0.45, windowHeight*0.625), 
+                    round(random(10,100)),
+                    cloudpicker
+        ));
     }
 }
 
 //single cloud
-function Cloud(x,y,lifespan) {
+function Cloud(x,y,lifespan, cloudpicker) {
     this.x = x;
     this.y = y;
-    this.radius = 25;
-    this.moveover = 25;
     this.lifespan = lifespan;
-    this.windmovementX = windSpeed/3;
-    this.fadeInOpacity = 0;
-    this.fadeInX = windowWidth/2;
-    this.fadeOutX = windowWidth - (windowWidth/3);
+    this.radius = 100;
+    this.width = 150;
+    this.height = 120;
+    this.windSpeedMotion = windSpeed/2;
+    this.windowRatioSpeed = windowWidth/100;
+    this.windmovementX = this.windSpeedMotion / this.windowRatioSpeed;
+    this.fadeInX = 0;
+    this.fadeOutX = windowWidth;
     
     this.display = function() {
         push();
-        noStroke();
-        fill(255, 120, 0, this.fadeInOpacity);
-        ellipse(this.x, this.y, this.radius, this.radius);
+        imageMode(CENTER);
+        image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);
+        console.log(this.windmovementX);
         pop();
-        //array with different img clouds one is random picked for ech new cloud 
     }
+    
     
     this.update = function() {
-        this.x = this.x + this.windmovementX;
-        if (this.x < this.fadeInX && this.fadeInOpacity <= 160) {
-            this.fadeInOpacity++;
+        this.x = this.x + this.windSpeedMotion;
+        if (this.x < this.fadeInX) {
+            this.lifespan+= 0.5;
         } if (this.x > this.fadeOutX) {
             this.lifespan--;
-            this.fadeInOpacity--;
         }
     }
-    this.updateWind = function() {
-        this.windmovementX = windSpeed/3;
-    }
-    
-    this.rearrange = function(){
-        this.x = this.x * this.radius*2;
-        this.y = this.y + this.radius*2;
-    }
-    this.intersects = function(otherCloud) {
-        var d = dist(this.x, this.y, otherCloud.x, otherCloud.y);
-        if (d < (this.radius*3 + otherCloud.radius)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 	this.lifespancheck = function() {
-		 if (this.lifespan < 0 && this.fadeInOpacity <= 0) {
+		 if (this.lifespan <= 0) {
             return true;
          } else {
 			return false;

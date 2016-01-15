@@ -32,6 +32,8 @@ var clouds = [];
 var weerbeer;
 var weathericon = [];
 var weathericonsAmount = 3;
+var cloudicons =  [];
+var cloudpicker;
 
 // variables for animation
 var direction = 1; //unused
@@ -50,6 +52,9 @@ function preload() {
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('../images/weather'+i+'.png');   
     }
+    for (var i = 0; i < 3; i++) {
+        cloudicons[i] = loadImage('../images/clouds'+i+'.png');
+    }
 }
 
 function setup() {
@@ -67,7 +72,8 @@ function setup() {
     setInterval(loadInt, 100000);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
-    setInterval(cloudPush, 1500);
+    cloudPush();
+    setInterval(cloudPush, 5000);
     weerbeerPush();
     setInterval(weerbeerPush, 1250);
     setTimeout(backgroundColorCalculator, 1250);
@@ -75,27 +81,25 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();
+    
+//    for (var i = clouds.length-1; i > 0; i--) {
+//        clouds[i].randomizer();
+//    }
 
 //    for (var i = 0; i < 3; i++) {
-//            raindrops[i] = new Raindrop(random(100,200), random(windowHeight/2,windowHeight/2+20));
+////            raindrops[i] = new Raindrop(random(100,200), random(windowHeight/2,windowHeight/2+20));
+////        
+//        
 //    }        
 }
 
 function draw() {
-    background(tempColorMappedR, tempColorMappedG, tempColorMappedB);
-    
+    background(tempColorMappedR, tempColorMappedG,          tempColorMappedB);
+
     if (weatherData) {
         for (var i = clouds.length-1; i  > 0; i--) {
             clouds[i].update();
             clouds[i].display();
-//                        console.log(clouds);
-            
-            for(var j = 0; j < clouds.length; j++) {
-                if (i!=j && clouds[i].intersects(clouds[j])) {
-                    clouds[i].rearrange();
-                    clouds[j].rearrange();
-                }
-            }
         
             if (clouds[i].lifespancheck()) {
             clouds.splice(i,1);

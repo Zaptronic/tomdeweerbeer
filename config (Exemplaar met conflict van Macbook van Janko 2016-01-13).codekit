@@ -81,7 +81,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 149782,
+		"initialSize": 51720,
 		"inputAbbreviatedPath": "\/images\/weather2.png",
 		"outputAbbreviatedPath": "\/images\/weather2.png",
 		"outputPathIsOutsideProject": 0,
@@ -142,14 +142,14 @@
 		},
 	"\/loadingfunctions.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/loadingfunctions.js",
 		"outputAbbreviatedPath": "\/min\/loadingfunctions-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/main.scss": {
 		"createSourceMap": 0,
@@ -367,14 +367,14 @@
 		},
 	"\/wind.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wind.js",
 		"outputAbbreviatedPath": "\/min\/wind-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		}
 	},
 "hooks": [
