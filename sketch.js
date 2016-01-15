@@ -53,9 +53,9 @@ function preload() {
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('../images/weather'+i+'.png');   
     }
-    for (var i = 0; i < 3; i++) {
-        cloudicons[i] = loadImage('../images/clouds'+i+'.png');
-    }
+//    for (var i = 0; i < 3; i++) {
+//        cloudicons[i] = loadImage('../images/clouds'+i+'.png');
+//    }
 }
 
 function setup() {
@@ -83,13 +83,15 @@ function setup() {
     tempColorMappedR = 200;
     keyPressed();
     
-    for (var i = clouds.length-1; i > 0; i--) {
-        clouds[i].randomizer();
-    }
+//    for (var i = clouds.length-1; i > 0; i--) {
+//        clouds[i].randomizer();
+//    }
 
-//    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 3; i++) {
 //            raindrops[i] = new Raindrop(random(100,200), random(windowHeight/2,windowHeight/2+20));
-//    }        
+//        
+        
+    }        
 }
 
 function draw() {

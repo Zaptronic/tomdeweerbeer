@@ -37,8 +37,8 @@ function gotData(data){
 
 function reloadCity() {
     loadCity();
-//    clouds = [];
-    for (var i = clouds.length-1; i  > 0; i--) {
-        clouds[i].updateWind();
-    }
+    clouds = [];
+//    for (var i = clouds.length-1; i  > 0; i--) {
+//        clouds[i].updateWind();
+//    }
 }

@@ -1,32 +1,28 @@
-function cloudPush(cloudtimer) {
+function cloudPush() {
     var cloudPosxA = -(windowWidth/4);
     var cloudPosxB = -50;
-    var cloudRatio = ceil(windowWidth/500);
+    var cloudRatio = windowWidth/500;
     var cloudAmount = 1 + cloudRatio;
-    cloudpicker = floor(random(3));
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
                     random(windowHeight*0.45, windowHeight*0.625), 
-                    round(random(10,150)),
-                    cloudpicker
-                    ));
+                    round(random(10,150))
+        ));
     }
 }
 
 //single cloud
-function Cloud(x,y,lifespan, cloudpicker) {
+function Cloud(x,y,lifespan) {
     this.x = x;
     this.y = y;
     this.lifespan = lifespan;
     this.radius = 100;
-//    this.moveover = 25;
     this.width = 150;
     this.height = 120;
-    this.windSpeedMotion = windSpeed/10;
-    this.windowRatioSpeed = windowWidth/500;
-    this.maxSpeed = 2;
-    this.windmovementX = constrain(this.windSpeedMotion + this.windowRatioSpeed, this.windSpeedMotion, this.maxSpeed);
+    this.windSpeedMotion = windSpeed/2;
+    this.windowRatioSpeed = windowWidth/100;
+    this.windmovementX = this.windSpeedMotion / this.windowRatioSpeed;
     this.fadeInOpacity = 0;
     this.fadeInX = windowWidth/2;
     this.fadeOutX = windowWidth/2 + (windowWidth/6);
@@ -34,17 +30,15 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.display = function() {
         push();
         imageMode(CENTER);
-//        ellipse(this.x, this.y, this.radius, this.radius);
+        ellipse(this.x, this.y, this.radius, this.radius);
         tint(255,this.fadeInOpacity);
-        image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);
-//        text(this.lifespan, this.x+10, this.y+10);
-//        text(this.fadeInOpacity, this.x+10, this.y+50);
+        console.log(this.windmovementX);
         pop();
     }
     
     
     this.update = function() {
-        this.x = this.x + this.windmovementX;
+        this.x = this.x + this.windSpeedMotion;
         if (this.x < this.fadeInX) {
             this.lifespan++;
             this.fadeInOpacity++;
@@ -64,7 +58,7 @@ function Cloud(x,y,lifespan, cloudpicker) {
 //    }
     
     this.updateWind = function() {
-        this.windmovementX = constrain(this.windSpeedMotion + this.windowRatioSpeed, this.windSpeedMotion, this.maxSpeed);
+        this.windmovementX = this.windSpeedMotion / this.windowRatioSpeed;
     }
     
     this.intersects = function(otherCloud) {
