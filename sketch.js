@@ -1,6 +1,8 @@
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-var city = 'Amsterdam, NL';
+var city = 'Antwerp, BE';
+//var city = 'Amsterdam, NL';
+var country = 'BE'
 var type = '&type=like';
 var mode = 'JSON';
 var appid = '&appid=2de143494c0b295cca9337e1e96b00e0';
@@ -10,6 +12,10 @@ var url = baseurl+city+type+mode+appid+unit+lang;
 // land toevoegen aan city met land selectiebox/ land iccon? 
 // button.mousepressed calls function with find and put it in an array with city and country then list them as text and then mousepressed an duse the value to chagne the global city value
 
+//var geo 
+var locationData;
+var geolat;
+var geolong;
 
 //variables from API
 var weatherData;
@@ -48,6 +54,7 @@ var formCity;
 
 function preload() {
 //    loadJSON(url); 
+    locationData = getCurrentPosition();
     standardFont = loadFont("../fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('../images/weather'+i+'.png');   
@@ -60,16 +67,21 @@ function preload() {
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
+    formCity = select('#formCity');
 //    cnv.parent("sketch");
+    if(geoCheck() == true) {
+        currentlocationtocurrentcity();
+        setInterval(loadInt, 500000);   
+    } else {
+        loadInt();
+        setInterval(loadCity, 500000);
+    }
     fill(255);
     textFont(standardFont);
     textSize(48);
-    formCity = select('#formCity');
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
 //    buttonF = select('#buttonCity');
-    loadJSON(url, gotData, 'jsonp'); 
-    setInterval(loadInt, 100000);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
     cloudPush();

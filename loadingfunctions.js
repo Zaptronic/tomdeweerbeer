@@ -7,16 +7,37 @@ function loadCity() {
     loadJSON(url, gotData, 'jsonp');
 }
 
+//function currentlocationtocurrentcity() {
+//    var geolat = round(locationData.latitude);
+//    var geolong = round(locationData.longitude);
+//    print(locationData.latitude);
+//    print(locationData.longitude);
+//    var geourl = baseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
+//    loadJSON(geourl, gotData, 'jsonp');
+////    loadJSON(geourl, geoCity, 'jsonp');
+//        console.log(geourl);
+//    
+//}
+function currentlocationtocurrentcity() {
+    geolat = round(locationData.latitude);
+    geolong = round(locationData.longitude);
+    print(locationData.latitude);
+    print(locationData.longitude);
+    url = baseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
+    loadJSON(url, gotData, 'jsonp');
+    console.log(url);
+}
 
 function gotData(data){
+    console.log(data);
     weatherData = data;
-    windSpeed = data.list[0].wind.speed*1.2;
     city = data.city.name;
     country = data.city.country;
-    var lon = round(data.city.coord.lon);
-    var lat = round(data.city.coord.lat);
+    console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
+    
+    windSpeed = data.list[0].wind.speed*1.2;
     
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
