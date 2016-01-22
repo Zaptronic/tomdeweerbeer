@@ -5,7 +5,7 @@ var city = 'Antwerp, BE';
 var country = 'BE'
 var type = '&type=like';
 var mode = 'JSON';
-var appid = '&appid=2de143494c0b295cca9337e1e96b00e0';
+var appid = '&appid=9010cdbc3c106b77c2db30db4e547a9a';
 var lang = '&lang=en'
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
