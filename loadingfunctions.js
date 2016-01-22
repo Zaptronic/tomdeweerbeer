@@ -7,33 +7,19 @@ function loadCity() {
     loadJSON(url, gotData, 'jsonp');
 }
 
-//function currentlocationtocurrentcity() {
-//    var geolat = round(locationData.latitude);
-//    var geolong = round(locationData.longitude);
-//    print(locationData.latitude);
-//    print(locationData.longitude);
-//    var geourl = baseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
-//    loadJSON(geourl, gotData, 'jsonp');
-////    loadJSON(geourl, geoCity, 'jsonp');
-//        console.log(geourl);
-//    
-//}
 function currentlocationtocurrentcity() {
-    geolat = round(locationData.latitude);
-    geolong = round(locationData.longitude);
-    print(locationData.latitude);
-    print(locationData.longitude);
-    url = baseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
+    var geobaseurl = 'http://api.openweathermap.org/data/2.5/forecast?';
+    geolat = locationData.latitude;
+    geolong = locationData.longitude;
+    url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
-    console.log(url);
 }
 
 function gotData(data){
-    console.log(data);
     weatherData = data;
     city = data.city.name;
     country = data.city.country;
-    console.log(city + ', ' + country);
+//    console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
     
@@ -59,4 +45,11 @@ function gotData(data){
 function reloadCity() {
     loadCity();
     clouds = [];
+}
+
+function succes() {
+    console.log('succes');
+}
+function error() {
+    console.log('error');
 }

@@ -55,6 +55,10 @@ var formCity;
 function preload() {
 //    loadJSON(url); 
     locationData = getCurrentPosition();
+//    if (event == 'dismissed' ) {
+//        error();
+//    }
+//    
     standardFont = loadFont("../fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('../images/weather'+i+'.png');   
