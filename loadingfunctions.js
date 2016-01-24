@@ -7,16 +7,42 @@ function loadCity() {
     loadJSON(url, gotData, 'jsonp');
 }
 
+function currentlocationtocurrentcity(pos) {
+    var geobaseurl = 'http://api.openweathermap.org/data/2.5/forecast?';
+    geolat = pos.coords.latitude;
+    geolong = pos.coords.longitude;
+    url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
+    loadJSON(url, gotData, 'jsonp');
+    setInterval(loadInt, 500000); 
+}
+
+function currentlocationerror(error) {
+	switch (error.code)
+	{
+		case error.PERMISSION_DENIED:
+            loadInt();
+			break;
+		case error.POSITION_UNAVAILABLE:
+            loadInt();
+			break;
+		case error.PERMISSION_DENIED_TIMEOUT:
+            loadInt();
+			break;
+		case error.UNKNOWN_ERROR:
+            loadInt();
+			break;
+	}
+}
 
 function gotData(data){
     weatherData = data;
-    windSpeed = data.list[0].wind.speed*1.2;
     city = data.city.name;
     country = data.city.country;
-    var lon = round(data.city.coord.lon);
-    var lat = round(data.city.coord.lat);
+//    console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
+    
+    windSpeed = data.list[0].wind.speed*1.2;
     
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
