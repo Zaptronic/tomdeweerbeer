@@ -1,7 +1,6 @@
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-var city = 'Antwerp, BE';
-//var city = 'Amsterdam, NL';
+var city = 'Amsterdam, NL';
 var country = 'BE'
 var type = '&type=like';
 var mode = 'JSON';
@@ -54,7 +53,7 @@ var formCity;
 
 function preload() {
 //    loadJSON(url); 
-    locationData = getCurrentPosition();
+//    locationData = getCurrentPosition();
 //    if (event == 'dismissed' ) {
 //        error();
 //    }
@@ -72,14 +71,11 @@ function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
     formCity = select('#formCity');
-//    cnv.parent("sketch");
-    if(geoCheck() == true) {
-        currentlocationtocurrentcity();
-        setInterval(loadInt, 500000);   
-    } else {
-        loadInt();
-        setInterval(loadCity, 500000);
+    
+    if (navigator.geolocation) {
+	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     }
+    
     fill(255);
     textFont(standardFont);
     textSize(48);

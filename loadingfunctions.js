@@ -7,12 +7,31 @@ function loadCity() {
     loadJSON(url, gotData, 'jsonp');
 }
 
-function currentlocationtocurrentcity() {
+function currentlocationtocurrentcity(pos) {
     var geobaseurl = 'http://api.openweathermap.org/data/2.5/forecast?';
-    geolat = locationData.latitude;
-    geolong = locationData.longitude;
+    geolat = pos.coords.latitude;
+    geolong = pos.coords.longitude;
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
+    setInterval(loadInt, 500000); 
+}
+
+function currentlocationerror(error) {
+	switch (error.code)
+	{
+		case error.PERMISSION_DENIED:
+            loadInt();
+			break;
+		case error.POSITION_UNAVAILABLE:
+            loadInt();
+			break;
+		case error.PERMISSION_DENIED_TIMEOUT:
+            loadInt();
+			break;
+		case error.UNKNOWN_ERROR:
+            loadInt();
+			break;
+	}
 }
 
 function gotData(data){
@@ -45,11 +64,4 @@ function gotData(data){
 function reloadCity() {
     loadCity();
     clouds = [];
-}
-
-function succes() {
-    console.log('succes');
-}
-function error() {
-    console.log('error');
 }
