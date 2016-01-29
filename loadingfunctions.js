@@ -41,7 +41,7 @@ function gotData(data){
     country = data.city.country;
     lon = data.city.coord.lon;
     lat = data.city.coord.lat;
-    console.log(city + ', ' + country);
+//    console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
     
@@ -77,7 +77,6 @@ function loadTimeatlocation(lon, lat, weatherTime) {
     var Gkey = '&key=AIzaSyARQPqPeZ3TQLPE0FLqh3TAezFnGw_I9xA';
     var timeurl = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=' + weatherTime + '&key=' + Gkey;
     loadJSON(timeurl, calclocaltime);
-    console.log(timeurl);
 }
 
 
@@ -87,5 +86,4 @@ function calclocaltime(timedata) {
     time = new Date((usertime + localtime)*1000);
     hours = time.getHours();
     hours = hours - 3; //correction for weather +3 hour prediction
-    console.log(hours);    
 }

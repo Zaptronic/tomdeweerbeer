@@ -12,11 +12,9 @@ function Nightorday(x,y) {
     this.display = function() {
         imageMode(CENTER);
         if ((hours >= 0 && hours < 6) || (hours > 18 && hours <= 23)) {
-            console.log('nacht');
             image(nightordayicon[1], this.x, this.y, this.size, this.size);
          } if (hours >= 6 && hours <= 18 ){
             image(nightordayicon[0], this.x, this.y, this.size, this.size);
-             console.log('dag');
          }
     }
 }
