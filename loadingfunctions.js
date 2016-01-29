@@ -38,8 +38,11 @@ function gotData(data){
     weatherData = data;
     city = data.city.name;
     country = data.city.country;
+    lon = data.city.coord.lon;
+    lat = data.city.coord.lat;
     console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
+    console.log(lon);
     formCity.value(city + ', ' + country);
     
     windSpeed = data.list[0].wind.speed*1.2;
@@ -61,6 +64,7 @@ function gotData(data){
     weatherType = data.list[0].weather[0].id;
     weatherDescription = data.list[0].weather[0].description;
     weatherTime = data.list[0].dt;
+    loadTimeatlocation(lon, lat, weatherTime);
     convertTimestamp(weatherTime);
     console.log(hours);
     console.log(data);
@@ -83,8 +87,7 @@ function convertTimestamp(weatherTime) {
     
     date = new Date(weatherTime * 1000); // Convert the passed timestamp to milliseconds
         console.log(date);
-    var iso = date.toISOString().match(/(\d{2}:\d{2}:\d{2})/)
-alert(iso[1]);
+//    var iso = date.toISOString().match(/(\d{2}:\d{2}:\d{2})/);
     hours = date.getHours();
         console.log(hours);
 	// ie: 2013-02-18, 8:35 AM	
@@ -92,4 +95,11 @@ alert(iso[1]);
 //    hours = hh;
 
 	return date;
+}
+
+function loadTimeatlocation(lon, lat, weatherTime) {
+    var Gkey = '&key=AIzaSyARQPqPeZ3TQLPE0FLqh3TAezFnGw_I9xA';
+    var timeurl = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=' + weatherTime + '&key=' + Gkey;
+    loadJSON(timeurl, currentlocationerror,'jsonp');
+    console.log(timeurl);
 }
