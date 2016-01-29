@@ -110,28 +110,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images_nightorday1.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1838,
-		"inputAbbreviatedPath": "\/images_nightorday1.png",
-		"outputAbbreviatedPath": "\/images_nightorday1.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images_nightorday2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1849,
-		"inputAbbreviatedPath": "\/images_nightorday2.png",
-		"outputAbbreviatedPath": "\/images_nightorday2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
