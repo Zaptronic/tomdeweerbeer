@@ -38,7 +38,7 @@ function gotData(data){
     weatherData = data;
     city = data.city.name;
     country = data.city.country;
-//    console.log(city + ', ' + country);
+    console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
     
@@ -60,9 +60,36 @@ function gotData(data){
     tempColor = data.list[0].main.temp;
     weatherType = data.list[0].weather[0].id;
     weatherDescription = data.list[0].weather[0].description;
+    weatherTime = data.list[0].dt;
+    convertTimestamp(weatherTime);
+    console.log(hours);
+    console.log(data);
 }
 
 function reloadCity() {
     loadCity();
     clouds = [];
+}
+
+function convertTimestamp(weatherTime) {
+    console.log(weatherTime);
+//    date = new Date(weatherTime * 1000),	// Convert the passed timestamp to milliseconds
+//		yyyy = date.getFullYear(),
+//		mm = ('0' + (date.getMonth() + 1)).slice(-2),	// Months are zero based. Add leading 0.
+//		dd = ('0' + date.getDate()).slice(-2),			// Add leading 0.
+//		hh = date.getHours(),
+//		hours = hh,
+//		min = ('0' + date.getMinutes()).slice(-2);
+    
+    date = new Date(weatherTime * 1000); // Convert the passed timestamp to milliseconds
+        console.log(date);
+    var iso = date.toISOString().match(/(\d{2}:\d{2}:\d{2})/)
+alert(iso[1]);
+    hours = date.getHours();
+        console.log(hours);
+	// ie: 2013-02-18, 8:35 AM	
+//	time = yyyy + '-' + mm + '-' + dd + ', ' + hours + ':' + min;
+//    hours = hh;
+
+	return date;
 }

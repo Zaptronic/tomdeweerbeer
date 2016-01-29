@@ -1,11 +1,11 @@
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 var city = 'Amsterdam, NL';
-var country = 'BE'
+var country = 'NL';
 var type = '&type=like';
 var mode = 'JSON';
 var appid = '&appid=9010cdbc3c106b77c2db30db4e547a9a';
-var lang = '&lang=nl'
+var lang = '&lang=nl';
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
 
@@ -35,6 +35,10 @@ var cloudicons =  [];
 var cloudpicker;
 var nightorday;
 var nightordayicon = [];
+var weatherTime;
+var date;
+var hours;
+
 
 // variables for animation
 var direction = 1; //unused
