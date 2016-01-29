@@ -16,6 +16,7 @@ function Nightorday(x,y) {
             image(nightordayicon[1], this.x, this.y, this.size, this.size);
          } if (hours >= 6 && hours <= 18 ){
             image(nightordayicon[0], this.x, this.y, this.size, this.size);
+             console.log('dag');
          }
     }
 }

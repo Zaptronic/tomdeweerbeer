@@ -33,6 +33,10 @@ var weathericon = [];
 var weathericonsAmount = 3;
 var cloudicons =  [];
 var cloudpicker;
+
+
+//variables for time
+var timedata;
 var nightorday;
 var nightordayicon = [];
 var weatherTime;
@@ -73,7 +77,7 @@ function setup() {
     if (navigator.geolocation) {
 	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     }
-    
+
     fill(255);
     textFont(standardFont);
     textSize(textsizestandard);

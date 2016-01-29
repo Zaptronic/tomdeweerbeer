@@ -1,5 +1,6 @@
 function loadInt() {
     loadJSON(url, gotData, 'jsonp');
+//    loadTimeatlocation(lon, lat, weatherTime);
 }
 
 function loadCity() {
@@ -42,7 +43,6 @@ function gotData(data){
     lat = data.city.coord.lat;
     console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
-    console.log(lon);
     formCity.value(city + ', ' + country);
     
     windSpeed = data.list[0].wind.speed*1.2;
@@ -65,9 +65,6 @@ function gotData(data){
     weatherDescription = data.list[0].weather[0].description;
     weatherTime = data.list[0].dt;
     loadTimeatlocation(lon, lat, weatherTime);
-    convertTimestamp(weatherTime);
-    console.log(hours);
-    console.log(data);
 }
 
 function reloadCity() {
@@ -75,31 +72,20 @@ function reloadCity() {
     clouds = [];
 }
 
-function convertTimestamp(weatherTime) {
-    console.log(weatherTime);
-//    date = new Date(weatherTime * 1000),	// Convert the passed timestamp to milliseconds
-//		yyyy = date.getFullYear(),
-//		mm = ('0' + (date.getMonth() + 1)).slice(-2),	// Months are zero based. Add leading 0.
-//		dd = ('0' + date.getDate()).slice(-2),			// Add leading 0.
-//		hh = date.getHours(),
-//		hours = hh,
-//		min = ('0' + date.getMinutes()).slice(-2);
-    
-    date = new Date(weatherTime * 1000); // Convert the passed timestamp to milliseconds
-        console.log(date);
-//    var iso = date.toISOString().match(/(\d{2}:\d{2}:\d{2})/);
-    hours = date.getHours();
-        console.log(hours);
-	// ie: 2013-02-18, 8:35 AM	
-//	time = yyyy + '-' + mm + '-' + dd + ', ' + hours + ':' + min;
-//    hours = hh;
-
-	return date;
-}
 
 function loadTimeatlocation(lon, lat, weatherTime) {
     var Gkey = '&key=AIzaSyARQPqPeZ3TQLPE0FLqh3TAezFnGw_I9xA';
     var timeurl = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=' + weatherTime + '&key=' + Gkey;
-    loadJSON(timeurl, currentlocationerror,'jsonp');
+    loadJSON(timeurl, calclocaltime);
     console.log(timeurl);
+}
+
+
+function calclocaltime(timedata) {
+    var usertime = weatherTime;
+    var localtime = timedata.rawOffset;
+    time = new Date((usertime + localtime)*1000);
+    hours = time.getHours();
+    hours = hours - 3; //correction for weather +3 hour prediction
+    console.log(hours);    
 }
