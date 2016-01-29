@@ -1,5 +1,6 @@
 function loadInt() {
     loadJSON(url, gotData, 'jsonp');
+//    loadTimeatlocation(lon, lat, weatherTime);
 }
 
 function loadCity() {
@@ -38,6 +39,8 @@ function gotData(data){
     weatherData = data;
     city = data.city.name;
     country = data.city.country;
+    lon = data.city.coord.lon;
+    lat = data.city.coord.lat;
 //    console.log(city + ', ' + country);
 //    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
@@ -59,9 +62,28 @@ function gotData(data){
     temperature = data.list[0].main.temp;
     tempColor = data.list[0].main.temp;
     weatherType = data.list[0].weather[0].id;
+    weatherDescription = data.list[0].weather[0].description;
+    weatherTime = data.list[0].dt;
+    loadTimeatlocation(lon, lat, weatherTime);
 }
 
 function reloadCity() {
     loadCity();
     clouds = [];
+}
+
+
+function loadTimeatlocation(lon, lat, weatherTime) {
+    var Gkey = '&key=AIzaSyARQPqPeZ3TQLPE0FLqh3TAezFnGw_I9xA';
+    var timeurl = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=' + weatherTime + '&key=' + Gkey;
+    loadJSON(timeurl, calclocaltime);
+}
+
+
+function calclocaltime(timedata) {
+    var usertime = weatherTime;
+    var localtime = timedata.rawOffset;
+    time = new Date((usertime + localtime)*1000);
+    hours = time.getHours();
+    hours = hours - 3; //correction for weather +3 hour prediction
 }
