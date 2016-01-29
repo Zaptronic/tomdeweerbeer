@@ -44,6 +44,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/nightorday0.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 994,
+		"inputAbbreviatedPath": "\/images\/nightorday0.png",
+		"outputAbbreviatedPath": "\/images\/nightorday0.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nightorday1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 922,
+		"inputAbbreviatedPath": "\/images\/nightorday1.png",
+		"outputAbbreviatedPath": "\/images\/nightorday1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/weather0.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -189,6 +211,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/min\/nightorday-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/nightorday-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/nightorday-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/min\/rain kopie-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -277,6 +310,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/min\/weathertype kopie-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/weathertype kopie-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/weathertype kopie-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/min\/weathertype-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -294,6 +338,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/min\/wind-min.js",
 		"outputAbbreviatedPath": "\/min\/min\/wind-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/nightorday.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/nightorday.js",
+		"outputAbbreviatedPath": "\/min\/nightorday-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -416,6 +471,12 @@
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/resize.js",
 			"position": 5,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/nightorday.js",
+			"position": 6,
 			"type": 1
 			}
 		]

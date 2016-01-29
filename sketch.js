@@ -5,7 +5,7 @@ var country = 'BE'
 var type = '&type=like';
 var mode = 'JSON';
 var appid = '&appid=9010cdbc3c106b77c2db30db4e547a9a';
-var lang = '&lang=en'
+var lang = '&lang=nl'
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
 
@@ -22,6 +22,7 @@ var amountSnow;
 var tempColor;
 var temperature;
 var weatherType;
+var weatherDescription;
 
 // variables for objects
 var raindrops = [];
@@ -32,12 +33,15 @@ var weathericon = [];
 var weathericonsAmount = 3;
 var cloudicons =  [];
 var cloudpicker;
+var nightorday;
+var nightordayicon = [];
 
 // variables for animation
 var direction = 1; //unused
 
 // variables for typography
 var standardFont;
+var textsizestandard = 48;
 
 //variables for DOM elements
 var buttonF;
@@ -52,6 +56,9 @@ function preload() {
     for (var i = 0; i < 3; i++) {
         cloudicons[i] = loadImage('../images/clouds'+i+'.png');
     }
+    for (var i = 0; i < 2; i++) {
+        nightordayicon[i] = loadImage('../images/nightorday'+i+'.png');
+    }
 }
 
 function setup() {
@@ -65,7 +72,7 @@ function setup() {
     
     fill(255);
     textFont(standardFont);
-    textSize(48);
+    textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
 //    buttonF = select('#buttonCity');
@@ -75,7 +82,8 @@ function setup() {
     setInterval(cloudPush, 5000);
     weerbeerPush();
     setInterval(weerbeerPush, 1250);
-    setTimeout(backgroundColorCalculator, 1250);
+    nightordayPush();
+    setInterval(nightordayPush, 1250);
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
@@ -105,6 +113,7 @@ function draw() {
             }
         }
         weerbeer.display();
+        nightorday.display();
         temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {
@@ -136,9 +145,10 @@ function clearPressed() {
 
 function temperaturePush() {
     push();
-//    translate(width/6,-100);
-//    rotate(210);
-    textAlign(CENTER);
-    text(floor(temperature)+'*'+'C', windowWidth/2,windowHeight-100);
+    text(floor(temperature)+'*'+'C', 32,windowHeight-60);
+    pop();
+    push();
+    textSize(textsizestandard/2);
+    text(weatherDescription, 32, windowHeight-32);
     pop();
 }
