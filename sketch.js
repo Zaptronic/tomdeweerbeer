@@ -8,8 +8,6 @@ var appid = '&appid=9010cdbc3c106b77c2db30db4e547a9a';
 var lang = '&lang=en'
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
-// land toevoegen aan city met land selectiebox/ land iccon? 
-// button.mousepressed calls function with find and put it in an array with city and country then list them as text and then mousepressed an duse the value to chagne the global city value
 
 //var geo 
 var locationData;
@@ -24,11 +22,6 @@ var amountSnow;
 var tempColor;
 var temperature;
 var weatherType;
-
-//variables for colors
-var tempColorMappedR = 0;
-var tempColorMappedG = 0;
-var tempColorMappedB = 0;
 
 // variables for objects
 var raindrops = [];
@@ -52,12 +45,6 @@ var clearbutton;
 var formCity;
 
 function preload() {
-//    loadJSON(url); 
-//    locationData = getCurrentPosition();
-//    if (event == 'dismissed' ) {
-//        error();
-//    }
-//    
     standardFont = loadFont("../fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('../images/weather'+i+'.png');   
@@ -106,7 +93,7 @@ function setup() {
 }
 
 function draw() {
-    background(tempColorMappedR, tempColorMappedG,          tempColorMappedB);
+    background(26,35,38);
 
     if (weatherData) {
         for (var i = clouds.length-1; i  > 0; i--) {
@@ -145,17 +132,6 @@ function keyPressed() {
 }
 function clearPressed() {
     formCity.value('');
-} 
-
-function backgroundColorCalculator() {
-//    tempColorMappedR = round(map(hour(),0, 23, 0, 20));
-    tempColorMappedR = 26;
-    tempColorMappedG = 35;
-    tempColorMappedB = 38;
-//    tempColorMappedB = round(map(tempColor,-20, 40, 0, 100));
-    return tempColorMappedR;
-    return tempColorMappedG;
-    return tempColorMappedB;
 }
 
 function temperaturePush() {
