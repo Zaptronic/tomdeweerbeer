@@ -469,13 +469,13 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/resize.js",
+			"linkedFileAbbreviatedPath": "\/nightorday.js",
 			"position": 5,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/nightorday.js",
+			"linkedFileAbbreviatedPath": "\/resize.js",
 			"position": 6,
 			"type": 1
 			}
