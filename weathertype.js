@@ -4,8 +4,6 @@ function weerbeerPush() {
     var weerbeersizer = weerbeerstandard * responsiveRatio;
     var PosY = ceil(windowHeight - (weerbeersizer / 2));
     weerbeer = new Weerbeer(PosX,PosY, weerbeersizer);
-    console.log(weerbeersizer); 
-    console.log(PosY);
 }
 
 function Weerbeer(x,y, weerbeersizer) {
