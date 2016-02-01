@@ -1,13 +1,17 @@
 function weerbeerPush() {
     var PosX = windowWidth/2;
-    var PosY = windowHeight - 424;
-    weerbeer = new Weerbeer(PosX,PosY);
+    var weerbeerstandard = 850;
+    var weerbeersizer = weerbeerstandard * responsiveRatio;
+    var PosY = ceil(windowHeight - (weerbeersizer / 2));
+    weerbeer = new Weerbeer(PosX,PosY, weerbeersizer);
+    console.log(weerbeersizer); 
+    console.log(PosY);
 }
 
-function Weerbeer(x,y) {
+function Weerbeer(x,y, weerbeersizer) {
     this.x = x;
     this.y = y;
-    this.radius = 850;
+    this.radius = weerbeersizer;
     this.fillColor = 255;
     
     this.display = function() {

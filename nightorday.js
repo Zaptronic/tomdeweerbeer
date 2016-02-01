@@ -1,13 +1,15 @@
 function nightordayPush() {
     var PosX = windowWidth/2 + windowWidth/3;
     var PosY = windowHeight/5;
-    nightorday = new Nightorday(PosX,PosY);
+    var nightordaystandard = 120;
+    var nightordaysizer = nightordaystandard * responsiveRatio;
+    nightorday = new Nightorday(PosX,PosY, nightordaysizer);
 }
 
-function Nightorday(x,y) {
+function Nightorday(x,y, nightordaysizer) {
     this.x = x;
     this.y = y;
-    this.size = 120;
+    this.size = nightordaysizer;
     
     this.display = function() {
         imageMode(CENTER);

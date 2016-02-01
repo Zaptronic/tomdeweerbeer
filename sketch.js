@@ -43,6 +43,11 @@ var weatherTime;
 var date;
 var hours;
 
+var responsiveRatio;
+var minRespL = 0.7;
+var maxRespL = 1.0;
+var minRespP = 0.7;
+var maxRespP = 1.3;
 
 // variables for animation
 var direction = 1; //unused
@@ -77,7 +82,7 @@ function setup() {
     if (navigator.geolocation) {
 	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     }
-
+    responsiveScaleCalc();
     fill(255);
     textFont(standardFont);
     textSize(textsizestandard);
@@ -159,4 +164,15 @@ function temperaturePush() {
     textSize(textsizestandard/2);
     text(weatherDescription, 32, windowHeight-32);
     pop();
+}
+function responsiveScaleCalc() {
+        var responsiveScaler = (windowWidth/1000);
+        if (windowWidth > windowHeight && windowWidth < 990){ //landscape
+            var responsiveScaler = (windowWidth/2000);     
+            responsiveRatio = constrain (responsiveScaler, minRespL, maxRespL);    
+        } else {
+            var responsiveScaler = (windowHeight/1000);    
+            responsiveRatio = constrain (responsiveScaler, minRespP, maxRespP);
+        }
+        return responsiveRatio;
 }
