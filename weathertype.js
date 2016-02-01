@@ -1,13 +1,13 @@
 function weerbeerPush() {
     var PosX = windowWidth/2;
-    var PosY = windowHeight/2;
+    var PosY = windowHeight - 424;
     weerbeer = new Weerbeer(PosX,PosY);
 }
 
 function Weerbeer(x,y) {
     this.x = x;
     this.y = y;
-    this.radius = 500;
+    this.radius = 850;
     this.fillColor = 255;
     
     this.display = function() {
@@ -29,7 +29,8 @@ function Weerbeer(x,y) {
             pop();
 
          } if (weatherType >= 500 && weatherType < 600){
-            image(weathericon[2], this.x, this.y, this.radius, this.radius*1.4);
+             console.log('rain');
+            image(weathericon[0], this.x, this.y, this.radius, this.radius);
              
          } if (weatherType >= 600 && weatherType < 700){
             push();
