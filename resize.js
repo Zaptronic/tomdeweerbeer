@@ -1,5 +1,6 @@
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
+    responsiveScaleCalc();
 }
 
 window.addEventListener("orientationchange", function() {

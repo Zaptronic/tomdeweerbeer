@@ -21,23 +21,10 @@ function Raindrop(x,y,lifespan) {
     
     this.display = function() {
         push();
-//        translate(-300,-200);
         rotate(this.raindropRotator);
         noStroke();
         fill(121,219,226, this.lifespan);
 
-//        beginShape();
-//        curveVertex(this.x,  this.y);
-//        curveVertex(this.x+10,  this.y-10);
-//        curveVertex(this.x+20,  this.y);
-//        curveVertex(this.x+25,  this.y+25);
-//        curveVertex(this.x+10,  this.y+35);    
-//        curveVertex(this.x-5,   this.y+25);
-//        curveVertex(this.x,   this.y);
-//        curveVertex(this.x+10,   this.y-10);        
-//        curveVertex(this.x,  this.y);
-//        endShape(CLOSE);
-        
         beginShape();
         curveVertex(this.x,  this.y);
         curveVertex(this.x+5,  this.y-5);
@@ -48,11 +35,7 @@ function Raindrop(x,y,lifespan) {
         curveVertex(this.x,   this.y);
         curveVertex(this.x+5,   this.y-5);        
         curveVertex(this.x,  this.y);
-        endShape(CLOSE);
-//
-//        fill(255,0,0);
-//        text(this.x, this.x, this.y);
-//        
+        endShape(CLOSE); 
         pop();
 
         
