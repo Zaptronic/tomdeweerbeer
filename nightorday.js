@@ -16,6 +16,7 @@ function Nightorday(x,y, nightordaysizer) {
         if ((hours >= 0 && hours < 6) || (hours > 18 && hours <= 23)) {
             image(nightordayicon[1], this.x, this.y, this.size, this.size);
          } if (hours >= 6 && hours <= 18 ){
+             push();
              image(nightordayicon[0], this.x, this.y, this.size, this.size);
          }
     }
