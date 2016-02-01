@@ -167,7 +167,7 @@ function temperaturePush() {
 }
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
-        if (windowWidth > windowHeight && windowWidth < 990){ //landscape
+        if (windowWidth > windowHeight && windowWidth < 990 && windowHeight < 800){ //landscape
             var responsiveScaler = (windowWidth/2000);     
             responsiveRatio = constrain (responsiveScaler, minRespL, maxRespL);    
         } else {
