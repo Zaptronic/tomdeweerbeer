@@ -62,15 +62,15 @@ var clearbutton;
 var formCity;
 
 function preload() {
-    standardFont = loadFont("../fonts/Cof.ttf");
+    standardFont = loadFont("fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
-         weathericon[i] = loadImage('../images/weather'+i+'.png');   
+         weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
     for (var i = 0; i < 3; i++) {
-        cloudicons[i] = loadImage('../images/clouds'+i+'.png');
+        cloudicons[i] = loadImage('images/clouds'+i+'.png');
     }
     for (var i = 0; i < 2; i++) {
-        nightordayicon[i] = loadImage('../images/nightorday'+i+'.png');
+        nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
 }
 
