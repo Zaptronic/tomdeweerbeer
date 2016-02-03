@@ -63,6 +63,7 @@ var formCity;
 
 function preload() {
     standardFont = loadFont("fonts/Cof.ttf");
+    
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
