@@ -59,7 +59,7 @@ var clearbutton;
 var formCity;
 
 function preload() {
-    standardFont = loadFont("fonts/Cof.ttf");
+//    standardFont = loadFont("fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
@@ -81,7 +81,7 @@ function setup() {
     }
     responsiveScaleCalc();
     fill(255);
-    textFont(standardFont);
+//    textFont(standardFont);
     textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
