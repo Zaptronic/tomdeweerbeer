@@ -354,6 +354,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/min\/sketch-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/sketch-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/sketch-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/min\/sketch_bckp_14122015 kopie-min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -437,6 +448,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sketch kopie.js",
 		"outputAbbreviatedPath": "\/min\/sketch kopie-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/sketch.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sketch.js",
+		"outputAbbreviatedPath": "\/min\/sketch-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
