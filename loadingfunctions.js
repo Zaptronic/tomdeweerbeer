@@ -65,6 +65,7 @@ function gotData(data){
     weatherDescription = data.list[0].weather[0].description;
     weatherTime = data.list[0].dt;
     loadTimeatlocation(lon, lat, weatherTime);
+//    console.log(data);
 }
 
 function reloadCity() {

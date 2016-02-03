@@ -58,13 +58,6 @@ var buttonF;
 var clearbutton;
 var formCity;
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    console.log("navigator.geolocation works well");
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity,
-                                         currentlocationerror);
-}
-
 function preload() {
 //    standardFont = loadFont("fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
@@ -82,12 +75,12 @@ function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
     formCity = select('#formCity');
-    
-//    if (navigator.geolocation) {
-//	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
-//    } else {
-//        loadInt();
-//    }
+
+    if (navigator.geolocation) {
+	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+    } else {
+        loadInt();
+    }
     responsiveScaleCalc();
     fill(255);
 //    textFont(standardFont);
