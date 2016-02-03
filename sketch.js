@@ -59,6 +59,7 @@ var clearbutton;
 var formCity;
 
 function preload() {
+    console.log('1');
 //    standardFont = loadFont("fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
@@ -72,10 +73,11 @@ function preload() {
 }
 
 function setup() {
+    console.log('2');
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
     formCity = select('#formCity');
-
+console.log('3');
     if (navigator.geolocation) {
 	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     } else {
@@ -106,7 +108,7 @@ function setup() {
 //
 //navigator.geolocation.getCurrentPosition(onSuccess, onError);
     
-    
+    console.log('4');
     responsiveScaleCalc();
     fill(255);
 //    textFont(standardFont);
