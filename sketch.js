@@ -77,7 +77,7 @@ function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
     formCity = select('#formCity');
-console.log('3');
+    console.log('3');
     if (navigator.geolocation) {
 	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     } else {
