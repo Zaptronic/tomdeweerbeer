@@ -185,6 +185,7 @@ function clearPressed() {
 
 function temperaturePush() {
 //    push();
+    temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);
 //    pop();
 //    push();
