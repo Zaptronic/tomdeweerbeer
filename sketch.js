@@ -49,9 +49,6 @@ var maxRespL = 1.0;
 var minRespP = 0.7;
 var maxRespP = 1.3;
 
-// variables for animation
-var direction = 1; //unused
-
 // variables for typography
 var standardFont;
 var textsizestandard = 48;
