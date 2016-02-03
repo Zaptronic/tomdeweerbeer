@@ -58,6 +58,11 @@ var buttonF;
 var clearbutton;
 var formCity;
 
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log("navigator.geolocation works well");
+}
+
 function preload() {
 //    standardFont = loadFont("fonts/Cof.ttf");
     for (var i = 0; i < weathericonsAmount; i++) {
@@ -78,6 +83,8 @@ function setup() {
     
     if (navigator.geolocation) {
 	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+    } else {
+        loadInt();
     }
     responsiveScaleCalc();
     fill(255);
