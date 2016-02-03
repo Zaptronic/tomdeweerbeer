@@ -80,6 +80,7 @@ function setup() {
 	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     } else {
         loadInt();
+        alert("Sorry, geolocation is not supported.");
     }
     responsiveScaleCalc();
     fill(255);
