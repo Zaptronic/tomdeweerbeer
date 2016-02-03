@@ -62,7 +62,11 @@ var clearbutton;
 var formCity;
 
 function preload() {
+<<<<<<< HEAD
 
+=======
+    standardFont = loadFont("fonts/Cof.ttf");
+>>>>>>> parent of b096b64... fonts removed to it that works on phonegap
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
@@ -84,7 +88,7 @@ function setup() {
 //    }
     responsiveScaleCalc();
     fill(255);
-//    textFont(standardFont);
+    textFont(standardFont);
     textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
