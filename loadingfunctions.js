@@ -85,5 +85,10 @@ function calclocaltime(timedata) {
     var localtime = timedata.rawOffset;
     time = new Date((usertime + localtime)*1000);
     hours = time.getHours();
+        console.log(localtime);
+        console.log(usertime);
+        console.log(time);
     hours = hours - 3; //correction for weather +3 hour prediction
+    //01:00 -3 is not 22:00
+    //calculation bug
 }
