@@ -62,11 +62,7 @@ var clearbutton;
 var formCity;
 
 function preload() {
-<<<<<<< HEAD
-
-=======
     standardFont = loadFont("fonts/Cof.ttf");
->>>>>>> parent of b096b64... fonts removed to it that works on phonegap
     for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
@@ -83,9 +79,9 @@ function setup() {
     cnv.position (0,0);
     formCity = select('#formCity');
     
-//    if (navigator.geolocation) {
-//	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
-//    }
+    if (navigator.geolocation) {
+	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+    }
     responsiveScaleCalc();
     fill(255);
     textFont(standardFont);
