@@ -184,13 +184,13 @@ function clearPressed() {
 }
 
 function temperaturePush() {
-    push();
-    text(floor(temperature)+'*'+'C', 32,windowHeight-60);
-    pop();
-    push();
+//    push();
+    text(temperature + '*' + 'C', 32,windowHeight-60);
+//    pop();
+//    push();
     textSize(textsizestandard/2);
     text(weatherDescription, 32, windowHeight-32);
-    pop();
+//    pop();
 }
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
