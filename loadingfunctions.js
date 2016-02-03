@@ -11,6 +11,7 @@ function loadCity() {
 function currentlocationtocurrentcity(pos) {
     var geobaseurl = 'http://api.openweathermap.org/data/2.5/forecast?';
     geolat = pos.coords.latitude;
+    console.log(geolat);
     geolong = pos.coords.longitude;
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');

@@ -35,7 +35,8 @@
     <plugin name="org.apache.cordova.device"/>
     <plugin name="org.apache.cordova.device-motion"/>
     <plugin name="org.apache.cordova.device-orientation"/>
-    <plugin name="org.apache.cordova.geolocation"/>
+<!--    <plugin name="org.apache.cordova.geolocation"/>-->
+    <plugin name="org.apache.cordova.geolocation" spec="0.3.10" source="pgb" />
     <plugin name="org.apache.cordova.globalization"/>
     <plugin name="org.apache.cordova.splashscreen"/>
 
@@ -67,10 +68,12 @@
     <icon src="fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />    
       
 <!-- plugins -->    
+<!--
     <gap:plugin name="org.apache.cordova.device-motion"/>
     <gap:plugin name="org.apache.cordova.device-orientation"/>
     <gap:plugin name="org.apache.cordova.device-motion"/>
     <gap:plugin name="org.apache.cordova.device-orientation"/>  
+-->
     
     
 <!-- splash global settings -->        
