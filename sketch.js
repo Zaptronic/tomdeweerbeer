@@ -73,7 +73,7 @@ function setup() {
     }
     formCity = select('#formCity');
 	loadInt(); //temp for ios > also on geo
-	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+//	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
