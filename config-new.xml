@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "nl.zaptronic.tomdeweerbeer"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <name>Tom de weerbeer</name>
+    <description>Tom is a weather bear</description>
+    <author href="http://zoinkbyzaptronic.nl" email="info@zaptronic.nl">Zoink by Zaptronic</author>
+
+    <content src="index.html"/>
+
+<!-- platforms -->
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
+
+<!-- global preferences -->    
+    <preference name="orientation" value="portrait" />
+<!--    <preference name="fullscreen" value="true" />-->
+<!--
+	<preference name="webviewbounce" value="false" />
+	<preference name="DisallowOverscroll" value="true" />
+-->
+<!--
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="stay-in-webview" value="false"/>
+-->
+
+<!-- ios preferences -->
+    <preference name="target-device" value="universal" />
+<!--    <preference name="prerendered-icon" value="true" />-->
+    <preference name="detect-data-types" value="false" />
+    <preference name="exit-on-suspend" value="true" />
+<!--    <preference name="deployment-target" value="7.0" />-->
+
+<!-- android preferences -->
+    <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-windowSoftInputMode" value="adjustPan" />
+
+<!-- plugins -->
+<!--    <plugin name="org.apache.cordova.console"/>-->
+<!--    <plugin name="org.apache.cordova.device"/>-->
+<!--    <plugin name="org.apache.cordova.device-motion"/>-->
+<!--    <plugin name="org.apache.cordova.device-orientation"/>-->
+<!--    <plugin name="org.apache.cordova.geolocation"/>-->
+<<<<<<< HEAD
+    <plugin name="org.apache.cordova.geolocation" spec="0.3.10" />
+<!--    <plugin name="org.apache.cordova.globalization"/>-->
+<!--    <plugin name="org.apache.cordova.splashscreen"/>-->
+=======
+    <plugin name="org.apache.cordova.geolocation" spec="0.3.10" source="pgb" />
+    <plugin name="org.apache.cordova.globalization"/>
+    <plugin name="org.apache.cordova.splashscreen"/>
+>>>>>>> parent of a153547... font setting placed in function
+
+<!-- icon global settings -->
+    <icon src="icon.png"/>
+        
+<!-- icon ios settings -->
+    <icon src="icon-60.png" gap:platform="ios" width="60" height="60" />
+    <icon src="icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+
+    <!-- iPad -->
+    <icon src="icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+
+    <!-- Settings Icon -->
+    <icon src="icon-small.png" gap:platform="ios" width="29" height="29" />
+    <icon src="icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+    <!-- Spotlight Icon -->
+    <icon src="icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+        
+<!-- icon android settings -->
+    <icon src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+    <icon src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+    <icon src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+    <icon src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+    <icon src="xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
+    <icon src="fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />    
+      
+<!-- plugins -->    
+<!--
+    <gap:plugin name="org.apache.cordova.device-motion"/>
+    <gap:plugin name="org.apache.cordova.device-orientation"/>
+    <gap:plugin name="org.apache.cordova.device-motion"/>
+    <gap:plugin name="org.apache.cordova.device-orientation"/>  
+-->
+    
+    
+<!-- splash global settings -->        
+    <gap:splash src="splash.png" />
+        
+<!-- splash ios settings -->    
+        
+      <!-- iPhone and iPod touch -->
+<!--
+    <gap:splash src="Default.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="Default@2x.png" gap:platform="ios" width="640" height="960" />
+-->
+
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+<!--    <gap:splash src="Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />-->
+
+    <!-- iPad -->
+<!--
+    <gap:splash src="Default-Portrait.png" gap:platform="ios" width="768" height="1024" />
+    <gap:splash src="Default-Landscape.png" gap:platform="ios" width="1024" height="768" />
+-->
+
+    <!-- Retina iPad -->
+<!--
+    <gap:splash src="Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
+    <gap:splash src="Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />  
+-->
+        
+<!-- splash android settings -->   
+        
+    <gap:splash src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+    <gap:splash src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+    <gap:splash src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+    <gap:splash src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+    <gap:splash src="fr-xhdpi.png" gap:platform="android" gap:qualifier="fr-xhdpi" />
+    <gap:splash src="portrait-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
+    <gap:splash src="landscape-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi" />      
+        
+</widget>

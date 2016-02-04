@@ -76,6 +76,8 @@ function setup() {
 //	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     responsiveScaleCalc();
     fill(255);
+    textFont(standardFont);
+    textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
@@ -147,14 +149,20 @@ function clearPressed() {
 }
 
 function temperaturePush() {
+<<<<<<< HEAD
 //	textFont(standardFont);
     textSize(textsizestandard);
+=======
+//    push();
+>>>>>>> parent of a153547... font setting placed in function
     temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);
+//    pop();
+//    push();
     textSize(textsizestandard/2);
     text(weatherDescription, 32, windowHeight-32);
+//    pop();
 }
-
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
         if (windowWidth > windowHeight && windowWidth < 990 && windowHeight < 800){ //landscape
