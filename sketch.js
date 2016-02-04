@@ -58,7 +58,9 @@ var buttonF;
 var clearbutton;
 var formCity;
 
-function preload() {
+function setup() {
+    var cnv = createCanvas (windowWidth, windowHeight);
+    cnv.position (0,0);
 	standardFont = loadFont("fonts/Cof.ttf");
 	for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
@@ -69,12 +71,9 @@ function preload() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
-}
-
-function setup() {
-    var cnv = createCanvas (windowWidth, windowHeight);
-    cnv.position (0,0);
-    formCity = select('#formCity');	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+    formCity = select('#formCity');
+	loadInt(); //temp for ios > also on geo
+	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
@@ -148,7 +147,7 @@ function clearPressed() {
 }
 
 function temperaturePush() {
-	textFont(standardFont);
+//	textFont(standardFont);
     textSize(textsizestandard);
     temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);
