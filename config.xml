@@ -23,10 +23,10 @@
 
 <!-- ios preferences -->
     <preference name="target-device" value="universal" />
-    <preference name="prerendered-icon" value="true" />
+<!--    <preference name="prerendered-icon" value="true" />-->
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="true" />
-    <preference name="deployment-target" value="8.0" />
+    <preference name="deployment-target" value="7.0" />
 
 <!-- android preferences -->
     <preference name="android-minSdkVersion" value="19" />
@@ -40,7 +40,7 @@
 <!--    <plugin name="org.apache.cordova.geolocation"/>-->
     <plugin name="org.apache.cordova.geolocation" spec="0.3.10" />
 <!--    <plugin name="org.apache.cordova.globalization"/>-->
-    <plugin name="org.apache.cordova.splashscreen"/>
+<!--    <plugin name="org.apache.cordova.splashscreen"/>-->
 
 <!-- icon global settings -->
     <icon src="icon.png"/>
