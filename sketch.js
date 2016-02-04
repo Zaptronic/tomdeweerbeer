@@ -73,6 +73,7 @@ function setup() {
     }
     formCity = select('#formCity');
     console.log('3');
+	        loadInt();
     if (navigator.geolocation) {
 	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     } else {
