@@ -62,7 +62,8 @@ function setup() {
     console.log('2');
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
-	    for (var i = 0; i < weathericonsAmount; i++) {
+	standardFont = loadFont("fonts/Cof.ttf");
+	for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
     for (var i = 0; i < 3; i++) {
@@ -84,7 +85,7 @@ function setup() {
     console.log('4');
     responsiveScaleCalc();
     fill(255);
-//    textFont(standardFont);
+    textFont(standardFont);
     textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
