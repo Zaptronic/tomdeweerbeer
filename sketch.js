@@ -59,7 +59,6 @@ var clearbutton;
 var formCity;
 
 function setup() {
-    console.log('2');
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
 	standardFont = loadFont("fonts/Cof.ttf");
@@ -72,24 +71,13 @@ function setup() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
-    formCity = select('#formCity');
-    console.log('3');
-	        loadInt();
-    if (navigator.geolocation) {
-	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
-    } else {
-        loadInt();
-        alert("Sorry, geolocation is not supported.");
-    }
-    
-    console.log('4');
+    formCity = select('#formCity');	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     responsiveScaleCalc();
     fill(255);
     textFont(standardFont);
     textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
-//    buttonF = select('#buttonCity');
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
     cloudPush();
