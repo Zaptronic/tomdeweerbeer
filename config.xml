@@ -26,20 +26,20 @@
     <preference name="prerendered-icon" value="true" />
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="true" />
-    <preference name="deployment-target" value="7.0" />
+    <preference name="deployment-target" value="8.0" />
 
 <!-- android preferences -->
     <preference name="android-minSdkVersion" value="19" />
     <preference name="android-windowSoftInputMode" value="adjustPan" />
 
 <!-- plugins -->
-    <plugin name="org.apache.cordova.console"/>
-    <plugin name="org.apache.cordova.device"/>
-    <plugin name="org.apache.cordova.device-motion"/>
-    <plugin name="org.apache.cordova.device-orientation"/>
+<!--    <plugin name="org.apache.cordova.console"/>-->
+<!--    <plugin name="org.apache.cordova.device"/>-->
+<!--    <plugin name="org.apache.cordova.device-motion"/>-->
+<!--    <plugin name="org.apache.cordova.device-orientation"/>-->
 <!--    <plugin name="org.apache.cordova.geolocation"/>-->
     <plugin name="org.apache.cordova.geolocation" spec="0.3.10" />
-    <plugin name="org.apache.cordova.globalization"/>
+<!--    <plugin name="org.apache.cordova.globalization"/>-->
     <plugin name="org.apache.cordova.splashscreen"/>
 
 <!-- icon global settings -->
