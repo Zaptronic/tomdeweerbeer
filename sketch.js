@@ -175,8 +175,9 @@ function draw() {
     }   
 }
 function keyPressed() {
-    if (keyCode === ENTER){
+    if (keyCode === 13 ){
         reloadCity();
+		document.activeElement.blur();
     }
 }
 function clearPressed() {
