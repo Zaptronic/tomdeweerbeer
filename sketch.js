@@ -58,10 +58,11 @@ var buttonF;
 var clearbutton;
 var formCity;
 
-function preload() {
-    console.log('1');
-//    standardFont = loadFont("fonts/Cof.ttf");
-    for (var i = 0; i < weathericonsAmount; i++) {
+function setup() {
+    console.log('2');
+    var cnv = createCanvas (windowWidth, windowHeight);
+    cnv.position (0,0);
+	    for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
     for (var i = 0; i < 3; i++) {
@@ -70,12 +71,6 @@ function preload() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
-}
-
-function setup() {
-    console.log('2');
-    var cnv = createCanvas (windowWidth, windowHeight);
-    cnv.position (0,0);
     formCity = select('#formCity');
     console.log('3');
     if (navigator.geolocation) {
@@ -84,29 +79,6 @@ function setup() {
         loadInt();
         alert("Sorry, geolocation is not supported.");
     }
-    
-//    navigator.geolocation.getCurrentPosition(geolocationSuccess,
-//                                         geolocationError);
-//    
-//    var onSuccess = function(position) {
-//    alert('Latitude: '          + position.coords.latitude          + '\n' +
-//          'Longitude: '         + position.coords.longitude         + '\n' +
-//          'Altitude: '          + position.coords.altitude          + '\n' +
-//          'Accuracy: '          + position.coords.accuracy          + '\n' +
-//          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-//          'Heading: '           + position.coords.heading           + '\n' +
-//          'Speed: '             + position.coords.speed             + '\n' +
-//          'Timestamp: '         + position.timestamp                + '\n');
-//};
-//
-//// onError Callback receives a PositionError object
-////
-//function onError(error) {
-//    alert('code: '    + error.code    + '\n' +
-//          'message: ' + error.message + '\n');
-//}
-//
-//navigator.geolocation.getCurrentPosition(onSuccess, onError);
     
     console.log('4');
     responsiveScaleCalc();
