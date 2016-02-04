@@ -73,7 +73,7 @@ function setup() {
     }
     formCity = select('#formCity');
 	loadInt(); //temp for ios > also on geo
-//	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     responsiveScaleCalc();
     fill(255);
     textFont(standardFont);
@@ -149,19 +149,11 @@ function clearPressed() {
 }
 
 function temperaturePush() {
-<<<<<<< HEAD
-//	textFont(standardFont);
     textSize(textsizestandard);
-=======
-//    push();
->>>>>>> parent of a153547... font setting placed in function
     temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);
-//    pop();
-//    push();
     textSize(textsizestandard/2);
     text(weatherDescription, 32, windowHeight-32);
-//    pop();
 }
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
