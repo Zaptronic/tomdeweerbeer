@@ -74,8 +74,6 @@ function setup() {
     formCity = select('#formCity');	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     responsiveScaleCalc();
     fill(255);
-    textFont(standardFont);
-    textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
@@ -147,15 +145,14 @@ function clearPressed() {
 }
 
 function temperaturePush() {
-//    push();
+	textFont(standardFont);
+    textSize(textsizestandard);
     temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);
-//    pop();
-//    push();
     textSize(textsizestandard/2);
     text(weatherDescription, 32, windowHeight-32);
-//    pop();
 }
+
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
         if (windowWidth > windowHeight && windowWidth < 990 && windowHeight < 800){ //landscape
