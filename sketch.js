@@ -4,7 +4,7 @@ var city = 'Amsterdam, NL';
 var country = 'NL';
 var type = '&type=like';
 var mode = 'JSON';
-var appid = '&appid=9010cdbc3c106b77c2db30db4e547a9a';
+var appid = '&appid=12f35fb9753b28f558510e9cd4bbb9ce';
 var lang = '&lang=nl';
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
@@ -76,8 +76,6 @@ function setup() {
 	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
     responsiveScaleCalc();
     fill(255);
-    textFont(standardFont);
-    textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
@@ -149,6 +147,7 @@ function clearPressed() {
 }
 
 function temperaturePush() {
+//        textFont(standardFont);
     textSize(textsizestandard);
     temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);

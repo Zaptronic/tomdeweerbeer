@@ -40,7 +40,7 @@
 <!--    <plugin name="org.apache.cordova.device-motion"/>-->
 <!--    <plugin name="org.apache.cordova.device-orientation"/>-->
 
-    <plugin name="org.apache.cordova.geolocation"/>
+    <plugin name="org.apache.cordova.geolocation" spec="0.3.10" />
 <!--    <plugin name="org.apache.cordova.globalization"/>-->
     <plugin name="org.apache.cordova.splashscreen"/>
 
