@@ -33,6 +33,12 @@
 <!-- android preferences -->
     <preference name="android-minSdkVersion" value="19" />
     <preference name="android-windowSoftInputMode" value="adjustPan" />
+    
+    
+    
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
 
 <!-- plugins -->
 <!--    <plugin name="org.apache.cordova.console"/>-->

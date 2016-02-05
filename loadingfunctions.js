@@ -16,7 +16,7 @@ function currentlocationtocurrentcity(position) {
     console.log(geolong);
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
-    setInterval(loadInt, 500000);
+    setInterval(loadInt, 1000000);
         console.log(url);
 }
 
