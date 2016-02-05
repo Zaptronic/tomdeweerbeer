@@ -57,9 +57,6 @@ var buttonF;
 var clearbutton;
 var formCity;
 
-
-document.addEventListener("deviceready",setup, false);
-
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
