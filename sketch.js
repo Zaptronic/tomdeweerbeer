@@ -69,8 +69,10 @@ function setup() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
+    console.log('log');
+//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    setInterval(loadInt, 1000000);
     formCity = select('#formCity');
-	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
@@ -86,17 +88,7 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
-    keyPressed();
-    
-//    for (var i = clouds.length-1; i > 0; i--) {
-//        clouds[i].randomizer();
-//    }
-
-//    for (var i = 0; i < 3; i++) {
-////            raindrops[i] = new Raindrop(random(100,200), random(windowHeight/2,windowHeight/2+20));
-////        
-//        
-//    }        
+    keyPressed();   
 }
 
 function draw() {
@@ -161,3 +153,7 @@ function responsiveScaleCalc() {
         }
         return responsiveRatio;
 }
+
+document.addEventListener("deviceready", function(){
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+}, false);

@@ -16,13 +16,12 @@ function currentlocationtocurrentcity(position) {
     console.log(geolong);
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
-    setInterval(loadInt, 1000000);
-        console.log(url);
+    console.log(url);
 }
 
 function currentlocationerror(error) {
 	console.log('error:', error);
-	loadInt();
+    loadInt();
 }
 
 function gotData(data){
@@ -31,8 +30,6 @@ function gotData(data){
     country = data.city.country;
     lon = data.city.coord.lon;
     lat = data.city.coord.lat;
-//    console.log(city + ', ' + country);
-//    console.log(lon + ', ' + lat);
     formCity.value(city + ', ' + country);
     
     windSpeed = data.list[0].wind.speed*1.2;

@@ -59,7 +59,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4211,
+		"initialSize": 4195,
 		"inputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputPathIsOutsideProject": 0,
@@ -70,7 +70,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4583,
+		"initialSize": 4779,
 		"inputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputPathIsOutsideProject": 0,
@@ -502,17 +502,6 @@
 		"initialSize": 70677,
 		"inputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-2x.png",
 		"outputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 262540,
-		"inputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.jpg",
-		"outputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -987,19 +976,19 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/wind.js",
+			"linkedFileAbbreviatedPath": "\/rain.js",
 			"position": 2,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/rain.js",
+			"linkedFileAbbreviatedPath": "\/snow.js",
 			"position": 3,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/snow.js",
+			"linkedFileAbbreviatedPath": "\/wind.js",
 			"position": 4,
 			"type": 1
 			},
