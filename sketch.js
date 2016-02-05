@@ -87,17 +87,7 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
-    keyPressed();
-    
-//    for (var i = clouds.length-1; i > 0; i--) {
-//        clouds[i].randomizer();
-//    }
-
-//    for (var i = 0; i < 3; i++) {
-////            raindrops[i] = new Raindrop(random(100,200), random(windowHeight/2,windowHeight/2+20));
-////        
-//        
-//    }        
+    keyPressed();   
 }
 
 function draw() {
