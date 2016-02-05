@@ -58,7 +58,6 @@ var clearbutton;
 var formCity;
 
 function setup() {
-	console.log('test voor setup');
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
 	for (var i = 0; i < weathericonsAmount; i++) {
@@ -71,7 +70,6 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     formCity = select('#formCity');
-	console.log('test');
 	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
     responsiveScaleCalc();
     fill(255);

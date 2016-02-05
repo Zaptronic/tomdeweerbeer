@@ -506,6 +506,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 262540,
+		"inputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.jpg",
+		"outputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.png": {
 		"fileType": 32768,
 		"ignore": 0,
