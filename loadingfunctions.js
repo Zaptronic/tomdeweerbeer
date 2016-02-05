@@ -17,6 +17,7 @@ function currentlocationtocurrentcity(position) {
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
     setInterval(loadInt, 500000);
+        console.log(url);
 }
 
 function currentlocationerror(error) {
@@ -67,7 +68,6 @@ function gotData(data){
     weatherDescription = data.list[0].weather[0].description;
     weatherTime = data.list[0].dt;
     loadTimeatlocation(lon, lat, weatherTime);
-//    console.log(data);
 }
 
 function reloadCity() {

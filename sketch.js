@@ -70,8 +70,8 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     formCity = select('#formCity');
-//	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
-    loadInt(); //temp for ios > also on geo
+	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+//    loadInt(); //temp for ios > also on geo
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
