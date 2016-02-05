@@ -77,7 +77,7 @@ function reloadCity() {
 
 
 function loadTimeatlocation(lon, lat, weatherTime) {
-    var Gkey = '&key=12f35fb9753b28f558510e9cd4bbb9ce';
+    var Gkey = '&key=AIzaSyBhAMl015DtFzNWm-jFGE2zqHqVMPmungg';
     var timeurl = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=' + weatherTime + '&key=' + Gkey;
     loadJSON(timeurl, calclocaltime);
 }

@@ -4,7 +4,7 @@ var city = 'Amsterdam, NL';
 var country = 'NL';
 var type = '&type=like';
 var mode = 'JSON';
-var appid = '&appid=12f35fb9753b28f558510e9cd4bbb9ce';
+var appid = '&appid=b68f585d34a9ee1d9d7e001ab811c8d6';
 var lang = '&lang=nl';
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
