@@ -4,7 +4,7 @@ var city = 'Amsterdam, NL';
 var country = 'NL';
 var type = '&type=like';
 var mode = 'JSON';
-var appid = '&appid=b68f585d34a9ee1d9d7e001ab811c8d6';
+var appid = '&appid=ab756baaa116a71f8636682c58f7bb84';
 var lang = '&lang=nl';
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
@@ -70,8 +70,8 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     formCity = select('#formCity');
-//	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
-    loadInt(); //temp for ios > also on geo
+	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+//    loadInt(); //temp for ios > also on geo
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
