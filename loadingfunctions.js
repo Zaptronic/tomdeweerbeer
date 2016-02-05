@@ -20,26 +20,25 @@ function currentlocationtocurrentcity(position) {
         console.log(url);
 }
 
-function currentlocationerror() {
-                loadInt();
-//	switch (error.code)
-//	{
-//		case error.PERMISSION_DENIED:
-//            loadInt();
-//			break;
-//		case error.POSITION_UNAVAILABLE:
-//            loadInt();
-//			break;
-//		case error.PERMISSION_DENIED_TIMEOUT:
-//            loadInt();
-//			break;
-//        case PositionError.TIMEOUT:
-//            loadInt();
-//            break;
-//		case error.UNKNOWN_ERROR:
-//            loadInt();
-//			break;
-//	}
+function currentlocationerror(error) {
+	switch (error.code)
+	{
+		case error.PERMISSION_DENIED:
+            loadInt();
+			break;
+		case error.POSITION_UNAVAILABLE:
+            loadInt();
+			break;
+		case error.PERMISSION_DENIED_TIMEOUT:
+            loadInt();
+			break;
+        case PositionError.TIMEOUT:
+            loadInt();
+            break;
+		case error.UNKNOWN_ERROR:
+            loadInt();
+			break;
+	}
 }
 
 function gotData(data){
