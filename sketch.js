@@ -57,6 +57,14 @@ var buttonF;
 var clearbutton;
 var formCity;
 
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    console.log("navigator.geolocation works well");
+}
+
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
@@ -70,7 +78,7 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     formCity = select('#formCity');
-	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+//	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    loadInt(); //temp for ios > also on geo
     responsiveScaleCalc();
     fill(255);

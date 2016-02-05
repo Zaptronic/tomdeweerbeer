@@ -32,6 +32,9 @@ function currentlocationerror(error) {
 		case error.PERMISSION_DENIED_TIMEOUT:
             loadInt();
 			break;
+        case PositionError.TIMEOUT:
+            loadInt();
+            break;
 		case error.UNKNOWN_ERROR:
             loadInt();
 			break;
