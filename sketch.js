@@ -58,6 +58,7 @@ var clearbutton;
 var formCity;
 
 function setup() {
+	console.log('test voor setup');
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
 	for (var i = 0; i < weathericonsAmount; i++) {
