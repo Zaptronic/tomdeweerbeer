@@ -71,7 +71,6 @@ function setup() {
     }
     formCity = select('#formCity');
 	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
-//    loadInt(); //temp for ios > also on geo
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
