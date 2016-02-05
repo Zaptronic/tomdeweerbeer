@@ -117,5 +117,7 @@
     <gap:splash src="fr-xhdpi.png" gap:platform="android" gap:qualifier="fr-xhdpi" />
     <gap:splash src="portrait-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
     <gap:splash src="landscape-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi" />      
-        
+    
+    <access origin="http://api.openweathermap.org" />
+    <access origin="https://*.google.com" />
 </widget>
