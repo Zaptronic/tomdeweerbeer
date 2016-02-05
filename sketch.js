@@ -57,10 +57,6 @@ var buttonF;
 var clearbutton;
 var formCity;
 
-document.addEventListener("deviceready", function(){
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
-}, false);
-
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
@@ -157,3 +153,7 @@ function responsiveScaleCalc() {
         }
         return responsiveRatio;
 }
+
+document.addEventListener("deviceready", function(){
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+}, false);
