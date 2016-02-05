@@ -70,6 +70,7 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     formCity = select('#formCity');
+	console.log('test');
 	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
     responsiveScaleCalc();
     fill(255);
