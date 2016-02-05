@@ -21,7 +21,7 @@ function currentlocationtocurrentcity(position) {
 }
 
 function currentlocationerror(error) {
-	console.log('error:', error);
+//	console.log('error:', error);
 //	loadInt();
     	switch (error.code)
 	{
