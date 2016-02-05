@@ -50,7 +50,6 @@ var minRespP = 0.7;
 var maxRespP = 1.3;
 
 // variables for typography
-var standardFont;
 var textsizestandard = 48;
 
 //variables for DOM elements
@@ -61,7 +60,6 @@ var formCity;
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
-//	standardFont = loadFont("fonts/Cof.ttf");
 	for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
@@ -72,8 +70,8 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     formCity = select('#formCity');
-	loadInt(); //temp for ios > also on geo
-//	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
+//    loadInt(); //temp for ios > also on geo
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
@@ -147,7 +145,6 @@ function clearPressed() {
 }
 
 function temperaturePush() {
-//        textFont(standardFont);
     textSize(textsizestandard);
     temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);
