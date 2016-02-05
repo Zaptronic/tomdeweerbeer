@@ -22,7 +22,25 @@ function currentlocationtocurrentcity(position) {
 
 function currentlocationerror(error) {
 	console.log('error:', error);
-	loadInt();
+//	loadInt();
+    	switch (error.code)
+	{
+		case error.PERMISSION_DENIED:
+            loadInt();
+			break;
+		case error.POSITION_UNAVAILABLE:
+            loadInt();
+			break;
+		case error.PERMISSION_DENIED_TIMEOUT:
+            loadInt();
+			break;
+        case PositionError.TIMEOUT:
+            loadInt();
+            break;
+		case error.UNKNOWN_ERROR:
+            loadInt();
+			break;
+	}
 }
 
 function gotData(data){
