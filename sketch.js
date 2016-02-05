@@ -4,7 +4,7 @@ var city = 'Amsterdam, NL';
 var country = 'NL';
 var type = '&type=like';
 var mode = 'JSON';
-var appid = '&appid=9010cdbc3c106b77c2db30db4e547a9a';
+var appid = '&appid=ab756baaa116a71f8636682c58f7bb84';
 var lang = '&lang=nl';
 var unit = '&units=metric';
 var url = baseurl+city+type+mode+appid+unit+lang;
@@ -50,7 +50,6 @@ var minRespP = 0.7;
 var maxRespP = 1.3;
 
 // variables for typography
-var standardFont;
 var textsizestandard = 48;
 
 //variables for DOM elements
@@ -58,9 +57,10 @@ var buttonF;
 var clearbutton;
 var formCity;
 
-function preload() {
-//    standardFont = loadFont("fonts/Cof.ttf");
-    for (var i = 0; i < weathericonsAmount; i++) {
+function setup() {
+    var cnv = createCanvas (windowWidth, windowHeight);
+    cnv.position (0,0);
+	for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/weather'+i+'.png');   
     }
     for (var i = 0; i < 3; i++) {
@@ -69,23 +69,12 @@ function preload() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
-}
-
-function setup() {
-    var cnv = createCanvas (windowWidth, windowHeight);
-    cnv.position (0,0);
     formCity = select('#formCity');
-    
-    if (navigator.geolocation) {
-	   navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror);
-    }
+	navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
     responsiveScaleCalc();
     fill(255);
-//    textFont(standardFont);
-    textSize(textsizestandard);
     clearbutton = select('.clearbutton');
     clearbutton.mousePressed(clearPressed);
-//    buttonF = select('#buttonCity');
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
     cloudPush();
@@ -145,8 +134,9 @@ function draw() {
     }   
 }
 function keyPressed() {
-    if (keyCode === ENTER){
+    if (keyCode === 13 ){
         reloadCity();
+		document.activeElement.blur();
     }
 }
 function clearPressed() {
@@ -154,13 +144,11 @@ function clearPressed() {
 }
 
 function temperaturePush() {
-    push();
-    text(floor(temperature)+'*'+'C', 32,windowHeight-60);
-    pop();
-    push();
+    textSize(textsizestandard);
+    temperature = floor(temperature);
+    text(temperature + '*' + 'C', 32,windowHeight-60);
     textSize(textsizestandard/2);
     text(weatherDescription, 32, windowHeight-32);
-    pop();
 }
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);

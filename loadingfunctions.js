@@ -8,31 +8,21 @@ function loadCity() {
     loadJSON(url, gotData, 'jsonp');
 }
 
-function currentlocationtocurrentcity(pos) {
+function currentlocationtocurrentcity(position) {
     var geobaseurl = 'http://api.openweathermap.org/data/2.5/forecast?';
-    geolat = pos.coords.latitude;
-    geolong = pos.coords.longitude;
+    geolat = position.coords.latitude;
+    geolong = position.coords.longitude;
+    console.log(geolat);
+    console.log(geolong);
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
-    setInterval(loadInt, 500000); 
+    setInterval(loadInt, 1000000);
+        console.log(url);
 }
 
 function currentlocationerror(error) {
-	switch (error.code)
-	{
-		case error.PERMISSION_DENIED:
-            loadInt();
-			break;
-		case error.POSITION_UNAVAILABLE:
-            loadInt();
-			break;
-		case error.PERMISSION_DENIED_TIMEOUT:
-            loadInt();
-			break;
-		case error.UNKNOWN_ERROR:
-            loadInt();
-			break;
-	}
+	console.log('error:', error);
+	loadInt();
 }
 
 function gotData(data){
@@ -74,7 +64,7 @@ function reloadCity() {
 
 
 function loadTimeatlocation(lon, lat, weatherTime) {
-    var Gkey = '&key=AIzaSyARQPqPeZ3TQLPE0FLqh3TAezFnGw_I9xA';
+    var Gkey = '&key=AIzaSyBhAMl015DtFzNWm-jFGE2zqHqVMPmungg';
     var timeurl = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=' + weatherTime + '&key=' + Gkey;
     loadJSON(timeurl, calclocaltime);
 }
