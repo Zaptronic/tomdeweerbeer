@@ -835,6 +835,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/min\/resize kopie-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/resize kopie-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/resize kopie-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/min\/resize-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -852,6 +863,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/min\/sketch-min.js",
 		"outputAbbreviatedPath": "\/min\/min\/sketch-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/temperature-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/temperature-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/temperature-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -945,6 +967,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/temperature.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/temperature.js",
+		"outputAbbreviatedPath": "\/min\/temperature-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/weathertype.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -1005,14 +1038,20 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/nightorday.js",
+			"linkedFileAbbreviatedPath": "\/temperature.js",
 			"position": 5,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/resize.js",
+			"linkedFileAbbreviatedPath": "\/nightorday.js",
 			"position": 6,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/resize.js",
+			"position": 7,
 			"type": 1
 			}
 		]

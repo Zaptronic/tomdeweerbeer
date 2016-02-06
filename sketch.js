@@ -1,3 +1,5 @@
+//todo: error message in case mobile data is off
+
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 var city = 'Amsterdam, NL';
@@ -51,7 +53,14 @@ var maxRespP = 1.3;
 
 // variables for typography
 var font;
-var textsizestandard = 48;
+var textsizestandard = 32;
+
+//variables for ui
+var outerpadding = 20;
+
+// variables for colors
+var darkblue = [26,35,38];
+var tomred = [206,79,58];
 
 //variables for DOM elements
 var buttonF;
@@ -59,7 +68,6 @@ var clearbutton;
 var formCity;
 
 function setup() {
-    font = loadFont('fonts/Cof.ttf');
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
 	for (var i = 0; i < weathericonsAmount; i++) {
@@ -74,8 +82,8 @@ function setup() {
     console.log('log');
 
     //   alleen voor testen in browser
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
-    
+//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    mobilesizes();
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
     responsiveScaleCalc();
@@ -97,7 +105,7 @@ function setup() {
 }
 
 function draw() {
-    background(26,35,38);
+    background(darkblue);
 
     if (weatherData) {
         for (var i = clouds.length-1; i  > 0; i--) {
@@ -129,6 +137,14 @@ function draw() {
             }
         }
     }   
+    push();
+    ellipseMode(CENTER);
+    fill(tomred);
+    noStroke();
+    ellipse(windowWidth - outerpadding*2, windowHeight - outerpadding*2, 40, 40);
+    fill(255);
+    ellipse(windowWidth - (outerpadding*4.5), windowHeight - outerpadding*2, 40, 40);
+    pop();
 }
 function keyPressed() {
     if (keyCode === 13 ){
@@ -136,26 +152,18 @@ function keyPressed() {
 		document.activeElement.blur();
     }
 }
+
 function clearPressed() {
     formCity.value('');
 }
 
-function temperaturePush() {
-    fill(0);
-    textFont(font);
-    textSize(textsizestandard);
-    temperature = floor(temperature);
-    text(temperature + '*' + 'C', 32,windowHeight-60);
-    textSize(textsizestandard/2);
-    text(weatherDescription, 32, windowHeight-32);
-}
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
-        if (windowWidth > windowHeight && windowWidth < 990 && windowHeight < 800){ //landscape
-            var responsiveScaler = (windowWidth/2000);     
+        if (windowWidth > windowHeight && windowWidth < 370 && windowHeight < 800){ //landscape
+            responsiveScaler = (windowWidth/2000);     
             responsiveRatio = constrain (responsiveScaler, minRespL, maxRespL);    
         } else {
-            var responsiveScaler = (windowHeight/1000);    
+            responsiveScaler = (windowHeight/1000);    
             responsiveRatio = constrain (responsiveScaler, minRespP, maxRespP);
         }
         return responsiveRatio;
@@ -164,3 +172,11 @@ function responsiveScaleCalc() {
 document.addEventListener("deviceready", function(){
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 }, false);
+
+function mobilesizes() {
+    if (windowWidth < 372) { 
+        minRespP = 0.18; 
+    } else { 
+        minRespP = 0.65; 
+    }
+}
