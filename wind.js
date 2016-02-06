@@ -2,13 +2,13 @@ function cloudPush() {
     var cloudPosxA = -(windowWidth / 4);
     var cloudPosxB = -50;
     var cloudRatio = windowWidth / 500;
-    var cloudAmount = 1 + cloudRatio;
+    var cloudAmount = 2 + cloudRatio;
     cloudpicker = floor(random(2));
 //    console.log(cloudpicker);
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
-                    random(windowHeight*0.45, windowHeight*0.625), 
+                    random(windowHeight*0.40, windowHeight*0.575), 
                     round(random(10,100)),
                     cloudpicker
         ));
@@ -20,9 +20,8 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.x = x;
     this.y = y;
     this.lifespan = lifespan;
-    this.radius = 100;
-    this.width = 150;
-    this.height = 120;
+    this.width = 120;
+    this.height = 96;
     this.windSpeedMotion = windSpeed/2;
     this.windowRatioSpeed = windowWidth/100;
     this.windmovementX = this.windSpeedMotion / this.windowRatioSpeed;

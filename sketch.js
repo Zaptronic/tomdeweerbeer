@@ -57,6 +57,7 @@ var textsizestandard = 32;
 
 //variables for ui
 var outerpadding = 20;
+var buttonSize = 40;
 
 // variables for colors
 var darkblue = [26,35,38];
@@ -141,9 +142,9 @@ function draw() {
     ellipseMode(CENTER);
     fill(tomred);
     noStroke();
-    ellipse(windowWidth - outerpadding*2, windowHeight - outerpadding*2, 40, 40);
+    ellipse(windowWidth - outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
     fill(255);
-    ellipse(windowWidth - (outerpadding*4.5), windowHeight - outerpadding*2, 40, 40);
+    ellipse(windowWidth - (outerpadding*4.5), windowHeight - outerpadding*2, buttonSize, buttonSize);
     pop();
 }
 function keyPressed() {
@@ -178,5 +179,9 @@ function mobilesizes() {
         minRespP = 0.18; 
     } else { 
         minRespP = 0.65; 
+    }
+    if (windowWidth > 760) {
+        outerpadding = 30;
+        buttonSize = 60;
     }
 }
