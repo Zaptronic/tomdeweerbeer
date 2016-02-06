@@ -59,7 +59,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4195,
+		"initialSize": 4211,
 		"inputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputPathIsOutsideProject": 0,
@@ -70,7 +70,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4779,
+		"initialSize": 4583,
 		"inputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputPathIsOutsideProject": 0,
@@ -506,6 +506,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/res\/screen\/ios\/screen-iphone-portrait-5-2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 241867,
+		"inputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-5-2x.png",
+		"outputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-5-2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -580,46 +591,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather0.png": {
+	"\/images\/tomtypes\/weather0.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 446281,
-		"inputAbbreviatedPath": "\/images\/weather0.png",
-		"outputAbbreviatedPath": "\/images\/weather0.png",
+		"initialSize": 466431,
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather1.png": {
+	"\/images\/tomtypes\/weather1.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 80200,
-		"inputAbbreviatedPath": "\/images\/weather1.png",
-		"outputAbbreviatedPath": "\/images\/weather1.png",
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather1.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather1.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather2-cloud.png": {
+	"\/images\/tomtypes\/weather2-cloud.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 51720,
-		"inputAbbreviatedPath": "\/images\/weather2-cloud.png",
-		"outputAbbreviatedPath": "\/images\/weather2-cloud.png",
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather2-cloud.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather2-cloud.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather2.png": {
+	"\/images\/tomtypes\/weather2.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 149782,
-		"inputAbbreviatedPath": "\/images\/weather2.png",
-		"outputAbbreviatedPath": "\/images\/weather2.png",
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

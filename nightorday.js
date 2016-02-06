@@ -1,7 +1,7 @@
 function nightordayPush() {
     var PosX = windowWidth/2 + windowWidth/3;
-    var PosY = windowHeight/5;
-    var nightordaystandard = 120;
+    var PosY = windowHeight * 0.18;
+    var nightordaystandard = 80;
     var nightordaysizer = nightordaystandard * responsiveRatio;
     nightorday = new Nightorday(PosX,PosY, nightordaysizer);
 }

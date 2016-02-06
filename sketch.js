@@ -46,10 +46,11 @@ var hours;
 var responsiveRatio;
 var minRespL = 0.7;
 var maxRespL = 1.0;
-var minRespP = 0.7;
+var minRespP = 0.65;
 var maxRespP = 1.3;
 
 // variables for typography
+var font;
 var textsizestandard = 48;
 
 //variables for DOM elements
@@ -58,10 +59,11 @@ var clearbutton;
 var formCity;
 
 function setup() {
+    font = loadFont('fonts/Cof.ttf');
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
 	for (var i = 0; i < weathericonsAmount; i++) {
-         weathericon[i] = loadImage('images/weather'+i+'.png');   
+         weathericon[i] = loadImage('images/tomtypes/weather'+i+'.png');   
     }
     for (var i = 0; i < 3; i++) {
         cloudicons[i] = loadImage('images/clouds'+i+'.png');
@@ -70,7 +72,10 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     console.log('log');
-//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+
+    //   alleen voor testen in browser
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
     responsiveScaleCalc();
@@ -136,6 +141,8 @@ function clearPressed() {
 }
 
 function temperaturePush() {
+    fill(0);
+    textFont(font);
     textSize(textsizestandard);
     temperature = floor(temperature);
     text(temperature + '*' + 'C', 32,windowHeight-60);
