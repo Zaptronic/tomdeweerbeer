@@ -84,6 +84,9 @@ function setup() {
 
     //   alleen voor testen in browser
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    
+    
+    
     mobilesizes();
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
