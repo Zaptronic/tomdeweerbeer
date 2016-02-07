@@ -48,7 +48,7 @@ var hours;
 var responsiveRatio;
 var minRespL = 0.7;
 var maxRespL = 1.0;
-var minRespP = 0.65;
+var minRespP = 0.55;
 var maxRespP = 1.3;
 
 // variables for typography
@@ -97,7 +97,7 @@ function setup() {
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
     cloudPush();
-    setInterval(cloudPush, 5000);
+    setInterval(cloudPush, 4000);
     weerbeerPush();
     setInterval(weerbeerPush, 1250);
     nightordayPush();
@@ -180,8 +180,6 @@ document.addEventListener("deviceready", function(){
 function mobilesizes() {
     if (windowWidth < 372) { 
         minRespP = 0.18; 
-    } else { 
-        minRespP = 0.65; 
     }
     if (windowWidth > 760) {
         outerpadding = 30;
