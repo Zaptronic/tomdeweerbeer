@@ -22,7 +22,7 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.lifespan = lifespan;
     this.width = 120;
     this.height = 96;
-    this.windSpeedMotion = windSpeed/2;
+    this.windSpeedMotion = windSpeed/3;
     this.windowRatioSpeed = windowWidth/100;
     this.windmovementX = this.windSpeedMotion / this.windowRatioSpeed;
     this.fadeInX = 0;
