@@ -1,5 +1,5 @@
 function nightordayPush() {
-    var PosX = (windowWidth/2) + (windowWidth * 0.35);
+    var PosX = windowWidth * 0.85;
     var PosY = windowHeight * 0.20;
     var nightordaystandard = 80;
     var nightordaysizer = nightordaystandard * responsiveRatio;
@@ -18,13 +18,9 @@ function Nightorday(x,y, nightordaysizer) {
     
     this.display = function() {
         imageMode(CENTER);
-        if ((hours >= 0 && hours < 6) || (hours > 18 && hours <= 23)) {
+        if ((hours >= -3 && hours < 6) || (hours > 18 && hours <= 23)) {
             image(nightordayicon[1], this.x, this.y, this.size, this.size);
-         } if (hours >= 6 && hours <= 18 ){
-//             image(nightordayicon[0], this.x, this.y, this.size, this.size);
-            image(nightordayicon[1], this.x, this.y, this.size, this.size);
-//            fill(tomyellow, 40); 
-//            fill(255, this.starbrightness); 
+            
             fill(234, 167, 0, this.starbrightness); 
             noStroke();
             push();
@@ -66,6 +62,12 @@ function Nightorday(x,y, nightordaysizer) {
             rotate(frameCount / -120.0);
             star(0, 0, innerRadius, outerRadius, 5); 
             pop();
+            
+         } if (hours >= 6 && hours <= 18 ){
+             image(nightordayicon[0], this.x, this.y, this.size, this.size);
+//            image(nightordayicon[1], this.x, this.y, this.size, this.size);
+//            fill(tomyellow, 40); 
+//            fill(255, this.starbrightness); 
          }
         
         
