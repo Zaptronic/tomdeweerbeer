@@ -1,12 +1,4 @@
 //todo: error message in case mobile data is off
-if(navigator 
-   && navigator.network 
-   && navigator.network.connection 
-   && navigator.network.connection.type == Connection.NONE) {
-      navigator.notification.alert("This app needs an internet connection", 
-      function() {navigator.app.exitApp();}, 
-      "Offline!");
-}
 
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
