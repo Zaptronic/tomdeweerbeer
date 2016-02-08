@@ -58,6 +58,7 @@ var buttonSize = 40;
 // variables for colors
 var darkblue = [26,35,38];
 var tomred = [206,79,58];
+var tomyellow = [234,167,0];
 
 //variables for DOM elements
 var buttonF;
@@ -81,8 +82,7 @@ function setup() {
     //   alleen voor testen in browser
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
     
-    
-    
+
     mobilesizes();
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
@@ -95,9 +95,9 @@ function setup() {
     cloudPush();
     setInterval(cloudPush, 4000);
     weerbeerPush();
-    setInterval(weerbeerPush, 1250);
+    setInterval(weerbeerPush, 5000);
     nightordayPush();
-    setInterval(nightordayPush, 1250);
+//    setInterval(nightordayPush, 5000);
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
@@ -118,6 +118,8 @@ function draw() {
         }
         weerbeer.display();
         nightorday.display();
+        nightorday.update();
+        nightorday.brightnesscheck();
         temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {

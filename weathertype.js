@@ -31,7 +31,7 @@ function Weerbeer(x,y, weerbeersizer) {
             pop();
 
          } if (weatherType >= 500 && weatherType < 600){
-             console.log('rain');
+//             console.log('rain');
             image(weathericon[0], this.x, this.y, this.radius, this.radius);
              
          } if (weatherType >= 600 && weatherType < 700){
