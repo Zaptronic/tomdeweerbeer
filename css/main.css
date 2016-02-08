@@ -50,15 +50,15 @@ p {
       .container .zoekform .clearbutton svg {
         width: 12px;
         margin-top: 1px; }
-      @media (min-width: 360px) {
-        .container .zoekform .clearbutton {
-          margin-top: 36px; } }
       @media (min-width: 480px) {
         .container .zoekform .clearbutton {
           top: auto;
           right: auto;
           margin-left: -44px;
           z-index: 99999; } }
+    @media (min-width: 360px) {
+      .container .zoekform {
+        margin-top: 36px; } }
   .container #formCity {
     box-sizing: border-box;
     width: 100%;

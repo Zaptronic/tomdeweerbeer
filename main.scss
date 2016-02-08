@@ -60,15 +60,15 @@ p {
                 width: 12px;
                 margin-top: 1px;
             }
-            @media (min-width: 360px) {
-                margin-top: 36px;
-            }
             @media (min-width: 480px) {
                 top: auto;
                 right: auto;
                 margin-left: -44px;
                 z-index: 99999;
             }
+        }
+        @media (min-width: 360px) {
+                margin-top: 36px;
         }
     }
 
