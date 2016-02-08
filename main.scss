@@ -1,6 +1,10 @@
 /*********************************************
- * Boilerplate scss
+ * Tom de weerbeer scss
  *********************************************/
+@font-face {
+    font-family: "tomfont";
+    src: url("../fonts/Cof.ttf") format("opentype");
+    }
 
 body {
 	background: rgb(26,35,38);
@@ -65,9 +69,7 @@ p {
             }
         }
     }
-    #button {
-//        z-index: 999999;
-    }
+
     #formCity {
         box-sizing: border-box;
         width: 100%;
@@ -86,6 +88,22 @@ p {
         }
         @media (min-width: 400px) {
             max-width: 355px;   
+        }
+    }
+    
+    .weeromschrijving {
+//        background: pink;
+        font-family: 'tomfont';
+        line-height: 16px;
+        color: white;
+        margin-top: 16px;
+        
+        .omschrijving {
+            font-size: 18px;
+        }
+        
+        .temperatuur {
+            font-size: 28px;
         }
     }
 }

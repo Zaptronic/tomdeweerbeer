@@ -51,10 +51,6 @@ var maxRespL = 1.0;
 var minRespP = 0.55;
 var maxRespP = 1.3;
 
-// variables for typography
-var font;
-var textsizestandard = 32;
-
 //variables for ui
 var outerpadding = 20;
 var buttonSize = 40;
@@ -83,7 +79,7 @@ function setup() {
     console.log('log');
 
     //   alleen voor testen in browser
-//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
     
     
     

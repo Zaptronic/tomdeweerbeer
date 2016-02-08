@@ -1,6 +1,9 @@
 /*********************************************
- * Boilerplate scss
+ * Tom de weerbeer scss
  *********************************************/
+@font-face {
+  font-family: "tomfont";
+  src: url("../fonts/Cof.ttf") format("opentype"); }
 body {
   background: #1a2326;
   margin: 0;
@@ -70,3 +73,12 @@ p {
     @media (min-width: 400px) {
       .container #formCity {
         max-width: 355px; } }
+  .container .weeromschrijving {
+    font-family: 'tomfont';
+    line-height: 16px;
+    color: white;
+    margin-top: 16px; }
+    .container .weeromschrijving .omschrijving {
+      font-size: 18px; }
+    .container .weeromschrijving .temperatuur {
+      font-size: 28px; }

@@ -1,8 +1,8 @@
 function temperaturePush() {
     fill(0);
-    textSize(textsizestandard);
     temperature = floor(temperature);
-    text(temperature + '*' + 'C', outerpadding,windowHeight-(outerpadding + 20));
-    textSize(textsizestandard/2);
-    text(weatherDescription, outerpadding, windowHeight-outerpadding);
+    var weeromschrijving = select('.omschrijving', '.weeromschrijving');
+    var temperatuur = select('.temperatuur', '.weeromschrijving');
+    weeromschrijving.html(weatherDescription);
+    temperatuur.html(temperature + '*c');
 }
