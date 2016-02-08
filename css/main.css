@@ -3,7 +3,7 @@
  *********************************************/
 @font-face {
   font-family: "tomfont";
-  src: url("/fonts/Cof.ttf") format("opentype"); }
+  src: url("fonts/Cof.ttf") format("opentype"); }
 body {
   background: #1a2326;
   margin: 0;
