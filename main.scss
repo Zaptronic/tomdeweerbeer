@@ -94,7 +94,6 @@ p {
     .weeromschrijving {
 //        background: pink;
         font-family: 'tomfont';
-        line-height: 16px;
         color: white;
         margin-top: 16px;
         
@@ -103,7 +102,31 @@ p {
         }
         
         .temperatuur {
-            font-size: 28px;
+            font-size: 36px;
+            line-height: 32px;
+        }
+        
+        @media (min-width: 400px) {
+            text-align: center;
+            margin: 18px auto;
+            p {
+                display: inline-block;
+                margin: 0;
+            }
+            .omschrijving {
+                font-size: 36px;
+                margin-right: 28px;
+                
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: #72b6b7;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 12px;
+                    margin: 16px 8px 0 16px;
+                }
+            }
         }
     }
 }

@@ -143,7 +143,7 @@ function draw() {
     noStroke();
     ellipse(windowWidth - outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
     fill(255);
-    ellipse(windowWidth - (outerpadding*4.5), windowHeight - outerpadding*2, buttonSize, buttonSize);
+    ellipse(outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
     pop();
 }
 function keyPressed() {

@@ -4,5 +4,5 @@ function temperaturePush() {
     var weeromschrijving = select('.omschrijving', '.weeromschrijving');
     var temperatuur = select('.temperatuur', '.weeromschrijving');
     weeromschrijving.html(weatherDescription);
-    temperatuur.html(temperature + '*c');
+    temperatuur.html(temperature + '*C');
 }
