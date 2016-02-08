@@ -58,7 +58,7 @@ function Nightorday(x,y, nightordaysizer) {
             push();
             innerRadius = stars[4] * responsiveRatio;
             outerRadius = innerRadius * 2;
-            translate(width*0.1, height*0.25);
+            translate(width*0.1, height*0.26);
             rotate(frameCount / -120.0);
             star(0, 0, innerRadius, outerRadius, 5); 
             pop();
