@@ -124,8 +124,7 @@ function draw() {
             stars[i].display();   
             stars[i].update();
         }
-//        nightorday.update();
-//        nightorday.brightnesscheck();
+        
         temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {
@@ -177,9 +176,17 @@ function responsiveScaleCalc() {
         return responsiveRatio;
 }
 
-document.addEventListener("deviceready", function(){
+document.addEventListener("deviceready", onDeviceReady, function(){
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    
+document.addEventListener("pause", onResume, false);
+    
 }, false);
+
+function onResume() {
+    reloadCity();
+    raindrops = [];
+}
 
 function mobilesizes() {
     if (windowWidth < 372) { 

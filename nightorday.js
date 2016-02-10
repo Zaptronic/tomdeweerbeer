@@ -3,7 +3,7 @@ function nightordayPush() {
     var PosY = windowHeight * 0.20;
     var nightordaystandard = 80;
     var nightordaysizer = nightordaystandard * responsiveRatio;
-    nightorday = new Nightorday(PosX,PosY, nightordaysizer);
+    nightorday = new Nightorday(PosX, PosY, nightordaysizer);
 }
 
 function Nightorday(x,y, nightordaysizer) {
@@ -26,28 +26,28 @@ function starsbynightPush() {
     var x = [0.73,0.82,0.93,0.225,0.1];
     var y = [0.17,0.3,0.28,0.31,0.26];
     var innerRadius = [4, 8, 4, 6, 4];
+    var starBrightness = [90, 60, 20, 120, 70];
     
     for(var i = 0; i < innerRadius.length; i++ ) {
-        stars.push(new Starbynight(x[i],y[i],innerRadius[i]));
+        stars.push(new Starbynight(x[i], y[i], innerRadius[i], starBrightness[i]));
     }
 }
 
-function Starbynight(x,y, innerRadius) {
+function Starbynight(x,y, innerRadius, starBrightness) {
     this.x = x;
     this.y = y;
     this.innerRadius = innerRadius * responsiveRatio;
     this.outerRadius = innerRadius * 2;
-    this.starbrightness = 100;
+    this.starbrightness = starBrightness;
     this.starbrightnessSpeed = 1;
-    console.log('star');
     
     this.display = function() {
         if ((hours >= -3 && hours < 6) || (hours > 18 && hours <= 23)) {
-            fill(234, 167, 0, this.starbrightness); 
             noStroke();   
             
             for (var i = 0; i < stars.length; i++) {
                 push();
+                fill(234, 167, 0, this.starbrightness); 
                 translate(width*this.x, height*this.y);
                 rotate(frameCount / -150.0);
                 star(0, 0, this.innerRadius, this.outerRadius, 5); 
@@ -93,10 +93,9 @@ function Starbynight(x,y, innerRadius) {
         } else {
            this.starbrightnessSpeed = this.starbrightnessSpeed * -1;
         }
-        console.log(this.starbrightness);
     }
     this.brightnesscheck = function() {
-		 if (this.starbrightness > 20 && this.starbrightness < 200) {
+		 if (this.starbrightness > 20 && this.starbrightness < 150) {
             return true;
          } else {
 			return false;
