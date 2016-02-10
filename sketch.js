@@ -120,11 +120,12 @@ function draw() {
         weerbeer.display();
         nightorday.display();
 
+        
         for (var i = 0; i < stars.length; i++) {
             stars[i].display();   
             stars[i].update();
         }
-        
+
         temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {
@@ -178,15 +179,7 @@ function responsiveScaleCalc() {
 
 document.addEventListener("deviceready", function(){
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
-    
-document.addEventListener("pause", onResume, false);
-    
 }, false);
-
-function onResume() {
-    reloadCity();
-    raindrops = [];
-}
 
 function mobilesizes() {
     if (windowWidth < 372) { 
