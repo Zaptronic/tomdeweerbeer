@@ -176,7 +176,7 @@ function responsiveScaleCalc() {
         return responsiveRatio;
 }
 
-document.addEventListener("deviceready", onDeviceReady, function(){
+document.addEventListener("deviceready", function(){
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
     
 document.addEventListener("pause", onResume, false);
