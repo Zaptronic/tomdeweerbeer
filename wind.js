@@ -4,7 +4,7 @@ function cloudPush() {
     var cloudRatio = windowWidth / 10;
     var cloudAmount = 3 + cloudRatio;
     cloudpicker = floor(random(2));
-    console.log(windSpeed);
+//    console.log(windSpeed);
     
     if (clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
@@ -23,7 +23,7 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.width = 100 * responsiveRatio;
     this.height = 80 * responsiveRatio;
     this.windSpeedMotion = map(windSpeed, 0, 32.7, 1, 6);
-    console.log(this.windSpeedMotion);
+//    console.log(this.windSpeedMotion);
     this.windowRatioSpeed = windowWidth/1000;
 //    this.windmovementX = 5;
     this.windmovementX = this.windSpeedMotion * this.windowRatioSpeed;

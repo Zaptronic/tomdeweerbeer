@@ -77,7 +77,6 @@ function setup() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
-    console.log('log');
 
     //   alleen voor testen in browser
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });

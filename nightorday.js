@@ -106,7 +106,7 @@ function Nightorday(x,y, nightordaysizer) {
         } else {
            this.starbrightnessSpeed = this.starbrightnessSpeed * -1;
         }
-        console.log(this.starbrightness);
+//        console.log(this.starbrightness);
     }
     this.brightnesscheck = function() {
 		 if (this.starbrightness > 50 && this.starbrightness < 200) {
