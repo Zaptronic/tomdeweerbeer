@@ -35,6 +35,7 @@ var weathericon = [];
 var weathericonsAmount = 3;
 var cloudicons =  [];
 var cloudpicker;
+var stars = [];
 
 
 //variables for time
@@ -96,6 +97,7 @@ function setup() {
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
     nightordayPush();
+    starsbynightPush();
 //    setInterval(nightordayPush, 5000);
     tempColorMappedR = 200;
     tempColorMappedR = 200;
@@ -117,8 +119,13 @@ function draw() {
         }
         weerbeer.display();
         nightorday.display();
-        nightorday.update();
-        nightorday.brightnesscheck();
+
+        for (var i = 0; i < stars.length; i++) {
+            stars[i].display();   
+            stars[i].update();
+        }
+//        nightorday.update();
+//        nightorday.brightnesscheck();
         temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {
