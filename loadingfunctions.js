@@ -65,6 +65,9 @@ function reloadCity() {
 }
 
 function onPause() {
+    clouds = [];
+    raindrops = [];
+    clouds = [];
     clearInterval(cloudPush);
     clearInterval(raindropPush);
     clearInterval(snowflakePush);
@@ -74,7 +77,7 @@ function onResume() {
     clouds = [];
     raindrops = [];
     clouds = [];
-    loadCity();
+//    setInterval(cloudPush);
 }
 
 

@@ -2,7 +2,7 @@ function cloudPush() {
     var cloudPosxA = -(windowWidth / 5);
     var cloudPosxB = -50;
     var cloudRatio = windowWidth / 10;
-    var cloudAmount = 3 + cloudRatio;
+    var cloudAmount = 2 + cloudRatio;
     cloudpicker = floor(random(2));
 //    console.log(windSpeed);
     
