@@ -37,7 +37,7 @@ function Starbynight(x,y, innerRadius, starBrightness) {
     this.x = x;
     this.y = y;
     this.innerRadius = innerRadius * responsiveRatio;
-    this.outerRadius = (innerRadius * 2) * responsiveRatio;
+    this.outerRadius = innerRadius * 2;
     this.starbrightness = starBrightness;
     this.starbrightnessSpeed = 1;
     

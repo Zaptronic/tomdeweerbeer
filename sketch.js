@@ -124,6 +124,7 @@ function draw() {
             }
         }
         weerbeer.display();
+        temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {
             raindrops[i].update();
@@ -141,7 +142,6 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
-        temperaturePush();
     }   
     push();
     ellipseMode(CENTER);
@@ -152,7 +152,6 @@ function draw() {
     ellipse(outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
     pop();
 }
-
 function keyPressed() {
     if (keyCode === 13 ){
         reloadCity();
@@ -162,7 +161,6 @@ function keyPressed() {
 
 function clearPressed() {
     formCity.value('');
-	document.getElementById('formCity').focus();
 }
 
 function responsiveScaleCalc() {
@@ -177,6 +175,10 @@ function responsiveScaleCalc() {
         return responsiveRatio;
 }
 
+document.addEventListener("deviceready", function(){
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+}, false);
+
 function mobilesizes() {
     if (windowWidth < 372) { 
         minRespP = 0.18; 
@@ -186,9 +188,3 @@ function mobilesizes() {
         buttonSize = 60;
     }
 }
-
-//document.addEventListener("deviceready", function(){
-//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 3000 });
-////    document.addEventListener("pause", onPause, false);
-//}, false);
-
