@@ -70,12 +70,12 @@ function onPause() {
     clouds = [];
 }
 
-//function onResume() {
-//    clouds = [];
-//    raindrops = [];
-//    clouds = [];
-//    loadCity();
-//}
+function onResume() {
+    clouds = [];
+    raindrops = [];
+    clouds = [];
+    loadCity();
+}
 
 
 function loadTimeatlocation(lon, lat, weatherTime) {
