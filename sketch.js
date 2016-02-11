@@ -109,6 +109,12 @@ function draw() {
     background(darkblue);
 
     if (weatherData) {
+        nightorday.display();
+        for (var i = 0; i < stars.length; i++) {
+            stars[i].display();   
+            stars[i].update();
+        }
+
         for (var i = clouds.length-1; i  > 0; i--) {
             clouds[i].update();
             clouds[i].display();
@@ -118,14 +124,6 @@ function draw() {
             }
         }
         weerbeer.display();
-        nightorday.display();
-
-        
-        for (var i = 0; i < stars.length; i++) {
-            stars[i].display();   
-            stars[i].update();
-        }
-
         temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {

@@ -56,14 +56,13 @@ function Starbynight(x,y, innerRadius, starBrightness) {
 
             
          } if (hours >= 6 && hours <= 18 ){
-                image(nightordayicon[0], this.x, this.y, this.size, this.size);
                 var offset = 20;   
                 var curveheight = 15;
                 var baseline = windowHeight * 0.56;
-                noStroke();
-                fill(255, 25);        
+                noStroke(); 
 
                 push();
+                fill(255, 5);       
                 translate(-20, 0);
                 beginShape();
                 curveVertex(-10, baseline);
