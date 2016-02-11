@@ -64,6 +64,19 @@ function reloadCity() {
     clouds = [];
 }
 
+function onPause() {
+    clouds = [];
+    raindrops = [];
+    clouds = [];
+}
+
+function onResume() {
+    clouds = [];
+    raindrops = [];
+    clouds = [];
+    loadCity();
+}
+
 
 function loadTimeatlocation(lon, lat, weatherTime) {
     var Gkey = '&key=AIzaSyBhAMl015DtFzNWm-jFGE2zqHqVMPmungg';
@@ -80,4 +93,5 @@ function calclocaltime(timedata) {
     hours = hours - 3; //correction for weather +3 hour prediction
     //01:00 -3 is not 22:00
     //calculation bug
+    console.log(hours);
 }

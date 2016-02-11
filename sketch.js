@@ -161,6 +161,7 @@ function keyPressed() {
 
 function clearPressed() {
     formCity.value('');
+	document.getElementById('formCity').focus();
 }
 
 function responsiveScaleCalc() {
@@ -174,10 +175,6 @@ function responsiveScaleCalc() {
         }
         return responsiveRatio;
 }
-
-document.addEventListener("deviceready", function(){
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
-}, false);
 
 function mobilesizes() {
     if (windowWidth < 372) { 
