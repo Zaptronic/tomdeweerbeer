@@ -155,6 +155,7 @@ function draw() {
 
 document.addEventListener("deviceready", function(){
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 3000 });
+    document.addEventListener("pause", onPause, false);
 }, false);
 
 
