@@ -66,10 +66,6 @@ var buttonF;
 var clearbutton;
 var formCity;
 
-document.addEventListener("deviceready", function(){
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
-}, false);
-
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
@@ -156,6 +152,12 @@ function draw() {
     ellipse(outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
     pop();
 }
+
+document.addEventListener("deviceready", function(){
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+}, false);
+
+
 function keyPressed() {
     if (keyCode === 13 ){
         reloadCity();
