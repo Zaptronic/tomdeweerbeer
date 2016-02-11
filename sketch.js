@@ -153,12 +153,6 @@ function draw() {
     pop();
 }
 
-document.addEventListener("deviceready", function(){
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 3000 });
-    document.addEventListener("pause", onPause, false);
-}, false);
-
-
 function keyPressed() {
     if (keyCode === 13 ){
         reloadCity();
@@ -192,3 +186,9 @@ function mobilesizes() {
         buttonSize = 60;
     }
 }
+
+document.addEventListener("deviceready", function(){
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 3000 });
+    document.addEventListener("pause", onPause, false);
+}, false);
+
