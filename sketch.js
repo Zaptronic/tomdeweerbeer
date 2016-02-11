@@ -189,6 +189,6 @@ function mobilesizes() {
 
 document.addEventListener("deviceready", function(){
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 3000 });
-    document.addEventListener("pause", onPause, false);
+//    document.addEventListener("pause", onPause, false);
 }, false);
 
