@@ -13,7 +13,7 @@
 		},
 	"\/doumentready.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/doumentready.js",
 		"outputAbbreviatedPath": "\/min\/doumentready-min.js",
@@ -1047,44 +1047,50 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/weathertype.js",
+			"linkedFileAbbreviatedPath": "\/doumentready.js",
 			"position": 1,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/rain.js",
+			"linkedFileAbbreviatedPath": "\/weathertype.js",
 			"position": 2,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/snow.js",
+			"linkedFileAbbreviatedPath": "\/rain.js",
 			"position": 3,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/wind.js",
+			"linkedFileAbbreviatedPath": "\/snow.js",
 			"position": 4,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/temperature.js",
+			"linkedFileAbbreviatedPath": "\/wind.js",
 			"position": 5,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/nightorday.js",
+			"linkedFileAbbreviatedPath": "\/temperature.js",
 			"position": 6,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/resize.js",
+			"linkedFileAbbreviatedPath": "\/nightorday.js",
 			"position": 7,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/resize.js",
+			"position": 8,
 			"type": 1
 			}
 		]
