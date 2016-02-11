@@ -124,7 +124,6 @@ function draw() {
             }
         }
         weerbeer.display();
-        temperaturePush();
 
         for (var i = raindrops.length-1; i  > 0; i--) {
             raindrops[i].update();
@@ -142,6 +141,7 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
+        temperaturePush();
     }   
     push();
     ellipseMode(CENTER);
