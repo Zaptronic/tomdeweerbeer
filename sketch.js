@@ -65,6 +65,7 @@ var tomyellow = [234,167,0];
 var buttonF;
 var clearbutton;
 var formCity;
+var errorpage;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -84,6 +85,7 @@ function setup() {
 //    
 
     mobilesizes();
+    errorpage = select('.errorpage');
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
     responsiveScaleCalc();
@@ -109,6 +111,7 @@ function draw() {
     background(darkblue);
 
     if (weatherData) {
+        errorpage.hide();
         nightorday.display();
         for (var i = 0; i < stars.length; i++) {
             stars[i].display();   
@@ -142,11 +145,12 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
-    } else {
-        text('Error!!! geen internet', 10, 10);
-        clearbutton.hide();
-        formCity.hide();
+    } if (!weatherData) {
+        error();
     }
+    
+    
+    
     push();
     ellipseMode(CENTER);
     fill(tomred);

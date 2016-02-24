@@ -55,10 +55,7 @@ function Weerbeer(x,y, weerbeersizer) {
              
          } if (weatherType >= 801 && weatherType < 900){
             push();
-            rectMode(CENTER);
-            noStroke();
-            fill(this.fillColor,76,255);
-            ellipse(this.x, this.y, this.radius, this.radius);
+            image(weathericon[2], this.x, this.y, this.radius, this.radius);
             pop();
             console.log('clouds');
              

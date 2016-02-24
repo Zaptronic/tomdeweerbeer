@@ -11,6 +11,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/error.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/error.js",
+		"outputAbbreviatedPath": "\/min\/error-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -59,7 +70,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4195,
+		"initialSize": 4211,
 		"inputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputPathIsOutsideProject": 0,
@@ -70,7 +81,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4779,
+		"initialSize": 4583,
 		"inputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputPathIsOutsideProject": 0,
@@ -595,7 +606,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 466431,
+		"initialSize": 521014,
 		"inputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
 		"outputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
 		"outputPathIsOutsideProject": 0,
@@ -628,9 +639,20 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 149782,
+		"initialSize": 378964,
 		"inputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
 		"outputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/tomtypes\/weather23.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 149782,
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather23.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather23.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1072,8 +1094,14 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/resize.js",
+			"linkedFileAbbreviatedPath": "\/error.js",
 			"position": 7,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/resize.js",
+			"position": 8,
 			"type": 1
 			}
 		]
