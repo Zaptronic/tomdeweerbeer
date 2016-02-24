@@ -142,7 +142,11 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
-    }   
+    } else {
+        text('Error!!! geen internet', 10, 10);
+        clearbutton.hide();
+        formCity.hide();
+    }
     push();
     ellipseMode(CENTER);
     fill(tomred);
@@ -176,7 +180,7 @@ function responsiveScaleCalc() {
 }
 
 document.addEventListener("deviceready", function(){
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 }, false);
 
 function mobilesizes() {
