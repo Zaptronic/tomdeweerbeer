@@ -1,6 +1,9 @@
 /*********************************************
- * Boilerplate scss
+ * Tom de weerbeer scss
  *********************************************/
+@font-face {
+  font-family: "tomfont";
+  src: url("../fonts/Cof.ttf") format("opentype"); }
 body {
   background: #1a2326;
   margin: 0;
@@ -26,7 +29,8 @@ p {
     position: relative;
     text-align: center;
     margin: auto;
-    margin-top: 48px; }
+    margin-top: 20px;
+    padding: 0 20px; }
     .container .zoekform .clearbutton {
       width: 32px;
       height: 32px;
@@ -36,7 +40,8 @@ p {
       border-radius: 16px;
       border: none;
       margin: 8px;
-      margin-left: -44px;
+      top: 0;
+      right: 24px;
       z-index: 99999; }
       .container .zoekform .clearbutton:hover {
         background-color: #ababab; }
@@ -45,14 +50,58 @@ p {
       .container .zoekform .clearbutton svg {
         width: 12px;
         margin-top: 1px; }
+      @media (min-width: 480px) {
+        .container .zoekform .clearbutton {
+          top: auto;
+          right: auto;
+          margin-left: -44px;
+          z-index: 99999; } }
+    @media (min-width: 360px) {
+      .container .zoekform {
+        margin-top: 30px; } }
   .container #formCity {
     box-sizing: border-box;
-    width: 280px;
+    width: 100%;
     height: 48px;
-    border-radius: 24px;
-    border: 1px solid #fff;
     padding-left: 20px;
-    font-size: 20px;
-    line-height: 16px; }
+    font-size: 18px;
+    line-height: 16px;
+    border: 1px solid #fff;
+    border-radius: 24px;
+    box-shadow: none !important;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)); }
     .container #formCity:focus {
       outline: none; }
+    @media (min-width: 480px) {
+      .container #formCity {
+        max-width: 355px; } }
+  .container .weeromschrijving {
+    font-family: 'tomfont';
+    color: white;
+    margin-top: 10px; }
+    .container .weeromschrijving .omschrijving {
+      font-size: 18px; }
+    .container .weeromschrijving .temperatuur {
+      font-size: 36px;
+      line-height: 32px; }
+    @media (min-width: 480px) {
+      .container .weeromschrijving {
+        text-align: center;
+        margin: 18px auto; }
+        .container .weeromschrijving p {
+          display: inline-block;
+          margin: 0; }
+        .container .weeromschrijving .omschrijving {
+          font-size: 30px;
+          margin-right: 28px; }
+          .container .weeromschrijving .omschrijving:after {
+            content: '';
+            position: absolute;
+            background: #72b6b7;
+            width: 6px;
+            height: 6px;
+            border-radius: 12px;
+            margin: 16px 8px 0 16px; }
+        .container .weeromschrijving .temperatuur {
+          font-size: 30px; } }

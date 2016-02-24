@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "19102",
+"creatorBuild": "19115",
 "files": {
 	"\/css\/main.css": {
 		"fileType": 16,
@@ -506,6 +506,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/res\/screen\/ios\/screen-iphone-portrait-5-2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 241867,
+		"inputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-5-2x.png",
+		"outputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-5-2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -580,46 +591,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather0.png": {
+	"\/images\/tomtypes\/weather0.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 446281,
-		"inputAbbreviatedPath": "\/images\/weather0.png",
-		"outputAbbreviatedPath": "\/images\/weather0.png",
+		"initialSize": 466431,
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather1.png": {
+	"\/images\/tomtypes\/weather1.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 80200,
-		"inputAbbreviatedPath": "\/images\/weather1.png",
-		"outputAbbreviatedPath": "\/images\/weather1.png",
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather1.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather1.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather2-cloud.png": {
+	"\/images\/tomtypes\/weather2-cloud.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 51720,
-		"inputAbbreviatedPath": "\/images\/weather2-cloud.png",
-		"outputAbbreviatedPath": "\/images\/weather2-cloud.png",
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather2-cloud.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather2-cloud.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/weather2.png": {
+	"\/images\/tomtypes\/weather2.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 149782,
-		"inputAbbreviatedPath": "\/images\/weather2.png",
-		"outputAbbreviatedPath": "\/images\/weather2.png",
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -769,6 +780,28 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/min\/doumentready-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/doumentready-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/doumentready-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/loadingfunctions kopie-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/loadingfunctions kopie-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/loadingfunctions kopie-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/min\/loadingfunctions-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -824,6 +857,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/min\/resize kopie-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/resize kopie-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/resize kopie-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/min\/resize-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -841,6 +885,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/min\/sketch-min.js",
 		"outputAbbreviatedPath": "\/min\/min\/sketch-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/temperature-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/temperature-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/temperature-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -934,6 +989,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/temperature.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/temperature.js",
+		"outputAbbreviatedPath": "\/min\/temperature-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/weathertype.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -994,14 +1060,20 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/nightorday.js",
+			"linkedFileAbbreviatedPath": "\/temperature.js",
 			"position": 5,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/resize.js",
+			"linkedFileAbbreviatedPath": "\/nightorday.js",
 			"position": 6,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/resize.js",
+			"position": 7,
 			"type": 1
 			}
 		]

@@ -32,7 +32,12 @@ function gotData(data){
     lat = data.city.coord.lat;
     formCity.value(city + ', ' + country);
     
-    windSpeed = data.list[0].wind.speed*1.2;
+    if (data.list[0].wind.speed) {
+        windSpeed = data.list[0].wind.speed*1.2;        
+    } else {
+        windSpeed = 1;
+    }
+
     
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
@@ -59,6 +64,22 @@ function reloadCity() {
     clouds = [];
 }
 
+function onPause() {
+    clouds = [];
+    raindrops = [];
+    clouds = [];
+    clearInterval(cloudPush);
+    clearInterval(raindropPush);
+    clearInterval(snowflakePush);
+}
+
+function onResume() {
+    clouds = [];
+    raindrops = [];
+    clouds = [];
+//    setInterval(cloudPush);
+}
+
 
 function loadTimeatlocation(lon, lat, weatherTime) {
     var Gkey = '&key=AIzaSyBhAMl015DtFzNWm-jFGE2zqHqVMPmungg';
@@ -72,10 +93,8 @@ function calclocaltime(timedata) {
     var localtime = timedata.rawOffset;
     time = new Date((usertime + localtime)*1000);
     hours = time.getHours();
-        console.log(localtime);
-        console.log(usertime);
-        console.log(time);
     hours = hours - 3; //correction for weather +3 hour prediction
     //01:00 -3 is not 22:00
     //calculation bug
+    console.log(hours);
 }

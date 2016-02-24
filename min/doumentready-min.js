@@ -1,0 +1,1 @@
+document.addEventListener("deviceready",function(){navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity,currentlocationerror,{timeout:3e4})},!1);

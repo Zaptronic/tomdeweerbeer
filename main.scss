@@ -1,6 +1,10 @@
 /*********************************************
- * Boilerplate scss
+ * Tom de weerbeer scss
  *********************************************/
+@font-face {
+    font-family: "tomfont";
+    src: url("../fonts/Cof.ttf") format("opentype");
+    }
 
 body {
 	background: rgb(26,35,38);
@@ -23,15 +27,13 @@ p {
     color: aqua;
     z-index: 99999;
     width: 100%;
-//    background: red;
 
     .zoekform {
-//        background: pink;
         position: relative;
         text-align: center;
-    //    left: 50%;
         margin: auto;
-        margin-top: 48px;
+        margin-top: 20px;
+        padding: 0 20px;
 
         .clearbutton {
             width: 32px;
@@ -42,7 +44,8 @@ p {
             border-radius: 16px;
             border: none;
             margin: 8px;
-            margin-left: -44px;
+            top: 0;
+            right: 24px;
             z-index: 99999;
             
             &:hover {
@@ -57,25 +60,78 @@ p {
                 width: 12px;
                 margin-top: 1px;
             }
+            @media (min-width: 480px) {
+                top: auto;
+                right: auto;
+                margin-left: -44px;
+                z-index: 99999;
+            }
+        }
+        @media (min-width: 360px) {
+                margin-top: 30px;
         }
     }
-    #button {
-//        z-index: 999999;
-    }
+
     #formCity {
         box-sizing: border-box;
-        width: 280px;
+        width: 100%;
         height: 48px;
-        border-radius: 24px;
-        border: 1px solid #fff;
         padding-left: 20px;
-//        padding-top: -30px;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 16px;
+        border: 1px solid #fff;
+        border-radius: 24px;
+        box-shadow: none !important;
+        background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,0)));
+        background-image:-webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
         
         &:focus {
             outline: none;
         }
+        @media (min-width: 480px) {
+            max-width: 355px;   
+        }
+    }
+    
+    .weeromschrijving {
+//        background: pink;
+        font-family: 'tomfont';
+        color: white;
+        margin-top: 10px;
         
+        .omschrijving {
+            font-size: 18px;
+        }
+        
+        .temperatuur {
+            font-size: 36px;
+            line-height: 32px;
+        }
+        
+        @media (min-width: 480px) {
+            text-align: center;
+            margin: 18px auto;
+            p {
+                display: inline-block;
+                margin: 0;
+            }
+            .omschrijving {
+                font-size: 30px;
+                margin-right: 28px;
+                
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: #72b6b7;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 12px;
+                    margin: 16px 8px 0 16px;
+                }
+            }
+            .temperatuur {
+                font-size: 30px;
+            }
+        }
     }
 }
