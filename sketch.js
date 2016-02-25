@@ -88,6 +88,15 @@ function setup() {
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
 
+    //used for complete array length
+    timer1 = new TimerObject(0, 1000, 32, 32);
+    timer1.counterclock();
+    
+    //used for instances in one push
+    timer2 = new TimerObject(0, 100, 32, 56);
+    timer2.counterclock();
+    
+    
     mobilesizes();
     errorpage = select('.errorpage');
     setInterval(loadInt, 1000000);
@@ -98,7 +107,7 @@ function setup() {
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
-//    cloudPush();
+    cloudPush();
 //    setInterval(cloudPush, 4000);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
@@ -109,19 +118,13 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();   
-    
-    timer1 = new TimerObject(0, 1000, 32, 32);
-    timer1.counterclock();
-    
-    timer2 = new TimerObject(0, 250, 32, 56);
-    timer2.counterclock();
 }
 
 function draw() {
     background(darkblue);
     cloudPush();
     
-    debug();
+//    debug();
 
     if (weatherData) {
         errorpage.hide();

@@ -70,7 +70,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4211,
+		"initialSize": 4195,
 		"inputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputAbbreviatedPath": "\/images\/nightorday0.png",
 		"outputPathIsOutsideProject": 0,
@@ -81,7 +81,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4583,
+		"initialSize": 4779,
 		"inputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputAbbreviatedPath": "\/images\/nightorday1.png",
 		"outputPathIsOutsideProject": 0,
@@ -606,7 +606,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 521014,
+		"initialSize": 466431,
 		"inputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
 		"outputAbbreviatedPath": "\/images\/tomtypes\/weather0.png",
 		"outputPathIsOutsideProject": 0,
@@ -639,7 +639,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 378964,
+		"initialSize": 149782,
 		"inputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
 		"outputAbbreviatedPath": "\/images\/tomtypes\/weather2.png",
 		"outputPathIsOutsideProject": 0,
@@ -1035,7 +1035,7 @@
 		},
 	"\/timer.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/timer.js",
 		"outputAbbreviatedPath": "\/min\/timer-min.js",
@@ -1080,56 +1080,50 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/timer.js",
+			"linkedFileAbbreviatedPath": "\/weathertype.js",
 			"position": 1,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/weathertype.js",
+			"linkedFileAbbreviatedPath": "\/rain.js",
 			"position": 2,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/rain.js",
+			"linkedFileAbbreviatedPath": "\/snow.js",
 			"position": 3,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/snow.js",
+			"linkedFileAbbreviatedPath": "\/wind.js",
 			"position": 4,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/wind.js",
+			"linkedFileAbbreviatedPath": "\/temperature.js",
 			"position": 5,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/temperature.js",
+			"linkedFileAbbreviatedPath": "\/nightorday.js",
 			"position": 6,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/nightorday.js",
+			"linkedFileAbbreviatedPath": "\/error.js",
 			"position": 7,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/error.js",
-			"position": 8,
-			"type": 1
-			},
-		{
-			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/resize.js",
-			"position": 9,
+			"position": 8,
 			"type": 1
 			}
 		]

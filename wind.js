@@ -6,10 +6,10 @@ function cloudPush() {
     cloudpicker = floor(random(2));
 //    console.log(windSpeed);
     
-    if ((timer2.counter() % 2 && random(100) < 1) && clouds.length < cloudAmount) {
+    if ((timer1.counter() % 2 && random(100) < 1) && (timer2.counter() % 3) && clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
                     random(windowHeight*0.45, windowHeight*0.6), 
-                    round(random(10,100)),
+                    round(random(60,120)),
                     cloudpicker
         ));
     }
@@ -31,7 +31,8 @@ function Cloud(x,y,lifespan, cloudpicker) {
     
     this.display = function() {
         push();
-        translate(this.translation, 0);
+        translate(this.translate, 0);
+        text(this.lifespan, this.x, this.y - 32);
         imageMode(CENTER);
         image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);
         pop();
@@ -55,13 +56,16 @@ function Cloud(x,y,lifespan, cloudpicker) {
 		 }
 	}
     this.intersectcheck = function(othercloud) {
-        if (this.x < othercloud.x + this.width) {
+        var dis = dist(this.x, this.y, othercloud.x, othercloud.y);
+        if (dis < this.x + othercloud.x || dis < this.y + othercloud.y) {
             return true;
         } else {
             return false;
         }       
     }
     this.intersecting = function() {
-        this.lifespan = this.lifespan -2;
+//        this.lifespan = this.lifespan -2;
+//        console.log('hit');
+        this.translate = -(this.width + 10);
     }
 }
