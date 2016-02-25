@@ -6,7 +6,7 @@ function cloudPush() {
     cloudpicker = floor(random(2));
 //    console.log(windSpeed);
     
-    if (clouds.length < cloudAmount) {
+    if ((timer2.counter() % 2 && random(100) < 1) && clouds.length < cloudAmount) {
          clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
                     random(windowHeight*0.45, windowHeight*0.6), 
                     round(random(10,100)),
@@ -27,9 +27,11 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.windmovementX = this.windSpeedMotion * this.windowRatioSpeed;
     this.fadeInX = 0;
     this.fadeOutX = windowWidth;
+    this.translate = 0;
     
     this.display = function() {
         push();
+        translate(this.translation, 0);
         imageMode(CENTER);
         image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);
         pop();
@@ -52,4 +54,14 @@ function Cloud(x,y,lifespan, cloudpicker) {
 			return false;
 		 }
 	}
+    this.intersectcheck = function(othercloud) {
+        if (this.x < othercloud.x + this.width) {
+            return true;
+        } else {
+            return false;
+        }       
+    }
+    this.intersecting = function() {
+        this.lifespan = this.lifespan -2;
+    }
 }

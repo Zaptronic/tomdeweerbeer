@@ -67,6 +67,10 @@ var clearbutton;
 var formCity;
 var errorpage;
 
+
+var timer1;
+var timer2;
+
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
     cnv.position (0,0);
@@ -81,7 +85,7 @@ function setup() {
     }
 
     //   alleen voor testen in browser
-//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
 
     mobilesizes();
@@ -94,8 +98,8 @@ function setup() {
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
-    cloudPush();
-    setInterval(cloudPush, 4000);
+//    cloudPush();
+//    setInterval(cloudPush, 4000);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
     nightordayPush();
@@ -105,10 +109,19 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();   
+    
+    timer1 = new TimerObject(0, 1000, 32, 32);
+    timer1.counterclock();
+    
+    timer2 = new TimerObject(0, 250, 32, 56);
+    timer2.counterclock();
 }
 
 function draw() {
     background(darkblue);
+    cloudPush();
+    
+    debug();
 
     if (weatherData) {
         errorpage.hide();
@@ -121,6 +134,12 @@ function draw() {
         for (var i = clouds.length-1; i  > 0; i--) {
             clouds[i].update();
             clouds[i].display();
+            
+            for (var j = clouds.length-1; j > 0; j--) {
+                if (i!=j && clouds[i].intersectcheck(clouds[j])) {
+                    clouds[j].intersecting();
+                }
+            }
         
             if (clouds[i].lifespancheck()) {
             clouds.splice(i,1);
