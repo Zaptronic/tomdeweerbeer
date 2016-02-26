@@ -118,7 +118,6 @@ function setup() {
 function draw() {
     background(darkblue);
     currentclouds();
-    console.log(currentcloudpusher);
     cloudPush();
     
 
@@ -134,11 +133,11 @@ function draw() {
             clouds[i].update();
             clouds[i].display();
             
-            for (var j = clouds.length-1; j > 0; j--) {
-                if (i!=j && clouds[i].intersectcheck(clouds[j])) {
-                    clouds[j].intersecting();
-                }
-            }
+//            for (var j = clouds.length-1; j > 0; j--) {
+//                if (i!=j && clouds[i].intersectcheck(clouds[j])) {
+//                    clouds[j].intersecting();
+//                }
+//            }
         
             if (clouds[i].lifespancheck()) {
             clouds.splice(i,1);

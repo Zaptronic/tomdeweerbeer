@@ -67,16 +67,16 @@ function Cloud(x,y,lifespan, cloudpicker) {
 			return false;
 		 }
 	}
-    this.intersectcheck = function(othercloud) {
-        var dis = dist(this.x, this.y, othercloud.x, othercloud.y);
-        if (dis < this.radius) {
-            return true;
-        } else {
-            return false;
-        }       
-    }
-    this.intersecting = function() {
-        this.translate = this.radius + 10;
-//        othercloud.translate = -(othercloud.radius);
-    }
+//    this.intersectcheck = function(othercloud) {
+//        var dis = dist(this.x, this.y, othercloud.x, othercloud.y);
+//        if (dis < this.radius) {
+//            return true;
+//        } else {
+//            return false;
+//        }       
+//    }
+//    this.intersecting = function() {
+//        this.translate = this.radius + 10;
+////        othercloud.translate = -(othercloud.radius);
+//    }
 }
