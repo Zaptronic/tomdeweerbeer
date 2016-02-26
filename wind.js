@@ -1,28 +1,22 @@
 function cloudPush() {
-    var cloudPosxA = -(windowWidth / 5);
-    var cloudPosxB = -100;
+    var cloudPosXGrid = [-10, -110, -210];
+    var cloudPosXpicker = floor(random(cloudPosXGrid.length));
+    var cloudPosX = cloudPosXGrid[cloudPosXpicker];
+    var cloudPosYGrid = [windowHeight*0.4, windowHeight*0.5, windowHeight*0.6, windowHeight*0.7];
+    var cloudPosYpicker = floor(random(cloudPosYGrid.length));
+    var cloudPosY = cloudPosYGrid[cloudPosYpicker];
+    var cloudLifespan = round(random(10,80));
     var cloudRatio = windowWidth / 100;
-//    var cloudAmount = 2;
     var cloudAmount = round(cloudRatio);
     cloudpicker = floor(random(2));
-//    console.log(cloudAmount);
+    
     if (clouds.length <= cloudAmount && weatherData) {
      
-        if (second() % 2 == 0 && random(100) < 70 && currentcloudpusher == 0) {
-             clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
-                        random(windowHeight*0.45, windowHeight*0.6), 
-                        round(random(10,80)),
-                        cloudpicker
+        if (second() % 2 == 0 && random(1000) < 40) {
+             clouds.push(new Cloud( cloudPosX,
+                        cloudPosY, cloudLifespan, cloudpicker
             ));
         } 
-    }
-}
-//timer1.counter() % 10 == 0 && 
-function currentclouds() {
-    if (timer1.counter() % 10 == 0 && currentcloudpusher <= 2) {
-        currentcloudpusher++;
-    } else {
-        currentcloudpusher = 0;
     }
 }
 
@@ -68,34 +62,3 @@ function Cloud(x,y,lifespan, cloudpicker) {
 		 }
 	}
 }
-
-
-
-
-//function cloudPush() {
-//    var cloudPosxA = -(windowWidth / 5);
-//    var cloudPosxB = -100;
-//    var cloudRatio = windowWidth / 100;
-////    var cloudAmount = 2;
-//    var cloudAmount = round(cloudRatio);
-//    cloudpicker = floor(random(2));
-////    console.log(cloudAmount);
-//    if (clouds.length <= cloudAmount && weatherData) {
-//     
-//        if (second() % 2 == 0 && random(100) < 10 && currentcloudpusher >= 1) {
-//             clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
-//                        random(windowHeight*0.45, windowHeight*0.6), 
-//                        round(random(10,80)),
-//                        cloudpicker
-//            ));
-//        } 
-//    }
-//}
-////timer1.counter() % 10 == 0 && 
-//function currentclouds() {
-//    if (timer1.counter() % 10 == 0 && currentcloudpusher <= 2) {
-//        currentcloudpusher++;
-//    } else {
-//        currentcloudpusher = 0;
-//    }
-//}

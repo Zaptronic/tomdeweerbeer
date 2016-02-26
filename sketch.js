@@ -67,7 +67,7 @@ var clearbutton;
 var formCity;
 var errorpage;
 
-var currentcloudpusher = 0;
+//var currentcloudpusher = 0;
 
 var timer1;
 
@@ -111,17 +111,19 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();
-    
-    setTimeout(cloudPush, 500);
-    setInterval(cloudPush, 1500);
-//    setInterval(    currentclouds, 1000);
+    setTimeout(cloudPush, 400);
+//    setInterval(cloudPush, 1500);
 }
 
 function draw() {
     background(darkblue);
+    if (timer1.counter() % 10 == 0) {
+        cloudPush();
+        console.log('hitme');
+    }
 //    cloudPush();
-    currentclouds();
-    console.log(currentcloudpusher);
+//    currentclouds();
+//    console.log(currentcloudpusher);
 
     if (weatherData) {
         errorpage.hide();
