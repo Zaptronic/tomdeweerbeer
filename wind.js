@@ -1,8 +1,8 @@
 function cloudPush() {
-    var cloudPosXGrid = [-10, -110, -210];
+    var cloudPosXGrid = [-120, -240, -360];
     var cloudPosXpicker = floor(random(cloudPosXGrid.length));
     var cloudPosX = cloudPosXGrid[cloudPosXpicker];
-    var cloudPosYGrid = [windowHeight*0.4, windowHeight*0.5, windowHeight*0.6, windowHeight*0.7];
+    var cloudPosYGrid = [windowHeight*0.4, windowHeight*0.5, windowHeight*0.6];
     var cloudPosYpicker = floor(random(cloudPosYGrid.length));
     var cloudPosY = cloudPosYGrid[cloudPosYpicker];
     var cloudLifespan = round(random(10,80));
@@ -12,7 +12,7 @@ function cloudPush() {
     
     if (clouds.length <= cloudAmount && weatherData) {
      
-        if (second() % 2 == 0 && random(1000) < 40) {
+        if (second() % 2 == 0 && random(1000) < 50) {
              clouds.push(new Cloud( cloudPosX,
                         cloudPosY, cloudLifespan, cloudpicker
             ));
@@ -24,16 +24,14 @@ function cloudPush() {
 function Cloud(x,y,lifespan, cloudpicker) {
     this.x = x;
     this.y = y;
-    this.radius = 100;
     this.lifespan = lifespan;
-    this.width = 100 * responsiveRatio;
-    this.height = 80 * responsiveRatio;
+    this.width = 120 * responsiveRatio;
+    this.height = 96 * responsiveRatio;
     this.windSpeedMotion = map(windSpeed, 0, 32.7, 1, 6);
     this.windowRatioSpeed = windowWidth/1000;
-    this.windmovementX = this.windSpeedMotion * this.windowRatioSpeed;
+    this.windmovementX = this.windSpeedMotion; this.windowRatioSpeed;
     this.fadeInX = 0;
     this.fadeOutX = windowWidth;
-    this.translate = 0;
     
     this.display = function() {
         push();
@@ -48,7 +46,7 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.update = function() {
         this.x = this.x + this.windmovementX;
         if (this.x < this.fadeInX) {
-            this.lifespan+= 0.5;
+            this.lifespan += 0.5;
         } if (this.x > this.fadeOutX) {
             this.lifespan--;
         }

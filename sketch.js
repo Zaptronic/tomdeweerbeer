@@ -111,23 +111,21 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();
-    setTimeout(cloudPush, 400);
+    setTimeout(cloudPush, 100);
 //    setInterval(cloudPush, 1500);
 }
 
 function draw() {
     background(darkblue);
-    if (timer1.counter() % 10 == 0) {
-        cloudPush();
-        console.log('hitme');
-    }
-//    cloudPush();
-//    currentclouds();
-//    console.log(currentcloudpusher);
 
     if (weatherData) {
         errorpage.hide();
         nightorday.display();
+        
+        if (timer1.counter() % 10 == 0) {
+            cloudPush();
+        }
+        
         for (var i = 0; i < stars.length; i++) {
             stars[i].display();   
             stars[i].update();
@@ -136,17 +134,12 @@ function draw() {
         for (var i = clouds.length-1; i  > 0; i--) {
             clouds[i].update();
             clouds[i].display();
-            
-//            for (var j = clouds.length-1; j > 0; j--) {
-//                if (i!=j && clouds[i].intersectcheck(clouds[j])) {
-//                    clouds[j].intersecting();
-//                }
-//            }
         
             if (clouds[i].lifespancheck()) {
             clouds.splice(i,1);
             }
         }
+        
         weerbeer.display();
         temperaturePush();
 
