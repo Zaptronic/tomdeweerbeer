@@ -24,13 +24,12 @@ function debug() {
     fill(255,0,0);
     textSize(24);
     timer1.display();
-    timer2.display();
     pop();
     push();
     fill(255,0,0);
     textSize(64);
     var rate = floor(frameRate());
-    text(rate, 32, 120);
+    text(rate, 32, windowHeight - 64);
     pop();
 
 }

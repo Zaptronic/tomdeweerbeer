@@ -69,7 +69,6 @@ var errorpage;
 
 
 var timer1;
-var timer2;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -89,13 +88,8 @@ function setup() {
 //    
 
     //used for complete array length
-    timer1 = new TimerObject(0, 1000, 32, 32);
+    timer1 = new TimerObject(0, 100, 32, windowHeight - 32);
     timer1.counterclock();
-    
-    //used for instances in one push
-    timer2 = new TimerObject(0, 100, 32, 56);
-    timer2.counterclock();
-    
     
     mobilesizes();
     errorpage = select('.errorpage');
@@ -123,8 +117,6 @@ function setup() {
 function draw() {
     background(darkblue);
     cloudPush();
-    
-//    debug();
 
     if (weatherData) {
         errorpage.hide();
@@ -181,6 +173,8 @@ function draw() {
     fill(255);
     ellipse(outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
     pop();
+    
+//    debug();
 }
 function keyPressed() {
     if (keyCode === 13 ){
