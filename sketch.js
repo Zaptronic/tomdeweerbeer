@@ -122,6 +122,7 @@ function draw() {
         errorpage.hide();
         nightorday.display();
         
+        //cloudpush counter die bij de eerste oproeping van de clouds altijd een cloudpush veroozaakt en na de eerste puses overgaat in de timer datb wordt dan de else
         if (timer1.counter() % 10 == 0) {
             cloudPush();
         }
