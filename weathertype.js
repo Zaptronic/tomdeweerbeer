@@ -57,7 +57,6 @@ function Weerbeer(x,y, weerbeersizer) {
             push();
             image(weathericon[2], this.x, this.y, this.radius, this.radius);
             pop();
-            console.log('clouds');
              
          } if (weatherType >= 900){
             push();

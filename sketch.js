@@ -67,6 +67,7 @@ var clearbutton;
 var formCity;
 var errorpage;
 
+var currentcloudpusher = 0;
 
 var timer1;
 
@@ -101,7 +102,7 @@ function setup() {
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
-    cloudPush();
+    setTimeout(cloudPush, 100);
 //    setInterval(cloudPush, 4000);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
@@ -116,7 +117,10 @@ function setup() {
 
 function draw() {
     background(darkblue);
+    currentclouds();
+    console.log(currentcloudpusher);
     cloudPush();
+    
 
     if (weatherData) {
         errorpage.hide();
