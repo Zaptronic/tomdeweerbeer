@@ -85,7 +85,7 @@ function setup() {
     }
 
     //   alleen voor testen in browser
-//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
 
     //used for complete array length
@@ -102,8 +102,6 @@ function setup() {
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
-    setTimeout(cloudPush, 100);
-//    setInterval(cloudPush, 4000);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
     nightordayPush();
@@ -112,14 +110,18 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
-    keyPressed();   
+    keyPressed();
+    
+    setTimeout(cloudPush, 500);
+    setInterval(cloudPush, 1500);
+//    setInterval(    currentclouds, 1000);
 }
 
 function draw() {
     background(darkblue);
+//    cloudPush();
     currentclouds();
-    cloudPush();
-    
+    console.log(currentcloudpusher);
 
     if (weatherData) {
         errorpage.hide();

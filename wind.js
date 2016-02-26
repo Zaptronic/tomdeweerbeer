@@ -8,7 +8,7 @@ function cloudPush() {
 //    console.log(cloudAmount);
     if (clouds.length <= cloudAmount && weatherData) {
      
-        if (second() % 2 == 0 && random(100) < 10 && currentcloudpusher >= 1) {
+        if (second() % 2 == 0 && random(100) < 70 && currentcloudpusher == 0) {
              clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
                         random(windowHeight*0.45, windowHeight*0.6), 
                         round(random(10,80)),
@@ -17,7 +17,7 @@ function cloudPush() {
         } 
     }
 }
-
+//timer1.counter() % 10 == 0 && 
 function currentclouds() {
     if (timer1.counter() % 10 == 0 && currentcloudpusher <= 2) {
         currentcloudpusher++;
@@ -67,16 +67,35 @@ function Cloud(x,y,lifespan, cloudpicker) {
 			return false;
 		 }
 	}
-//    this.intersectcheck = function(othercloud) {
-//        var dis = dist(this.x, this.y, othercloud.x, othercloud.y);
-//        if (dis < this.radius) {
-//            return true;
-//        } else {
-//            return false;
-//        }       
-//    }
-//    this.intersecting = function() {
-//        this.translate = this.radius + 10;
-////        othercloud.translate = -(othercloud.radius);
-//    }
 }
+
+
+
+
+//function cloudPush() {
+//    var cloudPosxA = -(windowWidth / 5);
+//    var cloudPosxB = -100;
+//    var cloudRatio = windowWidth / 100;
+////    var cloudAmount = 2;
+//    var cloudAmount = round(cloudRatio);
+//    cloudpicker = floor(random(2));
+////    console.log(cloudAmount);
+//    if (clouds.length <= cloudAmount && weatherData) {
+//     
+//        if (second() % 2 == 0 && random(100) < 10 && currentcloudpusher >= 1) {
+//             clouds.push(new Cloud(random(cloudPosxA,cloudPosxB),
+//                        random(windowHeight*0.45, windowHeight*0.6), 
+//                        round(random(10,80)),
+//                        cloudpicker
+//            ));
+//        } 
+//    }
+//}
+////timer1.counter() % 10 == 0 && 
+//function currentclouds() {
+//    if (timer1.counter() % 10 == 0 && currentcloudpusher <= 2) {
+//        currentcloudpusher++;
+//    } else {
+//        currentcloudpusher = 0;
+//    }
+//}
