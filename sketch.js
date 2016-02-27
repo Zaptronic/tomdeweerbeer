@@ -109,8 +109,7 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();
-//    setTimeout(cloudPush, 100);
-//    setInterval(cloudPush, 1500);
+
 }
 
 function draw() {
