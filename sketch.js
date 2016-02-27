@@ -83,8 +83,9 @@ function setup() {
     }
 
     //   alleen voor testen in browser
-    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
+    
 
     timer1 = new TimerObject(0, 100, 32, windowHeight - 32);
     timer1.counterclock();
