@@ -86,7 +86,6 @@ function setup() {
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
 
-    //used for complete array length
     timer1 = new TimerObject(0, 100, 32, windowHeight - 32);
     timer1.counterclock();
     
