@@ -45,8 +45,8 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.width = 120 * responsiveRatio;
     this.height = 96 * responsiveRatio;
     this.windSpeedMotion = map(windSpeed, 0, 32.7, 1, 6);
-    this.windowRatioSpeed = windowWidth/1000;
-    this.windmovementX = this.windSpeedMotion; this.windowRatioSpeed;
+    this.windowRatioSpeed = 1000/windowWidth;
+    this.windmovementX = this.windSpeedMotion * this.windowRatioSpeed;
     this.fadeInX = 0;
     this.fadeOutX = windowWidth;
     
