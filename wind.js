@@ -1,3 +1,18 @@
+var currentcloudpush = 0;
+
+function cloudpushControl() {
+    if (currentcloudpush < 50) {
+        currentcloudpush++;        
+    } else {
+        currentcloudpush = currentcloudpush;
+    }
+    if (currentcloudpush <= 3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function cloudPush() {
     var cloudPosXGrid = [-120, -240, -360];
     var cloudPosXpicker = floor(random(cloudPosXGrid.length));
@@ -10,13 +25,15 @@ function cloudPush() {
     var cloudAmount = round(cloudRatio);
     cloudpicker = floor(random(2));
     
-    if (clouds.length <= cloudAmount && weatherData) {
+    if (clouds.length <= cloudAmount && weatherData && cloudpushControl() == false) {
      
         if (second() % 2 == 0 && random(1000) < 50) {
              clouds.push(new Cloud( cloudPosX,
                         cloudPosY, cloudLifespan, cloudpicker
             ));
         } 
+    } else if (clouds.length <= cloudAmount && weatherData && cloudpushControl() == true) {
+        clouds.push(new Cloud( cloudPosX, cloudPosY, cloudLifespan, cloudpicker));
     }
 }
 
@@ -35,7 +52,6 @@ function Cloud(x,y,lifespan, cloudpicker) {
     
     this.display = function() {
         push();
-        translate(this.translate, this.translate);
 //        text(this.lifespan, this.x, this.y - 32);
         imageMode(CENTER);
         image(cloudicons[cloudpicker], this.x, this.y, this.width, this.height);

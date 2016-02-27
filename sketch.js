@@ -1,5 +1,3 @@
-//todo: error message in case mobile data is off
-
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 var city = 'Amsterdam, NL';
@@ -88,7 +86,6 @@ function setup() {
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
 
-    //used for complete array length
     timer1 = new TimerObject(0, 100, 32, windowHeight - 32);
     timer1.counterclock();
     
@@ -111,8 +108,6 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();
-//    setTimeout(cloudPush, 100);
-//    setInterval(cloudPush, 1500);
 }
 
 function draw() {
@@ -122,10 +117,9 @@ function draw() {
         errorpage.hide();
         nightorday.display();
         
-//                    cloudPush();
-        if (timer1.counter() % 10 == 0) {
+        if (timer1.counter() % 10 == 0 && weatherType != 800) {
             cloudPush();
-        }
+        }    
         
         for (var i = 0; i < stars.length; i++) {
             stars[i].display();   
