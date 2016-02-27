@@ -1,5 +1,3 @@
-//todo: error message in case mobile data is off
-
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 var city = 'Amsterdam, NL';
@@ -111,7 +109,7 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     keyPressed();
-    setTimeout(cloudPush, 100);
+//    setTimeout(cloudPush, 100);
 //    setInterval(cloudPush, 1500);
 }
 
@@ -122,10 +120,9 @@ function draw() {
         errorpage.hide();
         nightorday.display();
         
-        //cloudpush counter die bij de eerste oproeping van de clouds altijd een cloudpush veroozaakt en na de eerste puses overgaat in de timer datb wordt dan de else
-        if (timer1.counter() % 10 == 0) {
+        if (timer1.counter() % 10 == 0 && weatherType != 800) {
             cloudPush();
-        }
+        }    
         
         for (var i = 0; i < stars.length; i++) {
             stars[i].display();   

@@ -33,7 +33,7 @@ function gotData(data){
     formCity.value(city + ', ' + country);
     
     if (data.list[0].wind.speed) {
-        windSpeed = data.list[0].wind.speed*1.2;        
+        windSpeed = data.list[0].wind.speed;        
     } else {
         windSpeed = 1;
     }
@@ -62,6 +62,7 @@ function gotData(data){
 function reloadCity() {
     loadCity();
     clouds = [];
+    currentcloudpush = 0;
 }
 
 function onPause() {
