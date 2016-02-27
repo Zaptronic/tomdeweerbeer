@@ -1,5 +1,3 @@
-//todo: error message in case mobile data is off
-
 //var weather;
 var baseurl = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 var city = 'Amsterdam, NL';
@@ -65,6 +63,11 @@ var tomyellow = [234,167,0];
 var buttonF;
 var clearbutton;
 var formCity;
+var errorpage;
+
+//var currentcloudpusher = 0;
+
+var timer1;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -80,10 +83,15 @@ function setup() {
     }
 
     //   alleen voor testen in browser
-//    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
+    
 
+    timer1 = new TimerObject(0, 100, 32, windowHeight - 32);
+    timer1.counterclock();
+    
     mobilesizes();
+    errorpage = select('.errorpage');
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
     responsiveScaleCalc();
@@ -92,8 +100,6 @@ function setup() {
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
-    cloudPush();
-    setInterval(cloudPush, 4000);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
     nightordayPush();
@@ -102,14 +108,20 @@ function setup() {
     tempColorMappedR = 200;
     tempColorMappedR = 200;
     tempColorMappedR = 200;
-    keyPressed();   
+    keyPressed();
 }
 
 function draw() {
     background(darkblue);
 
     if (weatherData) {
+        errorpage.hide();
         nightorday.display();
+        
+        if (timer1.counter() % 10 == 0 && weatherType != 800) {
+            cloudPush();
+        }    
+        
         for (var i = 0; i < stars.length; i++) {
             stars[i].display();   
             stars[i].update();
@@ -123,6 +135,7 @@ function draw() {
             clouds.splice(i,1);
             }
         }
+        
         weerbeer.display();
         temperaturePush();
 
@@ -142,11 +155,12 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
-    } else {
-        text('Error!!! geen internet', 10, 10);
-        clearbutton.hide();
-        formCity.hide();
+    } if (!weatherData) {
+        error();
     }
+    
+    
+    
     push();
     ellipseMode(CENTER);
     fill(tomred);
@@ -155,6 +169,8 @@ function draw() {
     fill(255);
     ellipse(outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
     pop();
+    
+//    debug();
 }
 function keyPressed() {
     if (keyCode === 13 ){
