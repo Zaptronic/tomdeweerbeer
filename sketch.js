@@ -94,10 +94,10 @@ function setup() {
     errorpage = select('.errorpage');
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
-    formCity.mousePressed(clearPressed);
     responsiveScaleCalc();
     fill(255);
-    clearbutton = select('.clearbutton');
+    searchpage = select('.searchpage');
+    clearbutton = select('.searchbutton');
     clearbutton.mousePressed(clearPressed);
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
@@ -174,13 +174,20 @@ function draw() {
 //    debug();
 }
 function keyPressed() {
-    if (keyCode === 13 ){
-        reloadCity();
+    if (keyCode === 13){
+		reloadCity();
 		document.activeElement.blur();
-        clearbutton.removeClass('clearbutton__hide');
-        clearbutton.addClass('clearbutton__show');
-
+		clearbutton.show();
+        searchpage.removeClass('searchpage__show');
+        searchpage.addClass('searchpage__hide');
     }
+}
+
+function resetForm(form)  {
+    form.focus(); //test to see if this works on ios
+    form.select();
+    form.myButton.disabled = false;
+    form.myButton.value = "Submit";
 }
 
 //clear formfield by clicking on it
@@ -189,9 +196,13 @@ function keyPressed() {
 //activate the searchmode
 
 function clearPressed() {
-    formCity.value('');
-    clearbutton.removeClass('clearbutton__show');
-    clearbutton.addClass('clearbutton__hide');
+    formCity.value('');		
+	clearbutton.hide();
+    searchpage.removeClass('searchpage__hide');
+    searchpage.addClass('searchpage__show');
+    //clearbutton.removeClass('searchpage__hide');
+    //clearbutton.addClass('searchpage__show');
+	//not button but first select searchpage and then addclass to page
 }
 
 

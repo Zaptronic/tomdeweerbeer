@@ -1,0 +1,101 @@
+$background-color: rgb(26,35,38);
+
+/*********************************************
+ * searchpage
+ *********************************************/
+.searchpage {
+    overflow: hidden;
+    position: absolute;
+    color: aqua;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+//    opacity: 0.5;
+//    display: none;
+    transition: background-color 150ms ease-out;
+
+    &__hide {
+        display: none;           
+    }
+
+    &__show {
+        display: block;
+        background-color: $background-color;    
+    }
+
+    .zoekform {
+        position: relative;
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
+        padding: 0 20px;
+
+        .searchbutton {
+            width: 32px;
+            height: 32px;
+            position: relative;
+            position: absolute;
+            margin: auto;
+            display: hide;
+            background: lightgrey;
+            border-radius: 16px;
+            border: none;
+            margin: 8px;
+            top: 0;
+            right: 24px;
+            z-index: 99999;
+            
+            &:hover {
+                background-color: #ababab; 
+            }
+            
+            &:focus {
+                outline: none;
+            }
+            
+            &__hide {
+                display: none;
+            }
+            
+            &__show {
+                display: block;
+				background: red;
+			}
+            
+            &__svg {
+                width: 12px;
+                margin-top: 1px;
+            }
+            @media (min-width: 480px) {
+                top: auto;
+                right: auto;
+                margin-left: -44px;
+                z-index: 99999;
+            }
+        }
+        @media (min-width: 360px) {
+                margin-top: 30px;
+        }
+    }
+
+    #formCity {
+        box-sizing: border-box;
+        width: 100%;
+        height: 48px;
+        padding-left: 20px;
+        font-size: 18px;
+        line-height: 16px;
+        border: 1px solid #fff;
+        border-radius: 24px;
+        box-shadow: none !important;
+        background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,0)));
+        background-image:-webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
+        
+        &:focus {
+            outline: none;
+        }
+        @media (min-width: 480px) {
+            max-width: 355px;   
+        }
+    }
+}
