@@ -33,35 +33,57 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/clouds0.png": {
+	"\/images\/clouds\/clouds0.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 2034,
-		"inputAbbreviatedPath": "\/images\/clouds0.png",
-		"outputAbbreviatedPath": "\/images\/clouds0.png",
+		"initialSize": 5029,
+		"inputAbbreviatedPath": "\/images\/clouds\/clouds0.png",
+		"outputAbbreviatedPath": "\/images\/clouds\/clouds0.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/clouds1.png": {
+	"\/images\/clouds\/clouds1.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 2169,
-		"inputAbbreviatedPath": "\/images\/clouds1.png",
-		"outputAbbreviatedPath": "\/images\/clouds1.png",
+		"initialSize": 6825,
+		"inputAbbreviatedPath": "\/images\/clouds\/clouds1.png",
+		"outputAbbreviatedPath": "\/images\/clouds\/clouds1.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/clouds2.png": {
+	"\/images\/clouds\/clouds2.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1445,
-		"inputAbbreviatedPath": "\/images\/clouds2.png",
-		"outputAbbreviatedPath": "\/images\/clouds2.png",
+		"initialSize": 5116,
+		"inputAbbreviatedPath": "\/images\/clouds\/clouds2.png",
+		"outputAbbreviatedPath": "\/images\/clouds\/clouds2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/clouds\/clouds3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5098,
+		"inputAbbreviatedPath": "\/images\/clouds\/clouds3.png",
+		"outputAbbreviatedPath": "\/images\/clouds\/clouds3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/clouds\/clouds4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7495,
+		"inputAbbreviatedPath": "\/images\/clouds\/clouds4.png",
+		"outputAbbreviatedPath": "\/images\/clouds\/clouds4.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -537,7 +559,7 @@
 		"outputAbbreviatedPath": "\/images\/res\/screen\/ios\/screen-iphone-portrait-568h-2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/images\/res\/screen\/ios\/screen-iphone-portrait.png": {
 		"fileType": 32768,

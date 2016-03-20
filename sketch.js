@@ -75,8 +75,8 @@ function setup() {
 	for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/tomtypes/weather'+i+'.png');   
     }
-    for (var i = 0; i < 3; i++) {
-        cloudicons[i] = loadImage('images/clouds'+i+'.png');
+    for (var i = 0; i < 4; i++) {
+        cloudicons[i] = loadImage('images/clouds/clouds'+i+'.png');
     }
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
@@ -94,6 +94,7 @@ function setup() {
     errorpage = select('.errorpage');
     setInterval(loadInt, 1000000);
     formCity = select('#formCity');
+    formCity.mousePressed(clearPressed);
     responsiveScaleCalc();
     fill(255);
     clearbutton = select('.clearbutton');
@@ -176,12 +177,23 @@ function keyPressed() {
     if (keyCode === 13 ){
         reloadCity();
 		document.activeElement.blur();
+        clearbutton.removeClass('clearbutton__hide');
+        clearbutton.addClass('clearbutton__show');
+
     }
 }
 
+//clear formfield by clicking on it
+//works faster and is more clwar to the user
+//add search button for realoadCity;
+//activate the searchmode
+
 function clearPressed() {
     formCity.value('');
+    clearbutton.removeClass('clearbutton__show');
+    clearbutton.addClass('clearbutton__hide');
 }
+
 
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);

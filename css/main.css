@@ -55,7 +55,8 @@ p {
   position: absolute;
   color: aqua;
   z-index: 99999;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
   .container .zoekform {
     position: relative;
     text-align: center;
@@ -78,6 +79,10 @@ p {
         background-color: #ababab; }
       .container .zoekform .clearbutton:focus {
         outline: none; }
+      .container .zoekform .clearbutton__hide {
+        display: none; }
+      .container .zoekform .clearbutton__show {
+        display: inline-block; }
       .container .zoekform .clearbutton svg {
         width: 12px;
         margin-top: 1px; }
