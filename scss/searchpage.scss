@@ -1,7 +1,7 @@
 $background-color: rgb(26,35,38);
 $tom-yellow: rgb(234,167,0);
 $trans-time: 150ms;
-$trans-delay: 250ms;
+$trans-delay: 500ms;
 
 /*********************************************
  * searchpage
@@ -17,7 +17,8 @@ $trans-delay: 250ms;
 }    
 
 .searchpage {
-    display: none;
+    display: block;
+    opacity: 0;
     overflow: hidden;
     position: absolute;
     color: aqua;
@@ -27,12 +28,13 @@ $trans-delay: 250ms;
     background-color: $background-color;
     
     &__transout {
-        display: block;
+//        display: block;
         animation: reverseslide $trans-time ease-in-out $trans-delay;
     }
 
     &__show {
-        display: block;
+//        display: block;
+        opacity: 100;
         animation: slide $trans-time ease-in-out;
     }
     

@@ -134,7 +134,8 @@
   100% {
     opacity: 0; } }
 .searchpage {
-  display: none;
+  display: block;
+  opacity: 0;
   overflow: hidden;
   position: absolute;
   color: aqua;
@@ -143,11 +144,10 @@
   height: 100%;
   background-color: #1a2326; }
   .searchpage__transout {
-    display: block;
-    -webkit-animation: reverseslide 150ms ease-in-out 250ms;
-            animation: reverseslide 150ms ease-in-out 250ms; }
+    -webkit-animation: reverseslide 150ms ease-in-out 500ms;
+            animation: reverseslide 150ms ease-in-out 500ms; }
   .searchpage__show {
-    display: block;
+    opacity: 100;
     -webkit-animation: slide 150ms ease-in-out;
             animation: slide 150ms ease-in-out; }
   .searchpage .submitbutton {

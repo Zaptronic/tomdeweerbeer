@@ -58,9 +58,9 @@ function removesearchpage() {
     searchpagecounter = 0;
     clearbuttoncounter = 0;
     searchpage.addClass('searchpage__transout');
-    setTimeout(removetransout, 390);
     searchpage.removeClass('searchpage__show');
-    setTimeout(clearbuttonOut, 390);
+    setTimeout(removetransout, 640);
+    setTimeout(clearbuttonOut, 640);
 }
 
 function removetransout() {
