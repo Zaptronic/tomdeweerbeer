@@ -85,7 +85,7 @@ function setup() {
     }
 
     //   alleen voor testen in browser
-// navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
     
 
@@ -107,9 +107,6 @@ function setup() {
     setInterval(weerbeerPush, 5000);
     nightordayPush();
     starsbynightPush();
-//    tempColorMappedR = 200;
-//    tempColorMappedR = 200;
-//    tempColorMappedR = 200;
     keyPressed();
 }
 

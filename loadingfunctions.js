@@ -1,11 +1,13 @@
 function loadInt() {
     loadJSON(url, gotData, 'jsonp');
 //    loadTimeatlocation(lon, lat, weatherTime);
+    console.log('a');
 }
 
 function loadCity() {
     url = baseurl+formCity.value()+type+mode+appid+unit+lang; 
     loadJSON(url, gotData, 'jsonp');
+    console.log('b');
 }
 
 function currentlocationtocurrentcity(position) {
@@ -14,6 +16,7 @@ function currentlocationtocurrentcity(position) {
     geolong = position.coords.longitude;
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
+    console.log('c');
 }
 
 function currentlocationerror(error) {
@@ -58,7 +61,6 @@ function gotData(data){
     console.log(geolat);
     console.log(geolong);
     console.log(url);
-    console.log('weathertype ' + weatherType);
 }
 
 function reloadCity() {

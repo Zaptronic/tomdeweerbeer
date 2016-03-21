@@ -13,6 +13,7 @@ function Weerbeer(x,y, weerbeersizer) {
     this.fillColor = 255;
     
     this.display = function() {
+//        console.log('weathertype ' + weatherType);
         imageMode(CENTER);
         if (weatherType >= 200 && weatherType < 300) {
             push();
@@ -30,11 +31,12 @@ function Weerbeer(x,y, weerbeersizer) {
             rect(this.x, this.y, this.radius, this.radius);
             pop();
 
-         } if ((weatherType >= 500 && weatherType <= 501) || (weatherType >= 516 && weatherType <= 521)){
+         } if ((weatherType >= 500 && weatherType < 501) || (weatherType >= 516 && weatherType <= 521)){
             image(weathericon[0], this.x, this.y, this.radius, this.radius);
              
-         } if ((weatherType >= 502 && weatherType <= 515)  || (weatherType >= 522)) {
+         } if ((weatherType >= 501 && weatherType <= 515)  || (weatherType >= 522 && weatherType < 600)) {
             image(weathericon[3], this.x, this.y, this.radius, this.radius);
+            console.log('regen');
              
          } if (weatherType >= 600 && weatherType < 700){
             push();
