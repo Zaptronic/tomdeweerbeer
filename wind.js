@@ -6,7 +6,7 @@ function cloudpushControl() {
     } else {
         currentcloudpush = currentcloudpush;
     }
-    if (currentcloudpush <= 5) {
+    if (currentcloudpush <= 4) {
         return true;
     } else {
         return false;

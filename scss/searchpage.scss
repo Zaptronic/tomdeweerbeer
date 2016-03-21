@@ -1,7 +1,7 @@
 $background-color: rgb(26,35,38);
 $tom-yellow: rgb(234,167,0);
-$trans-time: 500ms;
-$trans-delay: 250ms;
+$trans-time: 200ms;
+$trans-delay: 350ms;
 
 /*********************************************
  * searchpage
@@ -29,11 +29,13 @@ $trans-delay: 250ms;
     &__transout {
         display: block;
         animation: reverseslide $trans-time ease-in-out $trans-delay;
+        animation-fill-mode: forwards;
     }
 
     &__show {
         display: block;
-        animation: slide $trans-time ease-in-out;
+        animation: slide $trans-time ease-in-out alternate;
+        animation-fill-mode: forwards;
     }
     
     .submitbutton {
@@ -51,5 +53,12 @@ $trans-delay: 250ms;
         font-family: 'tomfont';
         background-color: $tom-yellow;
         text-align: center;
+        
+        &:hover {
+            background-color: darken($tom-yellow, 5%);
+        }
+        &:active {
+            background-color: darken($tom-yellow, 5%);
+        }
     }
 }
