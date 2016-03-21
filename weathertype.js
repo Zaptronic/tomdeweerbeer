@@ -30,9 +30,11 @@ function Weerbeer(x,y, weerbeersizer) {
             rect(this.x, this.y, this.radius, this.radius);
             pop();
 
-         } if (weatherType >= 500 && weatherType < 600){
-//             console.log('rain');
+         } if ((weatherType >= 500 && weatherType <= 501) || (weatherType >= 516 && weatherType <= 521)){
             image(weathericon[0], this.x, this.y, this.radius, this.radius);
+             
+         } if ((weatherType >= 502 && weatherType <= 515)  || (weatherType >= 522)) {
+            image(weathericon[3], this.x, this.y, this.radius, this.radius);
              
          } if (weatherType >= 600 && weatherType < 700){
             push();
@@ -50,8 +52,12 @@ function Weerbeer(x,y, weerbeersizer) {
             rect(this.x, this.y, this.radius, this.radius);
             pop();
              
-         } if (weatherType == 800){
-            image(weathericon[1], this.x, this.y);
+         } if (weatherType == 800 && temperature > 0){
+            push();
+            image(weathericon[1], this.x, this.y, this.radius, this.radius);
+            pop();
+             
+            //onbewolkt min 0 graden 
              
          } if (weatherType >= 801 && weatherType < 900){
             push();
