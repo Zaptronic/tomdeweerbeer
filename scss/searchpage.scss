@@ -29,11 +29,13 @@ $trans-delay: 250ms;
     &__transout {
         display: block;
         animation: reverseslide $trans-time ease-in-out $trans-delay;
+        animation-fill-mode: forwards;
     }
 
     &__show {
         display: block;
-        animation: slide $trans-time ease-in-out;
+        animation: slide $trans-time ease-in-out alternate;
+        animation-fill-mode: forwards;
     }
     
     .submitbutton {
