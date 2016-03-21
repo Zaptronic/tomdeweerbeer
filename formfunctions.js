@@ -72,8 +72,6 @@ function removetransout() {
 }
 
 function resetForm(form)  {
-    //resetform ook op key13? nu lijkt er toch een page refresh te komen indien er geen relaod plaatsvindt kan dit?
-    
     form.myButton.disabled = false;
     form.myButton.value = "Submit";
 }
