@@ -1,0 +1,31 @@
+$background-color: rgb(26,35,38);
+
+/*********************************************
+ * searchpage
+ *********************************************/
+.searchpage {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    color: aqua;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background-color: $background-color;
+    transition: background-color 550ms ease-out;
+
+    &__hide {
+        display: none;           
+    }
+
+    &__show {
+        display: block;
+        transition: background-color 550ms ease-out;
+        background: pink;
+    }
+    
+    .submitbutton {
+        top: 300px;
+        margin: 300px auto;
+    }
+}

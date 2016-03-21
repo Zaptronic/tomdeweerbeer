@@ -39,34 +39,27 @@
         font-size: 30px; } }
 
 /*********************************************
- * searchpage
+ * searchform
  *********************************************/
-.searchpage {
+.searchform {
   overflow: hidden;
   position: absolute;
   color: aqua;
-  z-index: 99999;
-  width: 100%;
-  height: 100%;
-  transition: background-color 150ms ease-out; }
-  .searchpage__hide {
-    display: none; }
-  .searchpage__show {
-    display: block;
-    background-color: #1a2326; }
-  .searchpage .zoekform {
+  z-index: 999999;
+  width: 100%; }
+  .searchform .zoekform {
     position: relative;
     text-align: center;
     margin: auto;
     margin-top: 20px;
     padding: 0 20px; }
-    .searchpage .zoekform .searchbutton {
+    .searchform .zoekform .clearbutton {
       width: 32px;
       height: 32px;
       position: relative;
       position: absolute;
       margin: auto;
-      display: hide;
+      display: inline;
       background: lightgrey;
       border-radius: 16px;
       border: none;
@@ -74,28 +67,27 @@
       top: 0;
       right: 24px;
       z-index: 99999; }
-      .searchpage .zoekform .searchbutton:hover {
+      .searchform .zoekform .clearbutton:hover {
         background-color: #ababab; }
-      .searchpage .zoekform .searchbutton:focus {
+      .searchform .zoekform .clearbutton:focus {
         outline: none; }
-      .searchpage .zoekform .searchbutton__hide {
+      .searchform .zoekform .clearbutton__hide {
         display: none; }
-      .searchpage .zoekform .searchbutton__show {
-        display: block;
-        background: red; }
-      .searchpage .zoekform .searchbutton__svg {
+      .searchform .zoekform .clearbutton__show {
+        display: inline; }
+      .searchform .zoekform .clearbutton__svg {
         width: 12px;
         margin-top: 1px; }
       @media (min-width: 480px) {
-        .searchpage .zoekform .searchbutton {
+        .searchform .zoekform .clearbutton {
           top: auto;
           right: auto;
           margin-left: -44px;
           z-index: 99999; } }
     @media (min-width: 360px) {
-      .searchpage .zoekform {
+      .searchform .zoekform {
         margin-top: 30px; } }
-  .searchpage #formCity {
+  .searchform #formCity {
     box-sizing: border-box;
     width: 100%;
     height: 48px;
@@ -107,11 +99,36 @@
     box-shadow: none !important;
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
     background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)); }
-    .searchpage #formCity:focus {
+    .searchform #formCity:focus {
       outline: none; }
     @media (min-width: 480px) {
-      .searchpage #formCity {
+      .searchform #formCity {
         max-width: 355px; } }
+
+/*********************************************
+ * searchpage
+ *********************************************/
+.searchpage {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  color: aqua;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background-color: #1a2326;
+  -webkit-transition: background-color 550ms ease-out;
+  transition: background-color 550ms ease-out; }
+  .searchpage__hide {
+    display: none; }
+  .searchpage__show {
+    display: block;
+    -webkit-transition: background-color 550ms ease-out;
+    transition: background-color 550ms ease-out;
+    background: pink; }
+  .searchpage .submitbutton {
+    top: 300px;
+    margin: 300px auto; }
 
 /*********************************************
  * Tom de weerbeer scss
@@ -144,13 +161,20 @@ p {
   font-family: 'tomfont';
   font-size: 24px;
   color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end; }
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
   .errorpage__inner {
     padding: 36px;
     text-align: center;
     margin: auto;
-    transform: rotate(2deg); }
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg); }
     .errorpage__inner button {
       font-family: 'tomfont';
       font-size: 16px;
@@ -161,6 +185,7 @@ p {
       border-radius: 24px;
       border: none;
       background-color: #eaa700;
-      transform: rotate(-4deg); }
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg); }
       .errorpage__inner button:focus {
         outline: none; }

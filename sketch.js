@@ -63,6 +63,8 @@ var tomyellow = [234,167,0];
 var buttonF;
 var clearbutton;
 var formCity;
+var searchform;
+var searchpage;
 var errorpage;
 
 //var currentcloudpusher = 0;
@@ -91,24 +93,23 @@ function setup() {
     timer1.counterclock();
     
     mobilesizes();
-    errorpage = select('.errorpage');
-    setInterval(loadInt, 1000000);
-    formCity = select('#formCity');
     responsiveScaleCalc();
     fill(255);
-    searchpage = select('.searchpage');
-    clearbutton = select('.searchbutton');
-    clearbutton.mousePressed(clearPressed);
+    
+    errorpage = select('.errorpage');
+    setInterval(loadInt, 1000000);
+    
+    forminit();
+    
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
     nightordayPush();
     starsbynightPush();
-//    setInterval(nightordayPush, 5000);
-    tempColorMappedR = 200;
-    tempColorMappedR = 200;
-    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
     keyPressed();
 }
 
@@ -160,8 +161,6 @@ function draw() {
         error();
     }
     
-    
-    
     push();
     ellipseMode(CENTER);
     fill(tomred);
@@ -172,37 +171,6 @@ function draw() {
     pop();
     
 //    debug();
-}
-function keyPressed() {
-    if (keyCode === 13){
-		reloadCity();
-		document.activeElement.blur();
-		clearbutton.show();
-        searchpage.removeClass('searchpage__show');
-        searchpage.addClass('searchpage__hide');
-    }
-}
-
-function resetForm(form)  {
-    form.focus(); //test to see if this works on ios
-    form.select();
-    form.myButton.disabled = false;
-    form.myButton.value = "Submit";
-}
-
-//clear formfield by clicking on it
-//works faster and is more clwar to the user
-//add search button for realoadCity;
-//activate the searchmode
-
-function clearPressed() {
-    formCity.value('');		
-	clearbutton.hide();
-    searchpage.removeClass('searchpage__hide');
-    searchpage.addClass('searchpage__show');
-    //clearbutton.removeClass('searchpage__hide');
-    //clearbutton.addClass('searchpage__show');
-	//not button but first select searchpage and then addclass to page
 }
 
 
