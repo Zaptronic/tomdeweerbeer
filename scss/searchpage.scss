@@ -1,8 +1,19 @@
 $background-color: rgb(26,35,38);
+$trans-time: 150ms;
 
 /*********************************************
  * searchpage
  *********************************************/
+@keyframes slide {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}
+}
+
+@keyframes reverseslide {
+  0% {opacity: 100%;}
+  100% {opacity: 0;}
+}    
+
 .searchpage {
     display: none;
     overflow: hidden;
@@ -12,16 +23,15 @@ $background-color: rgb(26,35,38);
     width: 100%;
     height: 100%;
     background-color: $background-color;
-    transition: background-color 550ms ease-out;
-
-    &__hide {
-        display: none;           
+    
+    &__transout {
+        display: block;
+        animation: reverseslide $trans-time ease-in-out;
     }
 
     &__show {
         display: block;
-        transition: background-color 550ms ease-out;
-        background: pink;
+        animation: slide $trans-time ease-in-out;
     }
     
     .submitbutton {

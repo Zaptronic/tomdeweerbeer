@@ -108,6 +108,26 @@
 /*********************************************
  * searchpage
  *********************************************/
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100%; } }
+@keyframes slide {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100%; } }
+@-webkit-keyframes reverseslide {
+  0% {
+    opacity: 100%; }
+  100% {
+    opacity: 0; } }
+@keyframes reverseslide {
+  0% {
+    opacity: 100%; }
+  100% {
+    opacity: 0; } }
 .searchpage {
   display: none;
   overflow: hidden;
@@ -116,16 +136,15 @@
   z-index: 99999;
   width: 100%;
   height: 100%;
-  background-color: #1a2326;
-  -webkit-transition: background-color 550ms ease-out;
-  transition: background-color 550ms ease-out; }
-  .searchpage__hide {
-    display: none; }
+  background-color: #1a2326; }
+  .searchpage__transout {
+    display: block;
+    -webkit-animation: reverseslide 150ms ease-in-out;
+            animation: reverseslide 150ms ease-in-out; }
   .searchpage__show {
     display: block;
-    -webkit-transition: background-color 550ms ease-out;
-    transition: background-color 550ms ease-out;
-    background: pink; }
+    -webkit-animation: slide 150ms ease-in-out;
+            animation: slide 150ms ease-in-out; }
   .searchpage .submitbutton {
     top: 300px;
     margin: 300px auto; }

@@ -19,13 +19,17 @@ function clearPressed() {
     addsearchpage();
 }
 
-function keyPressed() {
-    if (keyCode === 13 && checkform()){
+function keyPressed(event) {
+    if (keyCode === 13) {
+        
+        if (checkform()){
             reloadCity();            
             document.activeElement.blur();
-//            clearbutton.removeClass('clearbutton__hide');
-//            clearbutton.addClass('clearbutton__show');
             removesearchpage();
+        } else if (!checkform()) {
+            event.preventDefault();
+            return false;
+        }
     }
 }
 
@@ -33,8 +37,6 @@ function submitPressed() {
     if (checkform()) {
             reloadCity();   
             document.activeElement.blur();
-//            clearbutton.removeClass('clearbutton__hide');
-//            clearbutton.addClass('clearbutton__show');
             removesearchpage();
     }
 }
@@ -43,7 +45,7 @@ var searchpagecounter = 0;
 var clearbuttoncounter = 0;
 
 function addsearchpage() {
-    setInterval(checkform, 350);
+//    setInterval(checkform, 350);
     if(searchpagecounter < 1) {
         searchpage.addClass('searchpage__show');   
         searchpagecounter++;
@@ -55,13 +57,18 @@ function addsearchpage() {
     }
 }
 function removesearchpage() {
-    clearInterval(checkform);
+//    clearInterval(checkform);
     searchpagecounter = 0;
     clearbuttoncounter = 0;
+    searchpage.addClass('searchpage__transout');
+    setTimeout(removetransout, 150);
     searchpage.removeClass('searchpage__show');
     clearbutton.removeClass('clearbutton__hide');
     clearbutton.addClass('clearbutton__show');
-    console.log('check');
+}
+
+function removetransout() {
+    searchpage.removeClass('searchpage__transout');
 }
 
 function resetForm(form)  {
@@ -74,10 +81,10 @@ function resetForm(form)  {
 function checkform() {
     var a = formCity.value();
     if (a == '') {
-        console.log('false');
+        console.log('checkform false');
         return false;
     } else {
-        console.log('true');
+        console.log('checkform true');
         return true;
     }
 }
