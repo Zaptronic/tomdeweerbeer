@@ -12,11 +12,8 @@ function currentlocationtocurrentcity(position) {
     var geobaseurl = 'http://api.openweathermap.org/data/2.5/forecast?';
     geolat = position.coords.latitude;
     geolong = position.coords.longitude;
-    console.log(geolat);
-    console.log(geolong);
     url = geobaseurl+'lat='+geolat+'&lon='+geolong+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
-    console.log(url);
 }
 
 function currentlocationerror(error) {
@@ -57,6 +54,11 @@ function gotData(data){
     weatherDescription = data.list[0].weather[0].description;
     weatherTime = data.list[0].dt;
     loadTimeatlocation(lon, lat, weatherTime);
+    
+    console.log(geolat);
+    console.log(geolong);
+    console.log(url);
+    console.log('weathertype ' + weatherType);
 }
 
 function reloadCity() {
@@ -78,7 +80,6 @@ function onResume() {
     clouds = [];
     raindrops = [];
     clouds = [];
-//    setInterval(cloudPush);
 }
 
 
@@ -94,8 +95,5 @@ function calclocaltime(timedata) {
     var localtime = timedata.rawOffset;
     time = new Date((usertime + localtime)*1000);
     hours = time.getHours();
-    hours = hours - 3; //correction for weather +3 hour prediction
-    //01:00 -3 is not 22:00
-    //calculation bug
-    console.log(hours);
+    hours = hours - 3;
 }

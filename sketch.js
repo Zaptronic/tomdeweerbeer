@@ -30,7 +30,7 @@ var snowflakes = [];
 var clouds = [];
 var weerbeer;
 var weathericon = [];
-var weathericonsAmount = 3;
+var weathericonsAmount = 4;
 var cloudicons =  [];
 var cloudpicker;
 var stars = [];
@@ -85,7 +85,7 @@ function setup() {
     }
 
     //   alleen voor testen in browser
- navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+// navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
     
 

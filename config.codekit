@@ -706,20 +706,9 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 80200,
+		"initialSize": 808874,
 		"inputAbbreviatedPath": "\/images\/tomtypes\/weather1.png",
 		"outputAbbreviatedPath": "\/images\/tomtypes\/weather1.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/tomtypes\/weather2-cloud.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 51720,
-		"inputAbbreviatedPath": "\/images\/tomtypes\/weather2-cloud.png",
-		"outputAbbreviatedPath": "\/images\/tomtypes\/weather2-cloud.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -735,13 +724,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/tomtypes\/weather23.png": {
+	"\/images\/tomtypes\/weather3.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 149782,
-		"inputAbbreviatedPath": "\/images\/tomtypes\/weather23.png",
-		"outputAbbreviatedPath": "\/images\/tomtypes\/weather23.png",
+		"initialSize": 452646,
+		"inputAbbreviatedPath": "\/images\/tomtypes\/weather3.png",
+		"outputAbbreviatedPath": "\/images\/tomtypes\/weather3.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
