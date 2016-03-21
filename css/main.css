@@ -134,8 +134,7 @@
   100% {
     opacity: 0; } }
 .searchpage {
-  display: block;
-  opacity: 0;
+  display: none;
   overflow: hidden;
   position: absolute;
   color: aqua;
@@ -144,12 +143,13 @@
   height: 100%;
   background-color: #1a2326; }
   .searchpage__transout {
-    -webkit-animation: reverseslide 150ms ease-in-out 500ms;
-            animation: reverseslide 150ms ease-in-out 500ms; }
+    display: block;
+    -webkit-animation: reverseslide 500ms ease-in-out 250ms;
+            animation: reverseslide 500ms ease-in-out 250ms; }
   .searchpage__show {
-    opacity: 100;
-    -webkit-animation: slide 150ms ease-in-out;
-            animation: slide 150ms ease-in-out; }
+    display: block;
+    -webkit-animation: slide 500ms ease-in-out;
+            animation: slide 500ms ease-in-out; }
   .searchpage .submitbutton {
     box-sizing: border-box;
     height: 96px;
