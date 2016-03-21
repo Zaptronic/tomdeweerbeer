@@ -1,0 +1,67 @@
+/*********************************************
+ * searchform
+ *********************************************/
+.searchform {
+  overflow: hidden;
+  position: absolute;
+  color: aqua;
+  z-index: 99999;
+  width: 100%; }
+  .searchform .zoekform {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 0 20px; }
+    .searchform .zoekform .searchbutton {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      position: absolute;
+      margin: auto;
+      display: hide;
+      background: lightgrey;
+      border-radius: 16px;
+      border: none;
+      margin: 8px;
+      top: 0;
+      right: 24px;
+      z-index: 99999; }
+      .searchform .zoekform .searchbutton:hover {
+        background-color: #ababab; }
+      .searchform .zoekform .searchbutton:focus {
+        outline: none; }
+      .searchform .zoekform .searchbutton__hide {
+        display: none; }
+      .searchform .zoekform .searchbutton__show {
+        display: block;
+        background: red; }
+      .searchform .zoekform .searchbutton__svg {
+        width: 12px;
+        margin-top: 1px; }
+      @media (min-width: 480px) {
+        .searchform .zoekform .searchbutton {
+          top: auto;
+          right: auto;
+          margin-left: -44px;
+          z-index: 99999; } }
+    @media (min-width: 360px) {
+      .searchform .zoekform {
+        margin-top: 30px; } }
+  .searchform #formCity {
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 16px;
+    border: 1px solid #fff;
+    border-radius: 24px;
+    box-shadow: none !important;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)); }
+    .searchform #formCity:focus {
+      outline: none; }
+    @media (min-width: 480px) {
+      .searchform #formCity {
+        max-width: 355px; } }

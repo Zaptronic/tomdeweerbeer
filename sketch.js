@@ -63,6 +63,8 @@ var tomyellow = [234,167,0];
 var buttonF;
 var clearbutton;
 var formCity;
+var searchform;
+var searchpage;
 var errorpage;
 
 //var currentcloudpusher = 0;
@@ -75,8 +77,8 @@ function setup() {
 	for (var i = 0; i < weathericonsAmount; i++) {
          weathericon[i] = loadImage('images/tomtypes/weather'+i+'.png');   
     }
-    for (var i = 0; i < 3; i++) {
-        cloudicons[i] = loadImage('images/clouds'+i+'.png');
+    for (var i = 0; i < 4; i++) {
+        cloudicons[i] = loadImage('images/clouds/clouds'+i+'.png');
     }
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
@@ -91,23 +93,23 @@ function setup() {
     timer1.counterclock();
     
     mobilesizes();
-    errorpage = select('.errorpage');
-    setInterval(loadInt, 1000000);
-    formCity = select('#formCity');
     responsiveScaleCalc();
     fill(255);
-    clearbutton = select('.clearbutton');
-    clearbutton.mousePressed(clearPressed);
+    
+    errorpage = select('.errorpage');
+    setInterval(loadInt, 1000000000);
+    
+    forminit();
+    
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
     nightordayPush();
     starsbynightPush();
-//    setInterval(nightordayPush, 5000);
-    tempColorMappedR = 200;
-    tempColorMappedR = 200;
-    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
     keyPressed();
 }
 
@@ -159,8 +161,6 @@ function draw() {
         error();
     }
     
-    
-    
     push();
     ellipseMode(CENTER);
     fill(tomred);
@@ -172,16 +172,7 @@ function draw() {
     
 //    debug();
 }
-function keyPressed() {
-    if (keyCode === 13 ){
-        reloadCity();
-		document.activeElement.blur();
-    }
-}
 
-function clearPressed() {
-    formCity.value('');
-}
 
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);

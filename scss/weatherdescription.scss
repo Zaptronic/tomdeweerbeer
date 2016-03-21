@@ -1,0 +1,51 @@
+//$background-color: rgb(26,35,38);
+/*********************************************
+ * weatherdescription
+ *********************************************/
+.weeromschrijving {
+    position: absolute;
+    color: aqua;
+    z-index: 99;
+    width: 100%;
+    font-family: 'tomfont';
+    color: white;
+    margin-top: 70px;
+
+    .omschrijving {
+        font-size: 18px;
+    }
+
+    .temperatuur {
+        font-size: 36px;
+        line-height: 32px;
+    }
+
+	@media (min-width: 360px) {
+		margin-top: 80px;
+	}
+    @media (min-width: 480px) {
+        text-align: center;
+        margin: 88px auto;
+        p {
+            display: inline-block;
+            margin: 0;
+        }
+        .omschrijving {
+            font-size: 30px;
+            margin-right: 28px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                background: #72b6b7;
+                width: 6px;
+                height: 6px;
+                border-radius: 12px;
+                margin: 16px 8px 0 16px;
+            }
+        }
+        .temperatuur {
+            font-size: 30px;
+        }
+    }
+}

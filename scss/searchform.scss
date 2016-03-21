@@ -1,0 +1,89 @@
+/*********************************************
+ * searchform
+ *********************************************/
+.searchform {
+    overflow: hidden;
+    position: absolute;
+    color: aqua;
+    z-index: 999999;
+    width: 100%;
+
+    .zoekform {
+        position: relative;
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
+        padding: 0 20px;
+
+        .clearbutton {
+            -webkit-appearance: none;
+            width: 32px;
+            height: 32px;
+            position: relative;
+            position: absolute;
+            margin: auto;
+            display: inline;
+            background-color: lightgrey;
+            background-image: url(../images/closebutton.svg);
+            background-size: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 16px;
+            border: none;
+            margin: 8px;
+            top: 0;
+            right: 22px;
+            z-index: 99999;
+            
+            &:hover {
+                background-color: #bbb; 
+            }
+            
+            &:focus {
+                outline: none;
+            }
+            
+            &__hide {
+                display: none;
+            }
+            &__show {
+                display: inline;
+            }
+            
+            &__svg {
+                width: 12px;
+                margin-top: 1px;
+            }
+            @media (min-width: 480px) {
+                top: auto;
+                right: auto;
+                margin-left: -42px;
+                z-index: 99999;
+            }
+        }
+        @media (min-width: 360px) {
+                margin-top: 30px;
+        }
+    }
+
+    #formCity {
+        box-sizing: border-box;
+        width: 100%;
+        height: 48px;
+        padding-left: 20px;
+        font-size: 18px;
+        line-height: 16px;
+        border: 1px solid #fff;
+        border-radius: 24px;
+        box-shadow: none !important;
+        background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,0)));
+        background-image:-webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
+        
+        &:focus {
+            outline: none;
+        }
+        @media (min-width: 480px) {
+            max-width: 355px;   
+        }
+    }
+}

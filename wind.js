@@ -6,7 +6,7 @@ function cloudpushControl() {
     } else {
         currentcloudpush = currentcloudpush;
     }
-    if (currentcloudpush <= 3) {
+    if (currentcloudpush <= 5) {
         return true;
     } else {
         return false;
@@ -23,7 +23,7 @@ function cloudPush() {
     var cloudLifespan = round(random(10,80));
     var cloudRatio = windowWidth / 100;
     var cloudAmount = round(cloudRatio);
-    cloudpicker = floor(random(2));
+    cloudpicker = floor(random(4));
     
     if (clouds.length <= cloudAmount && weatherData && cloudpushControl() == false) {
      
@@ -45,8 +45,8 @@ function Cloud(x,y,lifespan, cloudpicker) {
     this.width = 120 * responsiveRatio;
     this.height = 96 * responsiveRatio;
     this.windSpeedMotion = map(windSpeed, 0, 32.7, 1, 6);
-    this.windowRatioSpeed = 1000/windowWidth;
-    this.windmovementX = this.windSpeedMotion * this.windowRatioSpeed;
+//    this.windowRatioSpeed = 1000/windowWidth;
+    this.windmovementX = this.windSpeedMotion;
     this.fadeInX = 0;
     this.fadeOutX = windowWidth;
     
