@@ -97,7 +97,7 @@ function setup() {
     fill(255);
     
     errorpage = select('.errorpage');
-    setInterval(loadInt, 1000000);
+    setInterval(loadInt, 1000000000);
     
     forminit();
     

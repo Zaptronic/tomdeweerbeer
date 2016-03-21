@@ -4,6 +4,7 @@
 
 
 $background-color: rgb(26,35,38);
+$tom-yellow: rgb(234,167,0);
 
 /*********************************************
  * Tom de weerbeer scss
@@ -57,7 +58,7 @@ p {
             height: 44px;
             border-radius: 24px;
             border: none;
-            background-color: rgb(234,167,0);
+            background-color: $tom-yellow;
             transform: rotate(-4deg);
             
             &:focus {

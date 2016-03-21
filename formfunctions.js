@@ -1,3 +1,6 @@
+var searchpagecounter = 0;
+var clearbuttoncounter = 0;
+
 function forminit() {
     formCity = select('#formCity');
     searchform = select('.searchform');
@@ -21,7 +24,6 @@ function clearPressed() {
 
 function keyPressed(event) {
     if (keyCode === 13) {
-        
         if (checkform()){
             reloadCity();            
             document.activeElement.blur();
@@ -41,11 +43,7 @@ function submitPressed() {
     }
 }
 
-var searchpagecounter = 0;
-var clearbuttoncounter = 0;
-
 function addsearchpage() {
-//    setInterval(checkform, 350);
     if(searchpagecounter < 1) {
         searchpage.addClass('searchpage__show');   
         searchpagecounter++;
@@ -57,20 +55,21 @@ function addsearchpage() {
     }
 }
 function removesearchpage() {
-//    clearInterval(checkform);
     searchpagecounter = 0;
     clearbuttoncounter = 0;
     searchpage.addClass('searchpage__transout');
-    setTimeout(removetransout, 150);
+    setTimeout(removetransout, 390);
     searchpage.removeClass('searchpage__show');
-    clearbutton.removeClass('clearbutton__hide');
-    clearbutton.addClass('clearbutton__show');
+    setTimeout(clearbuttonOut, 390);
 }
 
 function removetransout() {
     searchpage.removeClass('searchpage__transout');
 }
-
+function clearbuttonOut() {
+    clearbutton.removeClass('clearbutton__hide');
+    clearbutton.addClass('clearbutton__show');
+}
 function resetForm(form)  {
     form.myButton.disabled = false;
     form.myButton.value = "Submit";

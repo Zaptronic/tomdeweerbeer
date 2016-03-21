@@ -16,22 +16,27 @@
         padding: 0 20px;
 
         .clearbutton {
+            -webkit-appearance: none;
             width: 32px;
             height: 32px;
             position: relative;
             position: absolute;
             margin: auto;
             display: inline;
-            background: lightgrey;
+            background-color: lightgrey;
+            background-image: url(../images/closebutton.svg);
+            background-size: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 16px;
             border: none;
             margin: 8px;
             top: 0;
-            right: 24px;
+            right: 22px;
             z-index: 99999;
             
             &:hover {
-                background-color: #ababab; 
+                background-color: #bbb; 
             }
             
             &:focus {
@@ -52,7 +57,7 @@
             @media (min-width: 480px) {
                 top: auto;
                 right: auto;
-                margin-left: -44px;
+                margin-left: -42px;
                 z-index: 99999;
             }
         }
