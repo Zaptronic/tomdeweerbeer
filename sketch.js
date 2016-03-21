@@ -63,6 +63,8 @@ var tomyellow = [234,167,0];
 var buttonF;
 var clearbutton;
 var formCity;
+var searchform;
+var searchpage;
 var errorpage;
 
 //var currentcloudpusher = 0;
@@ -91,24 +93,23 @@ function setup() {
     timer1.counterclock();
     
     mobilesizes();
-    errorpage = select('.errorpage');
-    setInterval(loadInt, 1000000);
-    formCity = select('#formCity');
-    formCity.mousePressed(clearPressed);
     responsiveScaleCalc();
     fill(255);
-    clearbutton = select('.clearbutton');
-    clearbutton.mousePressed(clearPressed);
+    
+    errorpage = select('.errorpage');
+    setInterval(loadInt, 1000000000);
+    
+    forminit();
+    
     setInterval(raindropPush, 400);
     setInterval(snowflakePush, 400);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
     nightordayPush();
     starsbynightPush();
-//    setInterval(nightordayPush, 5000);
-    tempColorMappedR = 200;
-    tempColorMappedR = 200;
-    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
+//    tempColorMappedR = 200;
     keyPressed();
 }
 
@@ -160,8 +161,6 @@ function draw() {
         error();
     }
     
-    
-    
     push();
     ellipseMode(CENTER);
     fill(tomred);
@@ -172,26 +171,6 @@ function draw() {
     pop();
     
 //    debug();
-}
-function keyPressed() {
-    if (keyCode === 13 ){
-        reloadCity();
-		document.activeElement.blur();
-        clearbutton.removeClass('clearbutton__hide');
-        clearbutton.addClass('clearbutton__show');
-
-    }
-}
-
-//clear formfield by clicking on it
-//works faster and is more clwar to the user
-//add search button for realoadCity;
-//activate the searchmode
-
-function clearPressed() {
-    formCity.value('');
-    clearbutton.removeClass('clearbutton__show');
-    clearbutton.addClass('clearbutton__hide');
 }
 
 

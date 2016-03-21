@@ -1,0 +1,55 @@
+$background-color: rgb(26,35,38);
+$tom-yellow: rgb(234,167,0);
+$trans-time: 150ms;
+$trans-delay: 250ms;
+
+/*********************************************
+ * searchpage
+ *********************************************/
+@keyframes slide {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}
+}
+
+@keyframes reverseslide {
+  0% {opacity: 100%;}
+  100% {opacity: 0;}
+}    
+
+.searchpage {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    color: aqua;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background-color: $background-color;
+    
+    &__transout {
+        display: block;
+        animation: reverseslide $trans-time ease-in-out $trans-delay;
+    }
+
+    &__show {
+        display: block;
+        animation: slide $trans-time ease-in-out;
+    }
+    
+    .submitbutton {
+        box-sizing: border-box;
+        height: 96px;
+        width: 96px;
+        border-radius: 50%;
+        padding: 24px 16px;
+        margin: auto;
+        margin-top: 120px;
+        text-transform: uppercase;
+        transform: rotate(-6deg);
+        color: white;
+        font-size: 40px;
+        font-family: 'tomfont';
+        background-color: $tom-yellow;
+        text-align: center;
+    }
+}
