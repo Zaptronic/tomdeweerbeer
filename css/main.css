@@ -144,12 +144,16 @@
   background-color: #1a2326; }
   .searchpage__transout {
     display: block;
-    -webkit-animation: reverseslide 150ms ease-in-out 250ms;
-            animation: reverseslide 150ms ease-in-out 250ms; }
+    -webkit-animation: reverseslide 200ms ease-in-out 350ms;
+            animation: reverseslide 200ms ease-in-out 350ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
   .searchpage__show {
     display: block;
-    -webkit-animation: slide 150ms ease-in-out;
-            animation: slide 150ms ease-in-out; }
+    -webkit-animation: slide 200ms ease-in-out alternate;
+            animation: slide 200ms ease-in-out alternate;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
   .searchpage .submitbutton {
     box-sizing: border-box;
     height: 96px;
@@ -166,6 +170,10 @@
     font-family: 'tomfont';
     background-color: #eaa700;
     text-align: center; }
+    .searchpage .submitbutton:hover {
+      background-color: #d19500; }
+    .searchpage .submitbutton:active {
+      background-color: #d19500; }
 
 /*********************************************
  * Tom de weerbeer scss
