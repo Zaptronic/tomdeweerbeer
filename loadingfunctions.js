@@ -41,13 +41,15 @@ function gotData(data){
     
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
-        amountRain = round(amountRain*200);   
+        var amountRainMapped = map(amountRain, 1, 25, 10, 100);
+        amountRain = round(amountRainMapped);  
+        console.log('rain =' + amountRain);
     } else {
         amountRain = 0;
     }
     if (data.list[0].snow) {
         amountSnow = data.list[0].snow["3h"];
-        amountSnow = round(amountSnow * 200);   
+        amountSnow = round(amountSnow * 2000);   
     } else {
         amountSnow = 0;
     }

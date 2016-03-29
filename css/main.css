@@ -44,7 +44,6 @@
 .searchform {
   overflow: hidden;
   position: absolute;
-  color: aqua;
   z-index: 999999;
   width: 100%; }
   .searchform .zoekform {

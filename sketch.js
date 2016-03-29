@@ -101,7 +101,7 @@ function setup() {
     
     forminit();
     
-    setInterval(raindropPush, 400);
+    setInterval(raindropPush, 100);
     setInterval(snowflakePush, 400);
     weerbeerPush();
     setInterval(weerbeerPush, 5000);
