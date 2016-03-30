@@ -23,6 +23,7 @@ function clearPressed() {
 }
 
 function keyPressed(event) {
+    clearweatherElements();
     if (keyCode === 13) {
         if (checkform()){
             reloadCity();            
@@ -36,6 +37,7 @@ function keyPressed(event) {
 }
 
 function submitPressed() {
+    clearweatherElements();
     if (checkform()) {
             reloadCity();   
             document.activeElement.blur();
@@ -59,8 +61,8 @@ function removesearchpage() {
     clearbuttoncounter = 0;
     searchpage.addClass('searchpage__transout');
     searchpage.removeClass('searchpage__show');
-    setTimeout(removetransout, 500);
-    setTimeout(clearbuttonOut, 500);
+    setTimeout(removetransout, 600);
+    setTimeout(clearbuttonOut, 600);
 }
 
 function removetransout() {

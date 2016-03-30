@@ -66,6 +66,7 @@ var formCity;
 var searchform;
 var searchpage;
 var errorpage;
+var retryButton;
 
 //var currentcloudpusher = 0;
 
@@ -97,7 +98,10 @@ function setup() {
     fill(255);
     
     errorpage = select('.errorpage');
+    
     setInterval(loadInt, 1000000000);
+    retryButton = select('.retry');
+    retryButton.mousePressed(loadInt);
     
     forminit();
     

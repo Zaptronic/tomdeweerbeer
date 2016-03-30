@@ -24,21 +24,19 @@ function Raindrop(x,y,lifespan) {
         rotate(this.raindropRotator);
         noStroke();
         fill(121,219,226, this.lifespan);
-
+        
         beginShape();
         curveVertex(this.x,  this.y);
-        curveVertex(this.x+5,  this.y-5);
-        curveVertex(this.x+10,  this.y);
-        curveVertex(this.x+12,  this.y+16);
-        curveVertex(this.x+5,  this.y+22);    
-        curveVertex(this.x-2,   this.y+16);
         curveVertex(this.x,   this.y);
-        curveVertex(this.x+5,   this.y-5);        
+        curveVertex(this.x+3,  this.y+3);
+        curveVertex(this.x+5,  this.y+20);
+        curveVertex(this.x,  this.y+26);
+        curveVertex(this.x-5,  this.y+20);    
+        curveVertex(this.x-3,   this.y+3);    
         curveVertex(this.x,  this.y);
         endShape(CLOSE); 
-        pop();
-
         
+        pop();
     }
     
     this.update = function() {

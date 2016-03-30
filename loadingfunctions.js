@@ -50,6 +50,9 @@ function gotData(data){
     if (data.list[0].snow) {
         amountSnow = data.list[0].snow["3h"];
         amountSnow = round(amountSnow * 2000);   
+        var amountSnowMapped = map(amountSnow, 1, 25, 10, 100);
+        amountSnow = round(amountSnowMapped);  
+        console.log('snow =' + amountSnow);
     } else {
         amountSnow = 0;
     }
@@ -65,27 +68,23 @@ function gotData(data){
     console.log(url);
 }
 
-function reloadCity() {
-    loadCity();
+function clearweatherElements() {
     clouds = [];
-    currentcloudpush = 0;
+    snowflakes = [];
+    raindrops = [];
+    
 }
 
-function onPause() {
-    clouds = [];
-    raindrops = [];
-    clouds = [];
-    clearInterval(cloudPush);
-    clearInterval(raindropPush);
-    clearInterval(snowflakePush);
+function reloadCity() {
+    loadCity();
 }
 
 function onResume() {
     clouds = [];
+    currentcloudpush = 0;
     raindrops = [];
-    clouds = [];
+    snowflakes = [];
 }
-
 
 function loadTimeatlocation(lon, lat, weatherTime) {
     var Gkey = '&key=AIzaSyBhAMl015DtFzNWm-jFGE2zqHqVMPmungg';

@@ -2,7 +2,7 @@ function snowflakePush() {
     var snowPosxA = -(windowWidth * 0.15);
     var snowPosxB = windowWidth - (windowWidth * 0.15);
     
-    if (snowflakes.length < amountSnow) {
+    if (snowflakes.length < amountSnow && weatherType != 800) {
          snowflakes.push(new Snowflake(random(snowPosxA,snowPosxB), random(-windowHeight/8,0), round(random(10,windowHeight/2))));
     }
 }
