@@ -23,11 +23,9 @@ function enterFormfield() {
 }
 
 function clearPressed() {
-    formCity.value(null);		
+    formCity.value(null);
+    clearbutton.addClass('clearbutton__hide');
     addsearchpage();
-    if (formCity.value(null)) {
-        clearbutton.addClass('clearbutton__hide');
-    }
     return false;
 }
 
