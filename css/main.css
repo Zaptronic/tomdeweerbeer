@@ -143,8 +143,8 @@
   background-color: #1a2326; }
   .searchpage__transout {
     display: block;
-    -webkit-animation: reverseslide 200ms ease-in-out 450ms;
-            animation: reverseslide 200ms ease-in-out 450ms;
+    -webkit-animation: reverseslide 200ms ease-in-out 550ms;
+            animation: reverseslide 200ms ease-in-out 550ms;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards; }
   .searchpage__show {
