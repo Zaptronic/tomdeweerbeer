@@ -16,16 +16,19 @@ function forminit() {
 function enterFormfield() {
     addsearchpage();
     document.activeElement.focus();
+    if (formCity.value(null)) {
+        clearbutton.addClass('clearbutton__hide');
+    }
     return false;
 }
 
 function clearPressed() {
     formCity.value(null);		
     addsearchpage();
-    return false;
     if (formCity.value(null)) {
         clearbutton.addClass('clearbutton__hide');
     }
+    return false;
 }
 
 function keyPressed(event) {

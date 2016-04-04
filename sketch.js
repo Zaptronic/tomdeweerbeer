@@ -86,7 +86,7 @@ function setup() {
     }
 
     //   alleen voor testen in browser
-// navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //    
     
 
