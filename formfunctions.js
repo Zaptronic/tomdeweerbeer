@@ -16,9 +16,6 @@ function forminit() {
 function enterFormfield() {
     addsearchpage();
     document.activeElement.focus();
-    if (formCity.value(null)) {
-        clearbutton.addClass('clearbutton__hide');
-    }
     return false;
 }
 
