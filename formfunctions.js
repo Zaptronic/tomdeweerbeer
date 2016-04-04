@@ -8,13 +8,14 @@ function forminit() {
     submitbutton = select('.submitbutton');
     clearbutton = select('.clearbutton');
     
-    formCity.mousePressed(enterFormfield);
-    clearbutton.mousePressed(clearPressed);
-    submitbutton.mousePressed(submitPressed);
+    formCity.touchStarted(enterFormfield);
+    clearbutton.touchStarted(clearPressed);
+    submitbutton.touchStarted(submitPressed);
 }
 
 function enterFormfield() {
     addsearchpage();
+    document.activeElement.focus();
 }
 
 function clearPressed() {
@@ -61,8 +62,8 @@ function removesearchpage() {
     clearbuttoncounter = 0;
     searchpage.addClass('searchpage__transout');
     searchpage.removeClass('searchpage__show');
-    setTimeout(removetransout, 600);
-    setTimeout(clearbuttonOut, 600);
+    setTimeout(removetransout, 700);
+    setTimeout(clearbuttonOut, 700);
 }
 
 function removetransout() {
