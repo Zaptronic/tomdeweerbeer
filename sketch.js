@@ -66,10 +66,16 @@ var searchform;
 var searchpage;
 var errorpage;
 var retryButton;
-
+var weeromschrijving;
+var temperatuur;
 //var currentcloudpusher = 0;
 
 var timer1;
+
+//variables for wordlMap
+
+var wordlMap = false;
+var worldmapimage;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -83,7 +89,7 @@ function setup() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
-
+    worldmapimage = loadImage('images/worldmap/world-map-black.png');
     //   alleen voor testen in browser
 navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //
@@ -111,11 +117,16 @@ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlo
     nightordayPush();
     starsbynightPush();
     keyPressed();
+
+    worldmapbutton = new ButtonObject(outerpadding,buttonSize);
+    exitbutton = new ExitButton(outerpadding,buttonSize);
 }
 
 function draw() {
     background(darkblue);
-
+    if (!weatherData) {
+        error();
+    }
     if (weatherData) {
         errorpage.hide();
         nightorday.display();
@@ -157,22 +168,38 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
-    } if (!weatherData) {
-        error();
+        worldmapbutton.display();
     }
-    
-    push();
-    ellipseMode(CENTER);
-    fill(tomred);
-    noStroke();
-    ellipse(windowWidth - outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
-    fill(255);
-    ellipse(outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
-    pop();
+    if (weatherData && wordlMap) {
+        background(255);
+        searchform.hide();
+        weeromschrijving.hide();
+        temperatuur.hide();
+        fill(255);
+        // imageMode(CENTER);
+        image(worldmapimage, 0, 0, image.width, image.height, mouseX, windowHeight/2, windowHeight*2, windowHeight);
+        exitbutton.display();
+
+    }
 
 //    debug();
 }
-
+function touchEnded() {
+    if(worldmapbutton.click()){
+    wordlMap = true;
+    }
+    if(exitbutton.exit()) {
+    wordlMap = false;
+    searchform.show();
+    temperatuur.show();
+    weeromschrijving.show();
+        if (windowWidth > 488) {
+            weeromschrijving.style('display' ,'inline');
+            temperatuur.style('display' ,'inline');
+        }
+    }
+    return wordlMap;
+}
 
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
