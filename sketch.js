@@ -75,7 +75,9 @@ var timer1;
 //variables for wordlMap
 
 var wordlMap = false;
-var worldmapimage;
+var worldmapimage
+var worldmapcitiesJson;
+var worldmapcities = [];
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -90,6 +92,8 @@ function setup() {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
     worldmapimage = loadImage('images/worldmap/world-map-black.png');
+    worldmapcitiesJson = loadJSON('json/prefabcities.json', checkData);
+
     //   alleen voor testen in browser
 navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 //
