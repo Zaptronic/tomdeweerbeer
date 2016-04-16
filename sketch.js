@@ -160,7 +160,7 @@ function draw() {
     } if (!weatherData) {
         error();
     }
-
+    
     push();
     ellipseMode(CENTER);
     fill(tomred);
