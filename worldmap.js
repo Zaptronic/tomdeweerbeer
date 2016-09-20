@@ -6,7 +6,7 @@ function checkData(data) {
 
 function worldmapScene() {
     fill(255);
-    // imageMode(CENTER);
+    imageMode(CENTER);
     image(worldmapimage, 0, 0, image.width, image.height, worldmapPosition, windowHeight/2, windowHeight*2, windowHeight);
     fill(255, 100, 0);
     rect(PworldmapPosition, 100, 50,50);
