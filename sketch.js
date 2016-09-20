@@ -75,9 +75,12 @@ var timer1;
 //variables for wordlMap
 
 var wordlMap = false;
-var worldmapimage
+var worldmapimage;
 var worldmapcitiesJson;
 var worldmapcities = [];
+var worldmapScene;
+var worldmapPosition = 0;
+var PworldmapPosition = 0;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -179,32 +182,35 @@ function draw() {
         searchform.hide();
         weeromschrijving.hide();
         temperatuur.hide();
-        fill(255);
-        // imageMode(CENTER);
-        image(worldmapimage, 0, 0, image.width, image.height, mouseX, windowHeight/2, windowHeight*2, windowHeight);
+        worldmapScene();
         exitbutton.display();
-
     }
 
 //    debug();
 }
 function touchEnded() {
-    if(worldmapbutton.click()){
-    wordlMap = true;
-    }
-    if(exitbutton.exit()) {
-    wordlMap = false;
-    searchform.show();
-    temperatuur.show();
-    weeromschrijving.show();
-        if (windowWidth > 488) {
-            weeromschrijving.style('display' ,'inline');
-            temperatuur.style('display' ,'inline');
+        if(worldmapbutton.click()){
+        wordlMap = true;
         }
-    }
-    return wordlMap;
+        if(exitbutton.exit()) {
+        wordlMap = false;
+        worldmapPosition = 0;
+        searchform.show();
+        temperatuur.show();
+        weeromschrijving.show();
+            if (windowWidth > 488) {
+                weeromschrijving.style('display' ,'inline');
+                temperatuur.style('display' ,'inline');
+            }
+        }
+        PworldmapPosition = worldmapPosition;
+        return wordlMap;
 }
-
+function touchMoved() {
+    if(weatherData && wordlMap) {
+        worldmapPosition = PworldmapPosition + mouseX;
+    }
+}
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
         if (windowWidth > windowHeight && windowWidth < 370 && windowHeight < 800){ //landscape
