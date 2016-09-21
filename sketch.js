@@ -79,8 +79,10 @@ var worldmapimage;
 var worldmapcitiesJson;
 var worldmapcities = [];
 var worldmapScene;
-var worldmapPosition = 0;
-var PworldmapPosition = 0;
+var worldmapPosition;
+var PworldmapPosition;
+var worldmapDistance;
+var mousers;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -127,6 +129,7 @@ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlo
 
     worldmapbutton = new ButtonObject(outerpadding,buttonSize);
     exitbutton = new ExitButton(outerpadding,buttonSize);
+    mousers = createVector(windowWidth/2,windowHeight/2);
 }
 
 function draw() {
@@ -183,6 +186,7 @@ function draw() {
         weeromschrijving.hide();
         temperatuur.hide();
         worldmapScene();
+        mousePosition();
         exitbutton.display();
     }
 
@@ -203,12 +207,11 @@ function touchEnded() {
                 temperatuur.style('display' ,'inline');
             }
         }
-        PworldmapPosition = worldmapPosition;
         return wordlMap;
 }
 function touchMoved() {
     if(weatherData && wordlMap) {
-        worldmapPosition = PworldmapPosition + mouseX;
+        mousers = createVector(mouseX, mouseY);
     }
 }
 function responsiveScaleCalc() {
