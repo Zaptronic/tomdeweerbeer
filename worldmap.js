@@ -5,14 +5,20 @@ function checkData(data) {
 
 
 function worldmapScene() {
-    push();
-    fill(255);
-    imageMode(CENTER);
-    // translate(0, 100);
-    image(worldmapimage, 0, 0, image.width, image.height, 0, windowHeight/2, windowHeight*2, windowHeight);
-    fill(255, 100, 0);
-    rect(10, 100, 50,50);
-    pop();
+    this.x = windowWidth/2;
+
+    this.update = function() {
+        this.x = worldmapDistance;
+    }
+    this.display = function() {
+        push();
+        fill(255);
+        translate(lerp(this.x, worldmapDistance, 20), 0);
+        image(worldmapimage, 0, 0, image.width, image.height, 0, windowHeight/2, windowHeight*2, windowHeight);
+        fill(255, 100, 0);
+        rect(10, 100, 50,50);
+        pop();
+    }
 }
 
 function mousePosition() {

@@ -76,13 +76,16 @@ var timer1;
 
 var wordlMap = false;
 var worldmapimage;
+var worldmapScene;
+var worldmapscene;
 var worldmapcitiesJson;
 var worldmapcities = [];
-var worldmapScene;
 var worldmapPosition;
-var PworldmapPosition;
+var worldmapPositionHistory;
+var worldmapPositionCurrent;
 var worldmapDistance;
 var mousers;
+var lengthnumber;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -130,6 +133,7 @@ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlo
     worldmapbutton = new ButtonObject(outerpadding,buttonSize);
     exitbutton = new ExitButton(outerpadding,buttonSize);
     mousers = createVector(windowWidth/2,windowHeight/2);
+    worldmapscene = new worldmapScene();
 }
 
 function draw() {
@@ -188,9 +192,10 @@ function draw() {
         worldmapScene();
         mousePosition();
         exitbutton.display();
+        worldmapscene.display();
     }
 
-//    debug();
+   // debug();
 }
 function touchEnded() {
         if(worldmapbutton.click()){
@@ -198,7 +203,6 @@ function touchEnded() {
         }
         if(exitbutton.exit()) {
         wordlMap = false;
-        worldmapPosition = 0;
         searchform.show();
         temperatuur.show();
         weeromschrijving.show();
@@ -207,11 +211,40 @@ function touchEnded() {
                 temperatuur.style('display' ,'inline');
             }
         }
+        // worldmapPositionHistory.push(floor(mousers.x));
+        // console.log(worldmapPositionHistory);
+        // console.log(worldmapPositionHistory[lengthnumber] - worldmapPositionHistory[lengthnumber - 1]);
+
+        //calculate difference between current and previous position
+        //capture posistion on mousedown and capture the posistion on touchdown each frame(mouse Delta)
+        //then mouse the image the amount of px
+        //http://stackoverflow.com/questions/2463739/panning-image-using-javascript-in-asp-net-page-overflows-div
+        //add(with add function in p5.vector) that diiference to the position vector of the map
+        //this becomes the new position of the map to which the map has to move
+        //new position to move to is old position + the distance calculated as above
         return wordlMap;
+}
+function touchStarted() {
+    //get current location for map positioning
+    if(weatherData && wordlMap) {
+        mousers = createVector(mouseX, mouseY);
+        worldmapPositionHistory = mousers.x;
+        console.log(worldmapPositionHistory);
+    }
+
+
 }
 function touchMoved() {
     if(weatherData && wordlMap) {
         mousers = createVector(mouseX, mouseY);
+        worldmapPositionCurrent = mousers.x;
+        worldmapDistance = worldmapPositionCurrent - worldmapPositionHistory;
+        console.log(worldmapDistance);
+        worldmapscene.update();
+        // if (worldmapDistance.length > 10) {
+        //     worldmapDistance.splice(0,1);
+        // }
+        // console.log(worldmapPositionHistory + worldmapDistance.length-2);
     }
 }
 function responsiveScaleCalc() {
