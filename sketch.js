@@ -222,13 +222,17 @@ function touchEnded() {
         //add(with add function in p5.vector) that diiference to the position vector of the map
         //this becomes the new position of the map to which the map has to move
         //new position to move to is old position + the distance calculated as above
+
+        //this is the right example
+        //https://github.com/Zaptronic/canvas_scroller/blob/master/canvas_scroller.js
+
         return wordlMap;
 }
 function touchStarted() {
     //get current location for map positioning
     if(weatherData && wordlMap) {
         mousers = createVector(mouseX, mouseY);
-        worldmapPositionHistory = mousers.x;
+        worldmapPositionHistory = mousers;
         console.log(worldmapPositionHistory);
     }
 
@@ -239,7 +243,7 @@ function touchMoved() {
         mousers = createVector(mouseX, mouseY);
         worldmapPositionCurrent = mousers.x;
         worldmapDistance = worldmapPositionCurrent - worldmapPositionHistory;
-        console.log(worldmapDistance);
+        // console.log(worldmapDistance);
         worldmapscene.update();
         // if (worldmapDistance.length > 10) {
         //     worldmapDistance.splice(0,1);
