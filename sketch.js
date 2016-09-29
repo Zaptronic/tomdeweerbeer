@@ -82,7 +82,7 @@ var worldmapcitiesJson;
 var worldmapcities = [];
 var worldmapPosition;
 var worldmapPositionHistory;
-var worldmapPositionCurrent;
+var worldmapPositions = [];
 var worldmapDistance;
 var mousers;
 var lengthnumber;
@@ -193,6 +193,10 @@ function draw() {
         mousePosition();
         exitbutton.display();
         worldmapscene.display();
+        // translate(worldmapPosition.x, 0);
+        // image(worldmapimage, 0, 0, image.width, image.height, 0, windowHeight/2, windowHeight*2, windowHeight);
+
+
     }
 
    // debug();
@@ -222,18 +226,14 @@ function touchEnded() {
         //add(with add function in p5.vector) that diiference to the position vector of the map
         //this becomes the new position of the map to which the map has to move
         //new position to move to is old position + the distance calculated as above
-
-        //this is the right example
-        //https://github.com/Zaptronic/canvas_scroller/blob/master/canvas_scroller.js
-
-        return wordlMap;
+        // return wordlMap;
 }
 function touchStarted() {
     //get current location for map positioning
     if(weatherData && wordlMap) {
         mousers = createVector(mouseX, mouseY);
         worldmapPositionHistory = mousers;
-        console.log(worldmapPositionHistory);
+        console.log('worldmapPositionHistory: ' + worldmapPositionHistory);
     }
 
 
@@ -241,14 +241,15 @@ function touchStarted() {
 function touchMoved() {
     if(weatherData && wordlMap) {
         mousers = createVector(mouseX, mouseY);
-        worldmapPositionCurrent = mousers.x;
-        worldmapDistance = worldmapPositionCurrent - worldmapPositionHistory;
+        worldmapPositionCurrent = mousers;
+        worldmapDistance = p5.Vector.sub(worldmapPositionCurrent, worldmapPositionHistory);
         // console.log(worldmapDistance);
         worldmapscene.update();
         // if (worldmapDistance.length > 10) {
         //     worldmapDistance.splice(0,1);
         // }
         // console.log(worldmapPositionHistory + worldmapDistance.length-2);
+        console.log('worldmapDistance: ' + worldmapDistance);
     }
 }
 function responsiveScaleCalc() {

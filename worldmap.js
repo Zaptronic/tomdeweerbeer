@@ -4,16 +4,16 @@ function checkData(data) {
 }
 
 
-function worldmapScene() {
-    this.position = createVector(windowWidth/2, windowHeight/2);
+function worldmapScene(worldmapDistance) {
+    // this.position = createVector(windowWidth/2, windowHeight/2);
+    this.position = createVector(worldmapDistance); // distance moet in update worden berekend  deltaX -= ( prevPosition - currPosition );
     this.velocity = createVector(0,0);
     this.acceleration = createVector(0,0);
 
     this.update = function() {
-        mouse = mousers;
-        this.acceleration = p5.Vector.sub(mouse, this.position);
-        this.acceleration.setMag(0.2);
-        this.velocity.add(this.acceleration);
+        mouse = createVector(mouseX, mouseY); //niet op mouse dan wordt de kaart opnieuw gereset
+        this.velocity = p5.Vector.sub(mouse, this.position);
+        // this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
     }
     this.display = function() {
@@ -21,7 +21,7 @@ function worldmapScene() {
         translate(this.position.x, 0);
         image(worldmapimage, 0, 0, image.width, image.height, 0, windowHeight/2, windowHeight*2, windowHeight);
         fill(255, 100, 0);
-        rect(this.position.x, 100, 50,50);
+        rect(0, 100, 50,50);
     }
 }
 
