@@ -12,6 +12,7 @@
     <content src="index.html"/>
 
 <!-- platforms -->
+    <preference name="phonegap-version" value="cli-6.2.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
@@ -95,7 +96,7 @@
 
 
 <!-- splash global settings -->
-    <gap:splash src="splash.png" />
+    <!-- <gap:splash src="splash.png" /> -->
 
 <!-- splash ios settings -->
 
