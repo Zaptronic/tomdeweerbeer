@@ -66,10 +66,22 @@ var searchform;
 var searchpage;
 var errorpage;
 var retryButton;
-
+var weeromschrijving;
+var temperatuur;
 //var currentcloudpusher = 0;
 
 var timer1;
+
+//variables for wordlMap
+var wordlMap = false;
+var worldmapimage;
+var worldmapScene;
+var worldmapscene;
+var worldmapcitiesJson;
+var worldmapcities = [];
+var worldmapPositionHistory;
+var worldmapDistance;
+var mousers;
 
 function setup() {
     var cnv = createCanvas (windowWidth, windowHeight);
@@ -83,6 +95,8 @@ function setup() {
     for (var i = 0; i < 2; i++) {
         nightordayicon[i] = loadImage('images/nightorday'+i+'.png');
     }
+    worldmapimage = loadImage('images/worldmap/world-map-black.png');
+    worldmapcitiesJson = loadJSON('json/prefabcities.json', checkData);
 
     //   alleen voor testen in browser
 navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
@@ -111,11 +125,18 @@ navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlo
     nightordayPush();
     starsbynightPush();
     keyPressed();
+
+    worldmapbutton = new ButtonObject(outerpadding,buttonSize);
+    exitbutton = new ExitButton(outerpadding,buttonSize);
+    mousers = createVector(windowWidth/2,windowHeight/2);
+    worldmapscene = new worldmapScene(worldmapcities);
 }
 
 function draw() {
     background(darkblue);
-
+    if (!weatherData) {
+        error();
+    }
     if (weatherData) {
         errorpage.hide();
         nightorday.display();
@@ -157,23 +178,54 @@ function draw() {
             snowflakes.splice(i,1);
             }
         }
-    } if (!weatherData) {
-        error();
+        worldmapbutton.display();
     }
-    
-    push();
-    ellipseMode(CENTER);
-    fill(tomred);
-    noStroke();
-    ellipse(windowWidth - outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
-    fill(255);
-    ellipse(outerpadding*2, windowHeight - outerpadding*2, buttonSize, buttonSize);
-    pop();
+    if (weatherData && wordlMap) {
+        background(darkblue);
+        searchform.hide();
+        weeromschrijving.hide();
+        temperatuur.hide();
+        worldmapScene();
+        mousePosition();
+        worldmapscene.display();
+        exitbutton.display();
+    }
 
-//    debug();
+   // debug();
 }
-
-
+function touchStarted() {
+    //get current location for map positioning
+    if(weatherData && wordlMap) {
+        mousers = createVector(mouseX, mouseY);
+        worldmapPositionHistory = mousers.x;
+    }
+}
+function touchMoved() {
+    if(weatherData && wordlMap) {
+        mousers = createVector(mouseX, mouseY);
+        worldmapPositionCurrent = mousers.x;
+        worldmapDistance = worldmapPositionCurrent - worldmapPositionHistory;
+        worldmapscene.update(worldmapDistance);
+    }
+}
+function touchEnded() {
+        if(worldmapbutton.click()){
+        wordlMap = true;
+        }
+        if(exitbutton.exit()) {
+        wordlMap = false;
+        searchform.show();
+        temperatuur.show();
+        weeromschrijving.show();
+            if (windowWidth > 488) {
+                weeromschrijving.style('display' ,'inline');
+                temperatuur.style('display' ,'inline');
+            }
+        }
+        if(weatherData && wordlMap) {
+            worldmapscene.ended();
+        }
+}
 function responsiveScaleCalc() {
         var responsiveScaler = (windowWidth/1000);
         if (windowWidth > windowHeight && windowWidth < 370 && windowHeight < 800){ //landscape
@@ -187,7 +239,7 @@ function responsiveScaleCalc() {
 }
 
 document.addEventListener("deviceready", function(){
- navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
+    navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 }, false);
 
 function mobilesizes() {

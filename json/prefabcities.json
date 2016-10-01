@@ -1,0 +1,29 @@
+{
+    "cities": [
+    {
+        "name": "New York",
+        "coord": {
+            "lon": -73.935242,
+            "lat": 40.730610
+        },
+        "country" : "USA"
+    },
+    {
+        "name": "Paris",
+        "coord": {
+            "lon": 2.349014,
+            "lat": 48.864716
+        },
+        "country" : "FR"
+    },
+    {
+        "name": "Amsterdam",
+        "coord": {
+            "lon": 4.897960,
+            "lat": 52.374355
+        },
+        "country" : "NL"
+    }
+
+    ]
+}

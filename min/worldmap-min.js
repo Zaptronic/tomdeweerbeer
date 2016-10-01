@@ -1,0 +1,1 @@
+function checkData(c){worldmapcities=c,console.log(worldmapcities.cities[2])}
