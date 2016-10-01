@@ -5,7 +5,7 @@ function loadInt() {
 }
 
 function loadCity() {
-    url = baseurl+formCity.value()+type+mode+appid+unit+lang; 
+    url = baseurl+formCity.value()+type+mode+appid+unit+lang;
     loadJSON(url, gotData, 'jsonp');
     console.log('b');
 }
@@ -31,23 +31,28 @@ function gotData(data){
     lon = data.city.coord.lon;
     lat = data.city.coord.lat;
     formCity.value(city + ', ' + country);
-    
+
     if (data.list[0].wind.speed) {
-        windSpeed = data.list[0].wind.speed;        
+        windSpeed = data.list[0].wind.speed;
     } else {
         windSpeed = 1;
     }
 
-    
+
     if (data.list[0].rain) {
         amountRain = data.list[0].rain["3h"];
-        amountRain = round(amountRain*200);   
+        var amountRainMapped = map(amountRain, 1, 25, 10, 100);
+        amountRain = round(amountRainMapped);
+        console.log('rain =' + amountRain);
     } else {
         amountRain = 0;
     }
     if (data.list[0].snow) {
         amountSnow = data.list[0].snow["3h"];
-        amountSnow = round(amountSnow * 200);   
+        amountSnow = round(amountSnow * 2000);
+        var amountSnowMapped = map(amountSnow, 1, 25, 10, 100);
+        amountSnow = round(amountSnowMapped);
+        console.log('snow =' + amountSnow);
     } else {
         amountSnow = 0;
     }
@@ -57,36 +62,31 @@ function gotData(data){
     weatherDescription = data.list[0].weather[0].description;
     weatherTime = data.list[0].dt;
     loadTimeatlocation(lon, lat, weatherTime);
-    
+
     console.log(geolat);
     console.log(geolong);
     console.log(url);
 }
 
-function reloadCity() {
-    loadCity();
+function clearweatherElements() {
     clouds = [];
-    currentcloudpush = 0;
+    snowflakes = [];
+    raindrops = [];
+
 }
 
-function onPause() {
-    clouds = [];
-    raindrops = [];
-    clouds = [];
-    clearInterval(cloudPush);
-    clearInterval(raindropPush);
-    clearInterval(snowflakePush);
+function reloadCity() {
+    loadCity();
 }
 
 function onResume() {
     clouds = [];
+    currentcloudpush = 0;
     raindrops = [];
-    clouds = [];
+    snowflakes = [];
 }
 
-
 function loadTimeatlocation(lon, lat, weatherTime) {
-    var Gkey = '&key=AIzaSyBhAMl015DtFzNWm-jFGE2zqHqVMPmungg';
     var timeurl = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=' + weatherTime + '&key=' + Gkey;
     loadJSON(timeurl, calclocaltime);
 }

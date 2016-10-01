@@ -2,7 +2,7 @@ function TimerObject(counter, interval, x, y) {
     this.x = x;
     this.y = y;
     this.interval = interval;
-    
+
     this.display = function() {
         text('timer: ' + counter, this.x, this.y);
     }

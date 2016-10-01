@@ -8,21 +8,29 @@ function forminit() {
     submitbutton = select('.submitbutton');
     clearbutton = select('.clearbutton');
     
-    formCity.mousePressed(enterFormfield);
-    clearbutton.mousePressed(clearPressed);
-    submitbutton.mousePressed(submitPressed);
+    formCity.touchStarted(enterFormfield);
+    clearbutton.touchStarted(clearPressed);
+    submitbutton.touchStarted(submitPressed);
 }
 
 function enterFormfield() {
     addsearchpage();
+    document.activeElement.focus();
+    if (formCity.value(null)) {
+        clearbutton.addClass('clearbutton__hide');
+    }
+    return false;
 }
 
 function clearPressed() {
     formCity.value(null);		
     addsearchpage();
+    clearbutton.addClass('clearbutton__hide');
+    return false;
 }
 
 function keyPressed(event) {
+    clearweatherElements();
     if (keyCode === 13) {
         if (checkform()){
             reloadCity();            
@@ -36,6 +44,7 @@ function keyPressed(event) {
 }
 
 function submitPressed() {
+    clearweatherElements();
     if (checkform()) {
             reloadCity();   
             document.activeElement.blur();
@@ -59,8 +68,8 @@ function removesearchpage() {
     clearbuttoncounter = 0;
     searchpage.addClass('searchpage__transout');
     searchpage.removeClass('searchpage__show');
-    setTimeout(removetransout, 500);
-    setTimeout(clearbuttonOut, 500);
+    setTimeout(removetransout, 700);
+    setTimeout(clearbuttonOut, 700);
 }
 
 function removetransout() {

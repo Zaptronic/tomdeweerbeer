@@ -1,0 +1,1 @@
+function ButtonObject(t){this.x=touchX,this.y=touchY,this.radius=t,this.display=function(){ellipse(this.x,this.y,this.radius,this.radius)},this.click=function(){return touchX<=outerpadding+this.radius&&touchY>=windowHeight-(outerpadding+this.radius)?(console.log("buttonhit is true"),!0):!1}}

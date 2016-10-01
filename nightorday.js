@@ -10,15 +10,15 @@ function Nightorday(x,y, nightordaysizer) {
     this.x = x;
     this.y = y;
     this.size = nightordaysizer;
-    
+
     this.display = function() {
         imageMode(CENTER);
         if ((hours >= -3 && hours < 6) || (hours > 18 && hours <= 23)) {
             image(nightordayicon[1], this.x, this.y, this.size, this.size);
-            
+
          } if (hours >= 6 && hours <= 18 ){
              image(nightordayicon[0], this.x, this.y, this.size, this.size);
-         }    
+         }
     }
 }
 
@@ -27,7 +27,7 @@ function starsbynightPush() {
     var y = [0.17,0.3,0.28,0.31,0.26];
     var innerRadius = [4, 8, 4, 6, 4];
     var starBrightness = [90, 60, 20, 120, 70];
-    
+
     for(var i = 0; i < innerRadius.length; i++ ) {
         stars.push(new Starbynight(x[i], y[i], innerRadius[i], starBrightness[i]));
     }
@@ -40,29 +40,29 @@ function Starbynight(x,y, innerRadius, starBrightness) {
     this.outerRadius = innerRadius * 2;
     this.starbrightness = starBrightness;
     this.starbrightnessSpeed = 1;
-    
+
     this.display = function() {
         if ((hours >= -3 && hours < 6) || (hours > 18 && hours <= 23)) {
-            noStroke();   
-            
+            noStroke();
+
             for (var i = 0; i < stars.length; i++) {
                 push();
-                fill(234, 167, 0, this.starbrightness); 
+                fill(234, 167, 0, this.starbrightness);
                 translate(width*this.x, height*this.y);
                 rotate(frameCount / -150.0);
-                star(0, 0, this.innerRadius, this.outerRadius, 5); 
+                star(0, 0, this.innerRadius, this.outerRadius, 5);
                 pop();
             }
 
-            
+
          } if (hours >= 6 && hours <= 18 ){
-                var offset = 20;   
+                var offset = 20;
                 var curveheight = 15;
-                var baseline = windowHeight * 0.56;
-                noStroke(); 
+                var baseline = windowHeight * 0.54;
+                noStroke();
 
                 push();
-                fill(255, 5);       
+                fill(255, 5);
                 translate(-20, 0);
                 beginShape();
                 curveVertex(-10, baseline);
@@ -77,16 +77,37 @@ function Starbynight(x,y, innerRadius, starBrightness) {
                 curveVertex(windowWidth*0.75, baseline + offset);
                 curveVertex(windowWidth*0.5, baseline + offset + curveheight * 0.7);
                 curveVertex(windowWidth*0.25, baseline + offset);
-                curveVertex(-10, baseline + offset + curveheight * 0.7);        
+                curveVertex(-10, baseline + offset + curveheight * 0.7);
                 curveVertex(-10, baseline);
                 endShape();
                 pop();
-        
+
+                push();
+                fill(255, 4);
+                translate(-80, 20);
+                beginShape();
+                curveVertex(-10, baseline);
+                curveVertex(-10, baseline - curveheight);
+                curveVertex(windowWidth*0.25, baseline);
+                curveVertex(windowWidth*0.5, baseline - curveheight * 0.6);
+                curveVertex(windowWidth*0.75, baseline);
+                curveVertex(windowWidth*1.25, baseline - curveheight * 0.7);
+                curveVertex(windowWidth*1.5, baseline - curveheight);
+                curveVertex(windowWidth*1.5, baseline + offset/2 + curveheight * 0.3);
+                curveVertex(windowWidth*1.25, baseline + offset/2 + curveheight);
+                curveVertex(windowWidth*0.75, baseline + offset/2);
+                curveVertex(windowWidth*0.5, baseline + offset/2 + curveheight * 0.4);
+                curveVertex(windowWidth*0.25, baseline + offset/2);
+                curveVertex(-10, baseline + offset/2 + curveheight * 0.2);
+                curveVertex(-10, baseline);
+                endShape();
+                pop();
+
          }
     }
     this.update = function() {
         this.starbrightness = this.starbrightness + this.starbrightnessSpeed;
-        
+
         if (this.brightnesscheck()) {
            this.starbrightnessSpeed = this.starbrightnessSpeed * 1;
         } else {
