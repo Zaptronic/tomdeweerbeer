@@ -17,9 +17,7 @@ function worldmapScene(worldmapcities) {
     this.x = 0;
 
     this.update = function(worldmapDistance) {
-        if (this.scrollCheck()) {
             this.x = this.prevPositionX - worldmapDistance;
-        }
     }
     this.scrollCheck = function() {
         var maxWscroll = -1000;

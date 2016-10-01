@@ -194,7 +194,6 @@ function draw() {
    // debug();
 }
 function touchStarted() {
-    //get current location for map positioning
     if(weatherData && wordlMap) {
         mousers = createVector(touchX, touchY);
         worldmapPositionHistory = mousers.x;
@@ -202,7 +201,7 @@ function touchStarted() {
 }
 function touchMoved() {
     if(weatherData && wordlMap) {
-        mousers = createVector(touchX, touchY);
+        mousers = createVector(ptouchX, ptouchY);
         worldmapPositionCurrent = mousers.x;
         worldmapDistance = worldmapPositionCurrent - worldmapPositionHistory;
         worldmapscene.update(worldmapDistance);
