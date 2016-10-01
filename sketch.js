@@ -196,13 +196,13 @@ function draw() {
 function touchStarted() {
     //get current location for map positioning
     if(weatherData && wordlMap) {
-        mousers = createVector(mouseX, mouseY);
+        mousers = createVector(touchX, touchY);
         worldmapPositionHistory = mousers.x;
     }
 }
 function touchMoved() {
     if(weatherData && wordlMap) {
-        mousers = createVector(mouseX, mouseY);
+        mousers = createVector(touchX, touchY);
         worldmapPositionCurrent = mousers.x;
         worldmapDistance = worldmapPositionCurrent - worldmapPositionHistory;
         worldmapscene.update(worldmapDistance);
@@ -237,7 +237,7 @@ function responsiveScaleCalc() {
         }
         return responsiveRatio;
 }
-// 
+//
 document.addEventListener("deviceready", function(){
     navigator.geolocation.getCurrentPosition(currentlocationtocurrentcity, currentlocationerror, { timeout: 30000 });
 }, false);
