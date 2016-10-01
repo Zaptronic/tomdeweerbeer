@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "nl.zaptronic.tomdeweerbeer"
-        versionCode = "10" 
+        versionCode = "10"
         version     = "1.0.0" >
 
     <name>Tom de weerbeer</name>
@@ -15,13 +15,14 @@
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
-<!-- global preferences -->    
+<!-- global preferences -->
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" />
 	<preference name="webviewbounce" value="false" />
 	<preference name="DisallowOverscroll" value="true" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="stay-in-webview" value="false"/>
+    <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="4000" />
     <preference name="FadeSplashScreenDuration" value="250"/>
 
@@ -30,13 +31,13 @@
     <preference name="prerendered-icon" value="true" />
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="true" />
-    <preference name="deployment-target" value="8.0" />
+    <preference name="deployment-target" value="9.0" />
 
 <!-- android preferences -->
     <preference name="android-minSdkVersion" value="19" />
     <preference name="android-windowSoftInputMode" value="adjustPan" />
-    
-    <gap:config-file platform="ios" parent="NSLocationWhenInUseUsageDescription" mode="replace"> 
+
+    <gap:config-file platform="ios" parent="NSLocationWhenInUseUsageDescription" mode="replace">
         <array>
           <string>NSLocationAlwaysUsageDescription</string>
         </array>
@@ -54,10 +55,10 @@
 
 <!-- icon global settings -->
     <icon src="images/res/icon/ios/icon.png"/>
-    
-    
 
-        
+
+
+
 <!-- icon ios settings -->
 <!--    <icon src="icon-60.png" gap:platform="ios" width="60" height="60" />-->
 <!--    <icon src="icon-60@2x.png" gap:platform="ios" width="120" height="120" />-->
@@ -73,7 +74,7 @@
     <!-- Spotlight Icon -->
 <!--    <icon src="icon-40.png" gap:platform="ios" width="40" height="40" />-->
 <!--    <icon src="icon-40@2x.png" gap:platform="ios" width="80" height="80" />-->
-        
+
 <!-- icon android settings -->
 <!--
     <icon src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
@@ -81,23 +82,23 @@
     <icon src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
     <icon src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
     <icon src="xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
-    <icon src="fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />    
+    <icon src="fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
 -->
-      
-<!-- plugins -->    
+
+<!-- plugins -->
 <!--
     <gap:plugin name="org.apache.cordova.device-motion"/>
     <gap:plugin name="org.apache.cordova.device-orientation"/>
     <gap:plugin name="org.apache.cordova.device-motion"/>
-    <gap:plugin name="org.apache.cordova.device-orientation"/>  
+    <gap:plugin name="org.apache.cordova.device-orientation"/>
 -->
-    
-    
-<!-- splash global settings -->        
+
+
+<!-- splash global settings -->
     <gap:splash src="splash.png" />
-        
-<!-- splash ios settings -->    
-        
+
+<!-- splash ios settings -->
+
       <!-- iPhone and iPod touch -->
 <!--
     <gap:splash src="Default.png" gap:platform="ios" width="320" height="480" />
@@ -105,7 +106,7 @@
 -->
     <!-- iPhone 6 -->
     <gap:splash src="images/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136" />
-    
+
     <!-- iPhone 6 -->
     <gap:splash src="images/res/screen/ios/screen-iphone-portrait-5-2x.png" gap:platform="ios" width="750" height="1334" />
 
@@ -118,19 +119,19 @@
     <!-- Retina iPad -->
 <!--
     <gap:splash src="Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
-    <gap:splash src="Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />  
+    <gap:splash src="Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />
 -->
-        
-<!-- splash android settings -->   
-        
+
+<!-- splash android settings -->
+
     <gap:splash src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
     <gap:splash src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
     <gap:splash src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
     <gap:splash src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
     <gap:splash src="fr-xhdpi.png" gap:platform="android" gap:qualifier="fr-xhdpi" />
     <gap:splash src="portrait-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
-    <gap:splash src="landscape-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi" />      
-    
+    <gap:splash src="landscape-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi" />
+
     <access origin="http://openweathermap.org" />
     <access origin="https://*.google.com" />
 </widget>
