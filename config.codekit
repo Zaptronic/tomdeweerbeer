@@ -1260,7 +1260,7 @@
 		},
 	"\/timer.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/timer.js",
 		"outputAbbreviatedPath": "\/min\/timer-min.js",
@@ -1293,7 +1293,7 @@
 		},
 	"\/worldmap.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/worldmap.js",
 		"outputAbbreviatedPath": "\/min\/worldmap-min.js",
